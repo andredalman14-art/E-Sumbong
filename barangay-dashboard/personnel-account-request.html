@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#123c2c" />
+    <title>Create Personnel Account | Barangay Poblacion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <script src="js/auth.js" defer></script>
+  </head>
+  <body data-auth-page="account-request">
+    <main class="signup-layout">
+      <section class="auth-brand signup-brand" aria-label="Barangay Poblacion Personnel Portal">
+        <span class="auth-orbit auth-orbit-top" aria-hidden="true"></span><span class="auth-orbit auth-orbit-bottom" aria-hidden="true"></span>
+        <a class="auth-brand-lockup" href="index.html"><span class="auth-brand-icon"><img src="assets/images/login-brand-shield.svg" alt="" /></span><span><strong>Barangay Poblacion</strong><small>Personnel Portal</small></span></a>
+        <div class="auth-brand-copy"><p class="auth-eyebrow">AUTHORIZED PERSONNEL REGISTRATION</p><h1>Join one accountable complaint workflow.</h1><p class="auth-brand-description">Create a secure personnel application for review. Dashboard access begins only after an authorized administrator approves your account and role.</p></div>
+        <p class="auth-brand-footer"><img src="assets/images/login-footer-shield.svg" alt="" />Approval required before portal access</p>
+      </section>
+      <section class="signup-main" aria-label="Create a personnel account">
+        <header class="signup-heading"><span class="signup-emblem"><img src="assets/images/registration-shield.svg" alt="" /></span><h2>Barangay Poblacion</h2><p class="signup-subtitle">Centralized Complaint Reporting System</p><p>Create your personnel account to access the Barangay Personnel Portal.</p></header>
+        <form class="signup-card" id="accountRequestForm" novalidate>
+          <section class="signup-section signup-all-fields" aria-labelledby="personalHeading">
+            <div class="signup-section-title"><span class="signup-section-icon"><img src="assets/images/registration-person.svg" alt="" /></span><span><strong id="personalHeading">Personal Information</strong><small>Your official personnel details</small></span></div>
+            <div class="signup-fields-grid">
+              <div><label class="auth-label" for="requestFirstName">First Name <b>*</b></label><input class="auth-input" id="requestFirstName" name="firstName" autocomplete="given-name" placeholder="Enter your first name" required /><small class="auth-field-error" id="requestFirstNameError" hidden>Enter your first name.</small></div>
+              <div><label class="auth-label" for="requestLastName">Last Name <b>*</b></label><input class="auth-input" id="requestLastName" name="lastName" autocomplete="family-name" placeholder="Enter your last name" required /><small class="auth-field-error" id="requestLastNameError" hidden>Enter your last name.</small></div>
+              <div><label class="auth-label" for="requestRole">Select a role <b>*</b></label><select class="auth-input" id="requestRole" name="requestedRole" required><option value="" selected disabled>Select your designation</option><option>Desk Staff</option><option>Barangay Secretary</option><option>Barangay Captain</option></select><small class="auth-field-error" id="requestRoleError" hidden>Select a role.</small></div>
+              <div><label class="auth-label" for="requestContact">Contact Number <b>*</b></label><input class="auth-input" id="requestContact" name="contactNumber" type="tel" autocomplete="tel" placeholder="09XX XXX XXXX" required /><small class="auth-field-error" id="requestContactError" hidden>Enter a contact number.</small></div>
+              <div><label class="auth-label" for="requestEmail">Email Address <b>*</b></label><input class="auth-input" id="requestEmail" name="email" type="email" autocomplete="email" placeholder="name@example.com" required /><small class="auth-field-error" id="requestEmailError" hidden>Enter a valid email address.</small></div>
+              <div><label class="auth-label" for="requestPassword">Password <b>*</b></label><div class="auth-password-wrap"><input class="auth-input" id="requestPassword" name="password" type="password" autocomplete="new-password" placeholder="Create a secure password" required /><button class="password-toggle" type="button" data-password-toggle="requestPassword" aria-label="Show password" aria-pressed="false"><svg class="eye-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/></svg></button></div><small class="signup-hint">At least 10 characters with a letter, number, and symbol.</small><small class="auth-field-error" id="requestPasswordError" hidden>Use 10 or more characters with a letter, number, and symbol.</small></div>
+              <div><label class="auth-label" for="requestPasswordConfirm">Confirm Password <b>*</b></label><div class="auth-password-wrap"><input class="auth-input" id="requestPasswordConfirm" name="passwordConfirm" type="password" autocomplete="new-password" placeholder="Re-enter your password" required /><button class="password-toggle" type="button" data-password-toggle="requestPasswordConfirm" aria-label="Show password" aria-pressed="false"><svg class="eye-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/></svg></button></div><small class="auth-field-error" id="requestPasswordConfirmError" hidden>Passwords must match.</small></div>
+            </div>
+          </section>
+          <section class="signup-consent" aria-labelledby="consentHeading"><h3 id="consentHeading">CONSENT AND ACKNOWLEDGMENT</h3><div class="signup-consent-grid"><label><input type="checkbox" id="termsAccepted" /><span>I have read and agree to the <a href="#terms" data-policy="terms">Terms and Conditions</a></span></label><label><input type="checkbox" id="privacyAccepted" /><span>I have read and agree to the <a href="#privacy" data-policy="privacy">Privacy Policy</a></span></label></div><small class="auth-field-error" id="consentError" hidden>Please accept both items to continue.</small><p class="auth-feedback" id="requestFeedback" role="alert" aria-live="polite" hidden></p><button class="auth-submit signup-submit" id="requestSubmit" type="submit"><span class="auth-submit-text">Create Account</span><img src="assets/images/login-arrow.svg" alt="" /></button><p class="signup-login">Already have an account? <a href="index.html">Login</a></p></section>
+        </form>
+      </section>
+    </main>
+    <dialog class="policy-dialog" id="policyDialog"><form method="dialog"><button class="policy-close" aria-label="Close">×</button><p class="auth-card-eyebrow" id="policyEyebrow">Portal information</p><h2 id="policyTitle">Terms and Conditions</h2><p id="policyText"></p><button class="verify-cancel">Close</button></form></dialog>
+  </body>
+</html>

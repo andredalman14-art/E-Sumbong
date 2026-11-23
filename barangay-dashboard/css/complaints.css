@@ -1,0 +1,2256 @@
+[hidden] {
+  display: none !important;
+}
+.complaints-screen {
+  padding: 34px 38px 56px;
+}
+.complaint-page-heading {
+  margin-bottom: 0;
+}
+.complaint-eyebrow {
+  margin: 0;
+  color: #16724f;
+  font-size: 10px;
+  letter-spacing: 1.26px;
+  font-weight: 700;
+}
+.complaint-page-heading h1 {
+  margin: 9px 0 0;
+  color: #13231d;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+  font-weight: 500;
+}
+.complaint-intro {
+  margin: 6px 0 0;
+  color: #66786f;
+  font-size: 12px;
+  line-height: 18px;
+}
+.complaint-toolbar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 24px;
+}
+.complaint-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.complaint-tab {
+  min-height: 30px;
+  padding: 0 13px;
+  border: 1px solid #dce5e0;
+  border-radius: 99px;
+  background: #fff;
+  color: #50635a;
+  font:
+    600 11px Inter,
+    Arial,
+    sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.complaint-tab:hover {
+  border-color: #94b9a5;
+}
+.complaint-tab.active {
+  background: #0b4836;
+  border-color: #0b4836;
+  color: #fff;
+}
+.walkin-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 15px;
+  border-radius: 7px;
+  white-space: nowrap;
+}
+.walkin-button span {
+  font-size: 17px;
+  line-height: 1;
+}
+.complaint-records {
+  margin-top: 14px;
+  background: #fff;
+  border: 1px solid #dce5e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.complaint-filters {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 170px 160px 121px;
+  align-items: center;
+  gap: 9px;
+  padding: 11px;
+  border-bottom: 1px solid #dce5e0;
+}
+.complaint-search {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 11px;
+  border: 1px solid #dce5e0;
+  border-radius: 7px;
+  color: #9caaa4;
+}
+.complaint-search > span {
+  font-size: 19px;
+  line-height: 1;
+}
+.complaint-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: #293b34;
+  font:
+    400 11px Inter,
+    Arial,
+    sans-serif;
+}
+.complaint-search input::placeholder {
+  color: #9caaa4;
+}
+.complaint-filters select,
+.complaint-filter-button {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #d9e3de;
+  border-radius: 7px;
+  background: #fff;
+  color: #293b34;
+  font:
+    400 11px Inter,
+    Arial,
+    sans-serif;
+}
+.complaint-filter-button {
+  font-weight: 600;
+  cursor: pointer;
+}
+.complaint-filter-button:hover,
+.complaint-action-button:hover {
+  border-color: #89b29c;
+  background: #f8fcfa;
+}
+.complaint-table-scroll {
+  overflow-x: auto;
+}
+.management-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  text-align: left;
+}
+.management-table th {
+  height: 35px;
+  padding: 0 14px;
+  background: #fbfcfc;
+  border-bottom: 1px solid #dce5e0;
+  color: #83938c;
+  font-size: 9px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.management-table td {
+  height: 57px;
+  padding: 8px 14px;
+  border-bottom: 1px solid #edf1ef;
+  color: #43554d;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.management-table tbody tr {
+  cursor: pointer;
+  transition: background 0.14s;
+}
+.management-table tbody tr:hover,
+.management-table tbody tr.selected-row {
+  background: #f6fbf8;
+}
+.management-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.management-table td:first-child strong {
+  color: #16724f;
+  font-size: 10px;
+}
+.management-table .cell-primary {
+  display: block;
+  color: #21352c;
+  font-weight: 700;
+  font-size: 10px;
+}
+.management-table .cell-sub {
+  display: block;
+  margin-top: 3px;
+  color: #92a098;
+  font-size: 9px;
+}
+.complaint-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 0 8px;
+  border-radius: 99px;
+  font-size: 9px;
+  font-weight: 700;
+}
+.complaint-status.new {
+  background: #e8f3ff;
+  color: #226b9e;
+}
+.complaint-status.review {
+  background: #dff7eb;
+  color: #0c7650;
+}
+.complaint-status.verify {
+  background: #fff0cd;
+  color: #9d5c00;
+}
+.complaint-status.hearing {
+  background: #eee9ff;
+  color: #694dc2;
+}
+.complaint-status.resolved {
+  background: #e4f3fb;
+  color: #21759c;
+}
+.complaint-row-action {
+  height: 29px;
+  width: 29px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #dce5e0;
+  border-radius: 7px;
+  background: #fff;
+  cursor: pointer;
+}
+.complaint-row-action img {
+  height: 14px;
+  width: 14px;
+}
+.complaint-empty {
+  padding: 28px;
+  text-align: center;
+  color: #82948b;
+  font-size: 11px;
+}
+.selected-complaint {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #dce9e1;
+  border-radius: 9px;
+  background: #fbfefc;
+}
+.selected-complaint-copy .complaint-eyebrow {
+  font-size: 9px;
+}
+.selected-complaint-copy strong,
+.selected-complaint-copy small {
+  display: block;
+}
+.selected-complaint-copy strong {
+  margin-top: 5px;
+  color: #21352c;
+  font-size: 10px;
+}
+.selected-complaint-copy small {
+  margin-top: 3px;
+  color: #84958d;
+  font-size: 9px;
+}
+.selected-complaint-actions {
+  display: flex;
+  gap: 7px;
+}
+.complaint-action-button {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 11px;
+  border: 1px solid #dce5e0;
+  border-radius: 7px;
+  background: #fff;
+  color: #294239;
+  text-decoration: none;
+  font:
+    600 10px Inter,
+    Arial,
+    sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.complaint-action-button img {
+  height: 12px;
+  width: 12px;
+}
+.complaint-action-button.route-button {
+  background: #0f6144;
+  border-color: #0f6144;
+  color: #fff;
+}
+.complaint-action-button.route-button:hover {
+  background: #0b4836;
+}
+.management-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 15px;
+}
+.management-form label {
+  display: grid;
+  gap: 5px;
+  color: #52645c;
+  font-size: 10px;
+  font-weight: 600;
+}
+.management-form input,
+.management-form select,
+.management-form textarea {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #dce5e0;
+  border-radius: 7px;
+  background: #fff;
+  color: #293b34;
+  font:
+    400 11px Inter,
+    Arial,
+    sans-serif;
+}
+.management-form textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+.details-screen {
+  max-width: 1320px;
+  padding: 27px 30px 36px;
+  color: #263830;
+}
+.details-breadcrumb {
+  display: flex;
+  gap: 6px;
+  color: #82948b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.65px;
+  margin-bottom: 18px;
+}
+.details-breadcrumb a {
+  color: #16724f;
+  text-decoration: none;
+}
+.details-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+.details-heading h1 {
+  margin: 5px 0 0;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.55px;
+  color: #17251f;
+}
+.details-back-top {
+  white-space: nowrap;
+  text-decoration: none;
+}
+.details-card {
+  background: #fff;
+  border: 1px solid #dce5e0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 5px #123f2f08;
+}
+.details-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 26px;
+  margin-bottom: 12px;
+}
+.details-icon {
+  width: 23px;
+  height: 23px;
+  display: grid;
+  place-items: center;
+  color: #17815a;
+  background: #e8f7ef;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.details-card-heading h2 {
+  margin: 0;
+  color: #263830;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+}
+.details-card-heading p {
+  margin: 2px 0 0;
+  color: #8c9b94;
+  font-size: 9px;
+}
+.details-card-heading > .status {
+  margin-left: auto;
+}
+.reference-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  margin-bottom: 12px;
+  background: #eff8f3;
+  border: 1px solid #d8ecdf;
+  border-radius: 7px;
+}
+.reference-strip div {
+  display: grid;
+  gap: 3px;
+}
+.reference-strip small {
+  color: #748a7f;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.65px;
+}
+.reference-strip strong {
+  color: #14704c;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 11px;
+  margin: 0;
+}
+.detail-grid dt {
+  color: #84968c;
+  font-size: 8px;
+  letter-spacing: 0.55px;
+  font-weight: 700;
+}
+.detail-grid dd {
+  margin: 4px 0 0;
+  color: #273b31;
+  font-size: 10px;
+  line-height: 1.45;
+  font-weight: 500;
+}
+.description-copy {
+  padding: 10px 12px;
+  margin: 0;
+  border: 1px solid #e1e9e4;
+  border-radius: 7px;
+  color: #4d6257;
+  font-size: 10px;
+  line-height: 1.65;
+}
+.extra-information {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 7px;
+  background: #f4f8f6;
+  color: #43594e;
+  font-size: 10px;
+}
+.extra-information p {
+  margin: 5px 0 0;
+  line-height: 1.55;
+}
+.document-row {
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border: 1px solid #e1e9e4;
+  border-radius: 7px;
+}
+.document-icon {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  color: #18845b;
+  background: #e8f7ef;
+}
+.document-copy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+.document-copy strong {
+  font-size: 10px;
+  color: #33473d;
+}
+.document-copy small {
+  font-size: 8px;
+  color: #87968e;
+}
+.document-row button {
+  margin-left: auto;
+  white-space: nowrap;
+}
+.no-documents {
+  margin: 0;
+  color: #829189;
+  font-size: 10px;
+}
+.activity-timeline {
+  list-style: none;
+  padding: 0 0 0 13px;
+  margin: 0 0 0 4px;
+  border-left: 1px solid #cfe5d8;
+}
+.activity-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 12px;
+  padding: 0 0 13px 13px;
+}
+.activity-timeline li:last-child {
+  padding-bottom: 0;
+}
+.activity-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 1px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid #d5eee0;
+  background: #25885d;
+}
+.activity-timeline strong {
+  color: #34483e;
+  font-size: 9px;
+}
+.activity-timeline small {
+  color: #89988f;
+  font-size: 8px;
+  white-space: nowrap;
+}
+.activity-timeline p {
+  grid-column: 1/-1;
+  margin: 0;
+  color: #687a70;
+  font-size: 8px;
+  line-height: 1.5;
+}
+.activity-timeline p b {
+  color: #43574c;
+  font-weight: 600;
+}
+.details-footer {
+  position: fixed;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  left: 182px;
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  padding: 7px 26px;
+  border-top: 1px solid #dce5e0;
+  background: #fff;
+}
+.details-footer > div {
+  display: flex;
+  gap: 8px;
+}
+.details-footer a {
+  text-decoration: none;
+}
+.details-back-link {
+  color: #4c6759;
+  font-size: 10px;
+}
+@media (min-width: 1500px) {
+  .details-screen {
+    padding: 34px 38px 42px;
+  }
+  .details-footer {
+    left: 256px;
+  }
+  .details-heading h1 {
+    font-size: 28px;
+  }
+  .detail-grid dd,
+  .description-copy {
+    font-size: 11px;
+  }
+}
+@media (max-width: 720px) {
+  .details-screen {
+    padding: 18px 14px 28px;
+  }
+  .details-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .details-heading h1 {
+    font-size: 22px;
+  }
+  .details-back-top {
+    align-self: flex-start;
+  }
+  .details-card {
+    padding: 12px;
+  }
+  .detail-grid {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+  .document-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .document-row button {
+    margin-left: 35px;
+  }
+  .activity-timeline li {
+    grid-template-columns: 1fr;
+  }
+  .activity-timeline small {
+    white-space: normal;
+  }
+  .details-footer {
+    left: 0;
+    align-items: center;
+    flex-direction: row;
+    padding: 7px 14px;
+  }
+  .details-footer > div {
+    display: flex;
+    gap: 6px;
+  }
+  .details-footer .button {
+    text-align: center;
+  }
+}
+.management-form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+@media (min-width: 1500px) {
+  .complaint-page-heading h1 {
+    font-size: 32px;
+  }
+  .complaint-eyebrow {
+    font-size: 11px;
+  }
+  .complaint-intro {
+    font-size: 13px;
+  }
+  .complaint-tab {
+    font-size: 13px;
+  }
+  .complaint-search input,
+  .complaint-filters select,
+  .complaint-filter-button {
+    font-size: 13px;
+  }
+  .management-table th {
+    font-size: 11px;
+  }
+  .management-table td {
+    font-size: 12px;
+  }
+  .management-table .cell-primary,
+  .management-table td:first-child strong {
+    font-size: 12px;
+  }
+  .management-table .cell-sub {
+    font-size: 10px;
+  }
+  .complaint-status {
+    font-size: 11px;
+  }
+  .complaint-action-button {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1050px) {
+  .complaints-screen {
+    padding: 24px 20px 40px;
+  }
+  .complaint-toolbar-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .complaint-tabs {
+    width: 100%;
+  }
+  .walkin-button {
+    align-self: flex-end;
+  }
+  .complaint-filters {
+    grid-template-columns: minmax(180px, 1fr) 150px 140px 110px;
+  }
+  .selected-complaint {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .selected-complaint-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 720px) {
+  .complaints-screen {
+    padding: 20px 14px 32px;
+  }
+  .complaint-page-heading h1 {
+    font-size: 23px;
+  }
+  .complaint-toolbar-heading {
+    margin-top: 19px;
+  }
+  .complaint-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .complaint-tab {
+    font-size: 10px;
+    min-height: 32px;
+  }
+  .walkin-button {
+    align-self: stretch;
+    justify-content: center;
+  }
+  .complaint-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+  .complaint-search {
+    grid-column: 1/-1;
+  }
+  .complaint-filter-button {
+    grid-column: 1/-1;
+  }
+  .selected-complaint-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .complaint-action-button {
+    justify-content: center;
+  }
+  .management-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Readable type and shared left alignment for Complaint Management. */
+body[data-page="complaints"] .top-title strong {
+  font-size: 14px;
+}
+body[data-page="complaints"] .top-title small {
+  font-size: 11px;
+}
+body[data-page="complaints"] .brand-copy strong {
+  font-size: 13px;
+}
+body[data-page="complaints"] .brand-copy small {
+  font-size: 10px;
+}
+body[data-page="complaints"] .side-label {
+  font-size: 9px;
+}
+body[data-page="complaints"] .nav-link {
+  font-size: 13px;
+}
+body[data-page="complaints"] .logout strong {
+  font-size: 11px;
+}
+body[data-page="complaints"] .logout small {
+  font-size: 9px;
+}
+body[data-page="complaints"] .profile-copy strong {
+  font-size: 12px;
+}
+body[data-page="complaints"] .profile-copy small {
+  font-size: 10px;
+}
+body[data-page="complaints"] .complaints-screen {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 30px 75px 56px;
+  font-size: 14px;
+}
+body[data-page="complaints"] .topbar {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+body[data-page="complaints"] .complaint-eyebrow {
+  font-size: 13px;
+}
+body[data-page="complaints"] .complaint-page-heading h1 {
+  font-size: 38px;
+}
+body[data-page="complaints"] .complaint-intro {
+  font-size: 16px;
+  line-height: 1.5;
+}
+body[data-page="complaints"] .complaint-toolbar-heading {
+  margin-top: 25px;
+}
+body[data-page="complaints"] .complaint-tab {
+  min-height: 36px;
+  padding-inline: 15px;
+  font-size: 15px;
+}
+body[data-page="complaints"] .walkin-button {
+  min-height: 42px;
+  font-size: 15px;
+}
+body[data-page="complaints"] .walkin-button span {
+  font-size: 20px;
+}
+body[data-page="complaints"] .complaint-records {
+  margin-top: 16px;
+}
+body[data-page="complaints"] .complaint-filters {
+  grid-template-columns: minmax(220px, 1fr) 190px 175px 135px;
+  gap: 10px;
+  padding: 12px;
+}
+body[data-page="complaints"] .complaint-search {
+  height: 42px;
+}
+body[data-page="complaints"] .complaint-search input,
+body[data-page="complaints"] .complaint-filters select,
+body[data-page="complaints"] .complaint-filter-button {
+  font-size: 15px;
+}
+body[data-page="complaints"] .complaint-filters select,
+body[data-page="complaints"] .complaint-filter-button {
+  height: 42px;
+}
+body[data-page="complaints"] .management-table {
+  table-layout: fixed;
+}
+body[data-page="complaints"] .complaint-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+body[data-page="complaints"] .management-table {
+  width: 100%;
+  min-width: 1000px;
+  border-spacing: 0;
+}
+body[data-page="complaints"] .management-table th,
+body[data-page="complaints"] .management-table td {
+  box-sizing: border-box;
+  text-align: left;
+  vertical-align: middle;
+}
+body[data-page="complaints"] .management-table th {
+  height: 40px;
+  padding-inline: 14px;
+  font-size: 13px;
+}
+body[data-page="complaints"] .management-table td {
+  height: 64px;
+  padding: 9px 14px;
+  font-size: 14px;
+}
+body[data-page="complaints"] .management-table th:nth-child(1),
+body[data-page="complaints"] .management-table td:nth-child(1) {
+  width: 16%;
+}
+body[data-page="complaints"] .management-table th:nth-child(2),
+body[data-page="complaints"] .management-table td:nth-child(2) {
+  width: 16%;
+}
+body[data-page="complaints"] .management-table th:nth-child(3),
+body[data-page="complaints"] .management-table td:nth-child(3) {
+  width: 18%;
+}
+body[data-page="complaints"] .management-table th:nth-child(4),
+body[data-page="complaints"] .management-table td:nth-child(4) {
+  width: 13%;
+}
+body[data-page="complaints"] .management-table th:nth-child(5),
+body[data-page="complaints"] .management-table td:nth-child(5) {
+  width: 15%;
+}
+body[data-page="complaints"] .management-table th:nth-child(6),
+body[data-page="complaints"] .management-table td:nth-child(6) {
+  width: 14%;
+}
+body[data-page="complaints"] .management-table th:nth-child(7),
+body[data-page="complaints"] .management-table td:nth-child(7) {
+  width: 8%;
+  text-align: center;
+  padding-inline: 6px;
+}
+body[data-page="complaints"]
+  .management-table
+  td:nth-child(5)
+  .complaint-status {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  max-width: 100%;
+  white-space: nowrap;
+}
+body[data-page="complaints"] .management-table td:nth-child(6) {
+  white-space: nowrap;
+}
+body[data-page="complaints"] .management-table td:nth-child(7) .row-open {
+  position: relative;
+  inset: auto;
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+body[data-page="complaints"]
+  .management-table
+  td:nth-child(7)
+  .row-open::after {
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  transform: none;
+}
+body[data-page="complaints"] .management-table td:first-child strong,
+body[data-page="complaints"] .management-table .cell-primary {
+  font-size: 15px;
+}
+body[data-page="complaints"] .management-table .cell-sub {
+  font-size: 13px;
+}
+body[data-page="complaints"] .complaint-status {
+  min-height: 24px;
+  padding-inline: 9px;
+  font-size: 13px;
+}
+body[data-page="complaints"] .row-open::after {
+  width: 24px;
+  height: 24px;
+  font-size: 18px;
+}
+body[data-page="complaints"] .selected-complaint {
+  min-height: 78px;
+  padding: 14px;
+}
+body[data-page="complaints"] .selected-complaint-copy .complaint-eyebrow {
+  font-size: 12px;
+}
+body[data-page="complaints"] .selected-complaint-copy strong {
+  font-size: 14px;
+}
+body[data-page="complaints"] .selected-complaint-copy small {
+  font-size: 13px;
+}
+body[data-page="complaints"] .complaint-action-button {
+  height: 38px;
+  padding-inline: 13px;
+  font-size: 14px;
+}
+@media (max-width: 1050px) {
+  body[data-page="complaints"] .complaints-screen {
+    padding: 24px 20px 44px;
+  }
+  body[data-page="complaints"] .topbar {
+    padding-left: 20px;
+  }
+  body[data-page="complaints"] .complaint-filters {
+    grid-template-columns: minmax(180px, 1fr) 155px 145px 120px;
+  }
+}
+@media (max-width: 720px) {
+  body[data-page="complaints"] .complaints-screen {
+    padding: 20px 14px 32px;
+  }
+  body[data-page="complaints"] .topbar {
+    padding-left: 14px;
+  }
+  body[data-page="complaints"] .complaint-page-heading h1 {
+    font-size: 26px;
+  }
+  body[data-page="complaints"] .complaint-intro {
+    font-size: 14px;
+  }
+  body[data-page="complaints"] .complaint-eyebrow {
+    font-size: 11px;
+  }
+  body[data-page="complaints"] .complaint-tab {
+    min-height: 34px;
+    font-size: 12px;
+  }
+  body[data-page="complaints"] .complaint-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+  body[data-page="complaints"] .complaint-search input,
+  body[data-page="complaints"] .complaint-filters select,
+  body[data-page="complaints"] .complaint-filter-button {
+    font-size: 13px;
+  }
+  body[data-page="complaints"] .management-table th {
+    font-size: 11px;
+  }
+  body[data-page="complaints"] .management-table td {
+    font-size: 12px;
+  }
+  body[data-page="complaints"] .management-table td:first-child strong,
+  body[data-page="complaints"] .management-table .cell-primary {
+    font-size: 13px;
+  }
+  body[data-page="complaints"] .management-table .cell-sub {
+    font-size: 11px;
+  }
+  body[data-page="complaints"] .complaint-status {
+    font-size: 11px;
+  }
+  body[data-page="complaints"] .management-table td:nth-child(5) .status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 5px 12px;
+    font-size: 15px;
+  }
+}
+
+/* Standard sizing for the Complaint Management workspace. */
+@media (min-width: 721px) {
+  body[data-page="complaints"] .top-title strong {
+    font-size: 14px;
+  }
+  body[data-page="complaints"] .top-title small {
+    font-size: 10px;
+  }
+  body[data-page="complaints"] .brand-copy strong {
+    font-size: 12px;
+  }
+  body[data-page="complaints"] .brand-copy small {
+    font-size: 9px;
+  }
+  body[data-page="complaints"] .side-label {
+    font-size: 8px;
+  }
+  body[data-page="complaints"] .nav-link {
+    height: 32px;
+    font-size: 12px;
+  }
+  body[data-page="complaints"] .nav-count {
+    font-size: 9px;
+  }
+  body[data-page="complaints"] .logout strong {
+    font-size: 10px;
+  }
+  body[data-page="complaints"] .logout small {
+    font-size: 8px;
+  }
+  body[data-page="complaints"] .profile-copy strong {
+    font-size: 12px;
+  }
+  body[data-page="complaints"] .profile-copy small {
+    font-size: 9px;
+  }
+  body[data-page="complaints"] .complaint-eyebrow {
+    font-size: 11px;
+  }
+  body[data-page="complaints"] .complaint-page-heading h1 {
+    font-size: 34px;
+  }
+  body[data-page="complaints"] .complaint-intro {
+    font-size: 14px;
+  }
+  body[data-page="complaints"] .complaint-tab {
+    min-height: 34px;
+    font-size: 13px;
+  }
+  body[data-page="complaints"] .walkin-button {
+    min-height: 40px;
+    font-size: 14px;
+  }
+  body[data-page="complaints"] .complaint-search,
+  body[data-page="complaints"] .complaint-filters select,
+  body[data-page="complaints"] .complaint-filter-button {
+    height: 40px;
+  }
+  body[data-page="complaints"] .complaint-search input,
+  body[data-page="complaints"] .complaint-filters select,
+  body[data-page="complaints"] .complaint-filter-button {
+    font-size: 14px;
+  }
+  body[data-page="complaints"] .management-table th {
+    height: 40px;
+    font-size: 13px;
+  }
+  body[data-page="complaints"] .management-table td {
+    height: 64px;
+    font-size: 14px;
+  }
+  body[data-page="complaints"] .management-table td:first-child strong,
+  body[data-page="complaints"] .management-table .cell-primary {
+    font-size: 15px;
+  }
+  body[data-page="complaints"] .management-table .cell-sub {
+    font-size: 12px;
+  }
+  body[data-page="complaints"] .complaint-status {
+    min-height: 30px;
+    padding-inline: 12px;
+    font-size: 14px;
+  }
+  body[data-page="complaints"] .management-table td:nth-child(5) {
+    width: 14%;
+  }
+  body[data-page="complaints"] .management-table th:nth-child(5) {
+    width: 14%;
+  }
+  body[data-page="complaints"] .management-table th:nth-child(1),
+  body[data-page="complaints"] .management-table td:nth-child(1) {
+    width: 12%;
+  }
+  body[data-page="complaints"] .management-table th:nth-child(2),
+  body[data-page="complaints"] .management-table td:nth-child(2) {
+    width: 13%;
+  }
+  body[data-page="complaints"] .management-table th:nth-child(3),
+  body[data-page="complaints"] .management-table td:nth-child(3) {
+    width: 14%;
+  }
+  body[data-page="complaints"] .management-table th:nth-child(6),
+  body[data-page="complaints"] .management-table td:nth-child(6) {
+    width: 14%;
+  }
+  body[data-page="complaints"] .management-table th:nth-child(7),
+  body[data-page="complaints"] .management-table td:nth-child(7) {
+    width: 14%;
+  }
+  body[data-page="complaints"] .management-table td:nth-child(7) {
+    text-align: center;
+    padding-inline: 6px;
+  }
+  body[data-page="complaints"] .management-table th:nth-child(7) {
+    text-align: center;
+    padding-inline: 6px;
+  }
+  body[data-page="complaints"] .management-table td:nth-child(5) .status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    max-width: 100%;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 15px;
+    line-height: 1.2;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  body[data-page="complaints"] .management-table td:nth-child(7) .row-open {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+  }
+  body[data-page="complaints"]
+    .management-table
+    td:nth-child(7)
+    .row-open::after {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 1;
+  }
+  body[data-page="complaints"] .selected-complaint {
+    min-height: 72px;
+  }
+  body[data-page="complaints"] .selected-complaint-copy .complaint-eyebrow {
+    font-size: 11px;
+  }
+  body[data-page="complaints"] .selected-complaint-copy strong {
+    font-size: 14px;
+  }
+  body[data-page="complaints"] .selected-complaint-copy small {
+    font-size: 12px;
+  }
+  body[data-page="complaints"] .complaint-action-button {
+    height: 38px;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1051px) {
+  body[data-page="complaints"] .complaint-filters {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  body[data-page="complaints"] .complaint-search {
+    flex: 0 1 420px;
+    min-width: 220px;
+    max-width: 420px;
+  }
+  body[data-page="complaints"] #categoryFilter {
+    flex: 0 0 190px;
+    width: 190px;
+    margin-left: auto;
+  }
+  body[data-page="complaints"] #statusFilter {
+    flex: 0 0 175px;
+    width: 175px;
+  }
+  body[data-page="complaints"] .complaint-filter-button {
+    flex: 0 0 135px;
+    width: 135px;
+  }
+}
+
+body[data-page="complaint-details"] .details-screen {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-bottom: 90px;
+  padding-right: 75px;
+  padding-left: 75px;
+}
+body[data-page="complaint-details"] .topbar {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+@media (max-width: 1050px) {
+  body[data-page="complaint-details"] .details-screen,
+  body[data-page="complaint-details"] .topbar {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+/* Delete confirmation state from the Complaint Management design. */
+body[data-page="complaints"] #modal.delete-confirmation {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+}
+body[data-page="complaints"] #modal.delete-confirmation > .modal {
+  width: min(430px, 100%);
+  padding: 28px;
+  border-radius: 11px;
+  box-shadow: 0 18px 48px rgba(13, 37, 27, 0.2);
+}
+body[data-page="complaints"] #modal.modal-backdrop {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+body[data-page="complaints"] #modal.delete-confirmation .modal-close {
+  display: none;
+}
+.delete-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.delete-dialog-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff0f0;
+}
+.delete-dialog-icon img {
+  display: block;
+  width: 23px;
+  height: 23px;
+}
+.delete-dialog-content h2 {
+  margin: 14px 0 0;
+  color: #1c3027;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+body[data-page="complaints"] .delete-dialog-copy {
+  max-width: 340px;
+  margin: 4px 0 0;
+  color: #788980;
+  font-size: 12px;
+  line-height: 1.55;
+}
+.delete-dialog-summary {
+  width: 100%;
+  margin-top: 19px;
+  overflow: hidden;
+  border: 1px solid #e0e8e3;
+  border-radius: 8px;
+  background: #fbfdfc;
+  text-align: left;
+}
+.delete-dialog-summary > div {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 17px;
+}
+.delete-dialog-summary > div + div {
+  border-top: 1px solid #e9eeeb;
+}
+.delete-dialog-summary span {
+  color: #819088;
+  font-size: 11px;
+}
+.delete-dialog-summary strong {
+  color: #263a31;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: right;
+}
+.delete-dialog-actions {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 19px;
+}
+.delete-dialog-actions button {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #d9e3de;
+  border-radius: 7px;
+  background: #fff;
+  color: #30453b;
+  font: 600 12px Inter, Arial, sans-serif;
+  cursor: pointer;
+}
+.delete-dialog-actions .delete-confirm {
+  border-color: #cf3434;
+  background: #cf3434;
+  color: #fff;
+}
+.delete-dialog-actions .delete-confirm:hover {
+  border-color: #b92b2b;
+  background: #b92b2b;
+}
+.delete-dialog-actions img {
+  width: 15px;
+  height: 15px;
+}
+@media (max-width: 480px) {
+  body[data-page="complaints"] #modal.delete-confirmation > .modal {
+    padding: 22px;
+  }
+  .delete-dialog-summary > div {
+    padding-inline: 12px;
+  }
+}
+@media (max-width: 720px) {
+  body[data-page="complaint-details"] .details-screen {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+  body[data-page="complaint-details"] .topbar {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+}
+@media (max-width: 720px) {
+  body[data-page="complaint-details"] .details-footer .button {
+    min-width: 0;
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+}
+body[data-page="complaints"] .management-table th:nth-child(7),
+body[data-page="complaints"] .management-table td:nth-child(7) {
+  text-align: center;
+}
+body[data-page="complaints"]
+  .management-table
+  td:nth-child(7)
+  .complaint-row-action {
+  margin: 0 auto;
+}
+body[data-page="request-information"] .information-request-page,
+body[data-page="update-status"] .status-update-page,
+body[data-page="route-complaint"] .routing-page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-right: 75px;
+  padding-left: 75px;
+}
+body[data-page="request-information"] .topbar,
+body[data-page="update-status"] .topbar,
+body[data-page="route-complaint"] .topbar {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+@media (max-width: 1050px) {
+  body[data-page="request-information"] .information-request-page,
+  body[data-page="update-status"] .status-update-page,
+  body[data-page="route-complaint"] .routing-page,
+  body[data-page="request-information"] .topbar,
+  body[data-page="update-status"] .topbar,
+  body[data-page="route-complaint"] .topbar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 720px) {
+  body[data-page="request-information"] .information-request-page,
+  body[data-page="update-status"] .status-update-page,
+  body[data-page="route-complaint"] .routing-page,
+  body[data-page="request-information"] .topbar,
+  body[data-page="update-status"] .topbar,
+  body[data-page="route-complaint"] .topbar {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+body[data-page="dashboard"] .top-title strong,
+body[data-page="request-information"] .top-title strong,
+body[data-page="update-status"] .top-title strong,
+body[data-page="route-complaint"] .top-title strong {
+  font-size: 14px;
+}
+body[data-page="dashboard"] .top-title small,
+body[data-page="request-information"] .top-title small,
+body[data-page="update-status"] .top-title small,
+body[data-page="route-complaint"] .top-title small {
+  font-size: 10px;
+}
+body[data-page="dashboard"] .brand-copy strong,
+body[data-page="request-information"] .brand-copy strong,
+body[data-page="update-status"] .brand-copy strong,
+body[data-page="route-complaint"] .brand-copy strong {
+  font-size: 12px;
+}
+body[data-page="dashboard"] .brand-copy small,
+body[data-page="request-information"] .brand-copy small,
+body[data-page="update-status"] .brand-copy small,
+body[data-page="route-complaint"] .brand-copy small {
+  font-size: 9px;
+}
+body[data-page="dashboard"] .side-label,
+body[data-page="request-information"] .side-label,
+body[data-page="update-status"] .side-label,
+body[data-page="route-complaint"] .side-label {
+  font-size: 8px;
+}
+body[data-page="dashboard"] .nav-link,
+body[data-page="request-information"] .nav-link,
+body[data-page="update-status"] .nav-link,
+body[data-page="route-complaint"] .nav-link {
+  font-size: 12px;
+}
+body[data-page="dashboard"] .logout strong,
+body[data-page="request-information"] .logout strong,
+body[data-page="update-status"] .logout strong,
+body[data-page="route-complaint"] .logout strong {
+  font-size: 10px;
+}
+body[data-page="dashboard"] .logout small,
+body[data-page="request-information"] .logout small,
+body[data-page="update-status"] .logout small,
+body[data-page="route-complaint"] .logout small {
+  font-size: 8px;
+}
+body[data-page="dashboard"] .profile-copy strong,
+body[data-page="request-information"] .profile-copy strong,
+body[data-page="update-status"] .profile-copy strong,
+body[data-page="route-complaint"] .profile-copy strong {
+  font-size: 12px;
+}
+body[data-page="dashboard"] .profile-copy small,
+body[data-page="request-information"] .profile-copy small,
+body[data-page="update-status"] .profile-copy small,
+body[data-page="route-complaint"] .profile-copy small {
+  font-size: 9px;
+}
+
+body[data-page="dashboard"] .page-heading h1,
+body[data-page="request-information"] .request-heading h1,
+body[data-page="update-status"] .status-page-heading h1,
+body[data-page="route-complaint"] .routing-heading h1 {
+  font-size: 34px;
+}
+body[data-page="dashboard"] .eyebrow,
+body[data-page="request-information"] .request-heading > p,
+body[data-page="route-complaint"] .routing-heading > p {
+  font-size: 11px;
+}
+body[data-page="dashboard"] .intro,
+body[data-page="request-information"] .request-heading > span,
+body[data-page="update-status"] .status-page-heading p,
+body[data-page="route-complaint"] .routing-heading > span {
+  font-size: 14px;
+}
+body[data-page="dashboard"] .heading-actions .button,
+body[data-page="request-information"] .request-footer .button,
+body[data-page="update-status"] .status-footer-actions .button,
+body[data-page="route-complaint"] .routing-footer .button {
+  font-size: 13px;
+}
+
+body[data-page="dashboard"] .stat-card strong {
+  font-size: 20px;
+}
+body[data-page="dashboard"] .stat-card > span:last-child {
+  font-size: 13px;
+}
+body[data-page="dashboard"] .panel-heading h2 {
+  font-size: 15px;
+}
+body[data-page="dashboard"] .panel-heading p {
+  font-size: 12px;
+}
+body[data-page="dashboard"] .text-button {
+  font-size: 13px;
+}
+body[data-page="dashboard"] .complaint-table th {
+  font-size: 13px;
+}
+body[data-page="dashboard"] .complaint-table td {
+  font-size: 14px;
+}
+body[data-page="dashboard"] .complaint-table td strong {
+  font-size: 15px;
+}
+body[data-page="dashboard"] .complaint-table td small {
+  font-size: 12px;
+}
+body[data-page="dashboard"] .complaint-table .status {
+  font-size: 14px;
+}
+body[data-page="dashboard"] .status-item div,
+body[data-page="dashboard"] .status-item b,
+body[data-page="dashboard"] .category,
+body[data-page="dashboard"] .category b {
+  font-size: 12px;
+}
+body[data-page="dashboard"] .hearing-card strong,
+body[data-page="dashboard"] .activity-item strong {
+  font-size: 14px;
+}
+body[data-page="dashboard"] .hearing-card small,
+body[data-page="dashboard"] .activity-item small {
+  font-size: 12px;
+}
+
+body[data-page="request-information"] .request-card-heading h2,
+body[data-page="update-status"] .status-section-heading h2,
+body[data-page="route-complaint"] .routing-card-heading h2 {
+  font-size: 15px;
+}
+body[data-page="request-information"] .request-card-heading p,
+body[data-page="update-status"] .status-section-heading p,
+body[data-page="route-complaint"] .routing-card-heading p {
+  font-size: 12px;
+}
+body[data-page="request-information"] .request-complaint-grid dt,
+body[data-page="request-information"] .request-field,
+body[data-page="request-information"] .previous-requests-table th,
+body[data-page="update-status"] .status-summary-grid small,
+body[data-page="update-status"] .status-select-field > small,
+body[data-page="update-status"] .status-field,
+body[data-page="update-status"] .channel-group legend,
+body[data-page="update-status"] .acknowledgment-group legend,
+body[data-page="route-complaint"] .complaint-info-grid dt,
+body[data-page="route-complaint"] .route-field {
+  font-size: 12px;
+}
+body[data-page="request-information"] .request-complaint-grid dd,
+body[data-page="request-information"] .previous-requests-table td,
+body[data-page="request-information"] .missing-checklist span,
+body[data-page="update-status"] .status-summary-grid strong,
+body[data-page="update-status"] .status-history strong,
+body[data-page="update-status"] .status-history p,
+body[data-page="route-complaint"] .complaint-info-grid dd,
+body[data-page="route-complaint"] .decision-option strong {
+  font-size: 14px;
+}
+body[data-page="request-information"] .request-status-pill,
+body[data-page="request-information"] .request-provided-pill,
+body[data-page="request-information"] .request-pending-pill,
+body[data-page="update-status"] .status-summary-grid .status,
+body[data-page="update-status"] .transition-state,
+body[data-page="update-status"] .channel-options span,
+body[data-page="update-status"] .ack-options span {
+  font-size: 12px;
+}
+body[data-page="request-information"] .request-field input,
+body[data-page="request-information"] .request-field select,
+body[data-page="request-information"] .request-field textarea,
+body[data-page="update-status"] .status-select-field select,
+body[data-page="update-status"] .status-field input,
+body[data-page="update-status"] .status-field select,
+body[data-page="update-status"] .status-field textarea,
+body[data-page="route-complaint"] .route-field input,
+body[data-page="route-complaint"] .route-field select,
+body[data-page="route-complaint"] .route-field textarea {
+  font-size: 14px;
+}
+body[data-page="request-information"] .request-info-note,
+body[data-page="request-information"] .request-validation,
+body[data-page="request-information"] .request-cancel,
+body[data-page="update-status"] .status-back-link,
+body[data-page="update-status"] .status-transition > small,
+body[data-page="update-status"] .status-validation,
+body[data-page="update-status"] .status-history small,
+body[data-page="update-status"] .status-cancel,
+body[data-page="route-complaint"] .route-document,
+body[data-page="route-complaint"] .decision-option small,
+body[data-page="route-complaint"] .route-cancel {
+  font-size: 12px;
+}
+body[data-page="request-information"] .request-footer .button,
+body[data-page="update-status"] .status-footer-actions .button,
+body[data-page="route-complaint"] .routing-footer .button {
+  min-height: 38px;
+}
+@media (max-width: 720px) {
+  body[data-page="dashboard"] .page-heading h1,
+  body[data-page="request-information"] .request-heading h1,
+  body[data-page="update-status"] .status-page-heading h1,
+  body[data-page="route-complaint"] .routing-heading h1 {
+    font-size: 26px;
+  }
+}
+
+body[data-page="dashboard"] .content {
+  max-width: none;
+  margin: 0;
+  padding-right: 75px;
+  padding-left: 75px;
+}
+body[data-page="dashboard"] .topbar {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.workflow-back-top {
+  display: inline-flex;
+  min-height: 38px;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 11px;
+  font-size: 13px;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+@media (max-width: 1050px) {
+  body[data-page="dashboard"] .content {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  body[data-page="dashboard"] .topbar {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+@media (max-width: 720px) {
+  body[data-page="dashboard"] .topbar {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+  body[data-page="dashboard"] .content {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+}
+@media (min-width: 1500px) {
+  body[data-page="dashboard"] .content {
+    padding-right: 75px;
+    padding-left: 75px;
+  }
+  body[data-page="dashboard"] .topbar {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+}
+
+body[data-page="complaint-details"] .top-title strong {
+  font-size: 14px;
+}
+body[data-page="complaint-details"] .top-title small {
+  font-size: 10px;
+}
+body[data-page="complaint-details"] .brand-copy strong,
+body[data-page="complaint-details"] .profile-copy strong {
+  font-size: 12px;
+}
+body[data-page="complaint-details"] .brand-copy small,
+body[data-page="complaint-details"] .profile-copy small {
+  font-size: 9px;
+}
+body[data-page="complaint-details"] .side-label {
+  font-size: 8px;
+}
+body[data-page="complaint-details"] .nav-link {
+  font-size: 12px;
+}
+body[data-page="complaint-details"] .logout strong {
+  font-size: 10px;
+}
+body[data-page="complaint-details"] .logout small {
+  font-size: 8px;
+}
+body[data-page="complaint-details"] .details-breadcrumb {
+  font-size: 11px;
+}
+body[data-page="complaint-details"] .details-heading h1 {
+  font-size: 34px;
+}
+body[data-page="complaint-details"] .details-heading .complaint-eyebrow {
+  font-size: 11px;
+}
+body[data-page="complaint-details"] .details-heading .complaint-intro {
+  font-size: 14px;
+}
+body[data-page="complaint-details"] .details-heading .button,
+body[data-page="complaint-details"] .details-footer .button {
+  font-size: 13px;
+}
+body[data-page="complaint-details"] .details-card-heading h2 {
+  font-size: 15px;
+  line-height: 20px;
+}
+body[data-page="complaint-details"] .details-card-heading p {
+  font-size: 12px;
+}
+body[data-page="complaint-details"] .reference-strip small,
+body[data-page="complaint-details"] .detail-grid dt {
+  font-size: 12px;
+}
+body[data-page="complaint-details"] .reference-strip strong {
+  font-size: 15px;
+}
+body[data-page="complaint-details"] .reference-strip > .status {
+  font-size: 14px;
+}
+body[data-page="complaint-details"] .detail-grid dd,
+body[data-page="complaint-details"] .description-copy,
+body[data-page="complaint-details"] .extra-information {
+  font-size: 14px;
+}
+body[data-page="complaint-details"] .document-copy strong {
+  font-size: 15px;
+}
+body[data-page="complaint-details"] .document-copy small,
+body[data-page="complaint-details"] .no-documents,
+body[data-page="complaint-details"] .activity-timeline small,
+body[data-page="complaint-details"] .activity-timeline p {
+  font-size: 12px;
+}
+body[data-page="complaint-details"] .activity-timeline strong {
+  font-size: 14px;
+}
+body[data-page="complaint-details"] .details-back-link {
+  font-size: 12px;
+}
+@media (max-width: 720px) {
+  body[data-page="complaint-details"] .details-heading h1 {
+    font-size: 26px;
+  }
+}
+
+:root {
+  --portal-title-size: 25px;
+  --portal-section-size: 16px;
+  --portal-body-size: 12px;
+  --portal-control-size: 11px;
+  --portal-meta-size: 10px;
+}
+
+body:is(
+    [data-page="dashboard"],
+    [data-page="complaints"],
+    [data-page="complaint-details"],
+    [data-page="edit-complaint"],
+    [data-page="request-information"],
+    [data-page="update-status"],
+    [data-page="route-complaint"]
+  )
+  .top-title strong {
+  font-size: 14px;
+}
+body:is(
+    [data-page="dashboard"],
+    [data-page="complaints"],
+    [data-page="complaint-details"],
+    [data-page="edit-complaint"],
+    [data-page="request-information"],
+    [data-page="update-status"],
+    [data-page="route-complaint"]
+  )
+  .top-title small {
+  font-size: var(--portal-meta-size);
+}
+body:is(
+    [data-page="dashboard"],
+    [data-page="complaints"],
+    [data-page="complaint-details"],
+    [data-page="edit-complaint"],
+    [data-page="request-information"],
+    [data-page="update-status"],
+    [data-page="route-complaint"]
+  )
+  .brand-copy strong,
+body:is(
+    [data-page="dashboard"],
+    [data-page="complaints"],
+    [data-page="complaint-details"],
+    [data-page="edit-complaint"],
+    [data-page="request-information"],
+    [data-page="update-status"],
+    [data-page="route-complaint"]
+  )
+  .profile-copy strong {
+  font-size: 12px;
+}
+body:is(
+    [data-page="dashboard"],
+    [data-page="complaints"],
+    [data-page="complaint-details"],
+    [data-page="edit-complaint"],
+    [data-page="request-information"],
+    [data-page="update-status"],
+    [data-page="route-complaint"]
+  )
+  .brand-copy small,
+body:is(
+    [data-page="dashboard"],
+    [data-page="complaints"],
+    [data-page="complaint-details"],
+    [data-page="edit-complaint"],
+    [data-page="request-information"],
+    [data-page="update-status"],
+    [data-page="route-complaint"]
+  )
+  .profile-copy small {
+  font-size: 9px;
+}
+body:is(
+    [data-page="dashboard"],
+    [data-page="complaints"],
+    [data-page="complaint-details"],
+    [data-page="edit-complaint"],
+    [data-page="request-information"],
+    [data-page="update-status"],
+    [data-page="route-complaint"]
+  )
+  .side-label {
+  font-size: 9px;
+}
+body:is(
+    [data-page="dashboard"],
+    [data-page="complaints"],
+    [data-page="complaint-details"],
+    [data-page="edit-complaint"],
+    [data-page="request-information"],
+    [data-page="update-status"],
+    [data-page="route-complaint"]
+  )
+  .nav-link {
+  font-size: 12px;
+}
+body:is(
+    [data-page="dashboard"],
+    [data-page="complaints"],
+    [data-page="complaint-details"],
+    [data-page="edit-complaint"],
+    [data-page="request-information"],
+    [data-page="update-status"],
+    [data-page="route-complaint"]
+  )
+  .logout strong {
+  font-size: 11px;
+}
+body:is(
+    [data-page="dashboard"],
+    [data-page="complaints"],
+    [data-page="complaint-details"],
+    [data-page="edit-complaint"],
+    [data-page="request-information"],
+    [data-page="update-status"],
+    [data-page="route-complaint"]
+  )
+  .logout small {
+  font-size: 9px;
+}
+
+body[data-page="dashboard"] .page-heading h1,
+body[data-page="complaints"] .complaint-page-heading h1,
+body[data-page="complaint-details"] .details-heading h1,
+body[data-page="edit-complaint"] .content .edit-heading h1,
+body[data-page="request-information"] .request-heading h1,
+body[data-page="update-status"] .content .status-page-heading h1,
+body[data-page="route-complaint"] .content .routing-heading h1 {
+  font-size: var(--portal-title-size);
+  line-height: 1.2;
+}
+
+body[data-page="dashboard"] .eyebrow,
+body[data-page="complaints"] .complaint-eyebrow,
+body[data-page="complaint-details"] .details-heading .complaint-eyebrow,
+body[data-page="edit-complaint"] .edit-heading .complaint-eyebrow,
+body[data-page="request-information"] .request-heading > p,
+body[data-page="update-status"] .status-page-heading .complaint-eyebrow,
+body[data-page="route-complaint"] .routing-heading > p {
+  font-size: var(--portal-control-size);
+}
+
+body[data-page="dashboard"] .intro,
+body[data-page="complaints"] .complaint-intro,
+body[data-page="complaint-details"] .details-heading .complaint-intro,
+body[data-page="edit-complaint"] .content .edit-heading > div > p:last-child,
+body[data-page="request-information"] .request-heading > span,
+body[data-page="update-status"] .status-page-heading p,
+body[data-page="route-complaint"] .routing-heading > span {
+  font-size: var(--portal-body-size);
+  line-height: 1.5;
+}
+
+body[data-page="dashboard"] .heading-actions .button,
+body[data-page="dashboard"] .text-button,
+body[data-page="complaints"] .complaint-tab,
+body[data-page="complaints"] .walkin-button,
+body[data-page="complaints"] .complaint-filters input,
+body[data-page="complaints"] .complaint-filters select,
+body[data-page="complaints"] .complaint-filter-button,
+body[data-page="complaints"] .complaint-action-button,
+body[data-page="complaint-details"] .details-heading .button,
+body[data-page="complaint-details"] .details-footer .button,
+body[data-page="edit-complaint"] .edit-form-actions .button,
+body[data-page="request-information"] .request-footer .button,
+body[data-page="request-information"] .request-dialog-actions .button,
+body[data-page="request-information"] .request-success-action,
+body[data-page="update-status"] .content .status-footer-actions .button,
+body[data-page="route-complaint"] .content .routing-footer .button,
+body[data-page="route-complaint"] .route-confirm-actions .button,
+body[data-page="route-complaint"] .route-return-button {
+  font-size: var(--portal-control-size);
+}
+
+body[data-page="dashboard"] .panel-heading h2,
+body[data-page="dashboard"] .modal h2,
+body[data-page="complaint-details"] .details-card-heading h2,
+body[data-page="complaint-details"] .modal h2,
+body[data-page="edit-complaint"] .edit-section-heading h2,
+body[data-page="edit-complaint"] .save-confirm-modal h2,
+body[data-page="request-information"] .request-card-heading h2,
+body[data-page="request-information"] .request-dialog h2,
+body[data-page="update-status"] .content .status-section-heading h2,
+body[data-page="update-status"] .status-dialog h2,
+body[data-page="route-complaint"] .content .routing-card-heading h2,
+body[data-page="route-complaint"] .route-confirm-dialog h2,
+body[data-page="route-complaint"] .route-success-content h2 {
+  font-size: var(--portal-section-size);
+  line-height: 1.3;
+}
+
+body[data-page="dashboard"] .panel-heading p,
+body[data-page="dashboard"] .modal p,
+body[data-page="complaint-details"] .details-card-heading p,
+body[data-page="complaint-details"] .modal p,
+body[data-page="edit-complaint"] .edit-section-heading p,
+body[data-page="edit-complaint"] .save-confirm-modal > p,
+body[data-page="request-information"] .request-card-heading p,
+body[data-page="request-information"] .request-dialog > p,
+body[data-page="update-status"] .content .status-section-heading p,
+body[data-page="update-status"] .status-dialog > p,
+body[data-page="route-complaint"] .content .routing-card-heading p,
+body[data-page="route-complaint"] .route-confirm-dialog p,
+body[data-page="route-complaint"] .route-success-content > p {
+  font-size: var(--portal-meta-size);
+  line-height: 1.5;
+}
+
+body[data-page="dashboard"] .stat-card strong {
+  font-size: 20px;
+}
+body[data-page="dashboard"] .stat-card > span:last-child,
+body[data-page="dashboard"] .status-item div,
+body[data-page="dashboard"] .status-item b,
+body[data-page="dashboard"] .category,
+body[data-page="dashboard"] .category b,
+body[data-page="dashboard"] .hearing-card strong,
+body[data-page="dashboard"] .activity-item strong {
+  font-size: var(--portal-control-size);
+}
+body[data-page="dashboard"] .complaint-table th,
+body[data-page="dashboard"] .complaint-table td small,
+body[data-page="dashboard"] .panel-heading p,
+body[data-page="dashboard"] .hearing-card small,
+body[data-page="dashboard"] .activity-item small {
+  font-size: var(--portal-meta-size);
+}
+body[data-page="dashboard"] .complaint-table td {
+  font-size: var(--portal-body-size);
+}
+body[data-page="dashboard"] .complaint-table td strong {
+  font-size: 13px;
+}
+body[data-page="dashboard"] .status,
+body[data-page="dashboard"] .text-button,
+body[data-page="dashboard"] .popover-footer {
+  font-size: var(--portal-control-size);
+}
+body[data-page="dashboard"] .popover-head strong,
+body[data-page="dashboard"] .notice b,
+body[data-page="dashboard"] .profile-popover > button {
+  font-size: var(--portal-control-size);
+}
+body[data-page="dashboard"] .notice small,
+body[data-page="dashboard"] .profile-popover-head small {
+  font-size: var(--portal-meta-size);
+}
+body[data-page="dashboard"] .toast {
+  font-size: var(--portal-body-size);
+}
+
+body[data-page="complaints"] .complaint-tab,
+body[data-page="complaints"] .walkin-button,
+body[data-page="complaints"] .complaint-search input,
+body[data-page="complaints"] .complaint-filters select,
+body[data-page="complaints"] .complaint-filter-button,
+body[data-page="complaints"] .complaint-action-button {
+  font-size: var(--portal-control-size);
+}
+body[data-page="complaints"] .management-table th,
+body[data-page="complaints"] .selected-complaint-copy .complaint-eyebrow,
+body[data-page="complaints"] .management-table .cell-sub,
+body[data-page="complaints"] .selected-complaint-copy small {
+  font-size: var(--portal-meta-size);
+}
+body[data-page="complaints"] .management-table td {
+  font-size: var(--portal-body-size);
+}
+body[data-page="complaints"] .management-table td:first-child strong,
+body[data-page="complaints"] .management-table .cell-primary,
+body[data-page="complaints"] .selected-complaint-copy strong {
+  font-size: 13px;
+}
+body[data-page="complaints"] .complaint-status,
+body[data-page="complaints"] .management-table td:nth-child(5) .status {
+  font-size: var(--portal-control-size);
+}
+
+body[data-page="complaint-details"] .details-breadcrumb,
+body[data-page="complaint-details"] .details-card-heading p,
+body[data-page="complaint-details"] .reference-strip small,
+body[data-page="complaint-details"] .detail-grid dt,
+body[data-page="complaint-details"] .document-copy small,
+body[data-page="complaint-details"] .no-documents,
+body[data-page="complaint-details"] .activity-timeline small,
+body[data-page="complaint-details"] .activity-timeline p {
+  font-size: var(--portal-meta-size);
+}
+body[data-page="complaint-details"] .details-back-link,
+body[data-page="complaint-details"] .details-card-heading h2 {
+  font-size: var(--portal-section-size);
+}
+body[data-page="complaint-details"] .reference-strip strong,
+body[data-page="complaint-details"] .document-copy strong,
+body[data-page="complaint-details"] .activity-timeline strong {
+  font-size: 13px;
+}
+body[data-page="complaint-details"] .reference-strip > .status {
+  font-size: var(--portal-control-size);
+}
+body[data-page="complaint-details"] .detail-grid dd,
+body[data-page="complaint-details"] .description-copy,
+body[data-page="complaint-details"] .extra-information {
+  font-size: var(--portal-body-size);
+}
+
+body[data-page="edit-complaint"] .content .edit-field,
+body[data-page="edit-complaint"] .edit-form-actions .button,
+body[data-page="edit-complaint"] .edit-attachment-actions button {
+  font-size: var(--portal-control-size);
+}
+body[data-page="edit-complaint"] .content .edit-field input,
+body[data-page="edit-complaint"] .content .edit-field select,
+body[data-page="edit-complaint"] .content .edit-field textarea {
+  font-size: var(--portal-body-size);
+}
+body[data-page="edit-complaint"] .edit-error,
+body[data-page="edit-complaint"] .edit-record-grid small,
+body[data-page="edit-complaint"] .edit-attachment-meta small,
+body[data-page="edit-complaint"] .save-confirm-summary span,
+body[data-page="edit-complaint"] .save-confirm-summary strong,
+body[data-page="edit-complaint"] .save-confirm-error {
+  font-size: var(--portal-meta-size);
+}
+body[data-page="edit-complaint"] .content .details-card-heading h2 {
+  font-size: var(--portal-section-size);
+}
+body[data-page="edit-complaint"] .content .details-card-heading p,
+body[data-page="edit-complaint"] .edit-no-attachments,
+body[data-page="edit-complaint"] .save-confirm-modal > p {
+  font-size: var(--portal-body-size);
+}
+body[data-page="edit-complaint"] .edit-record-grid strong,
+body[data-page="edit-complaint"] .edit-attachment-meta strong {
+  font-size: 13px;
+}
+
+body[data-page="request-information"] .request-complaint-grid dt,
+body[data-page="request-information"] .previous-requests-table th,
+body[data-page="request-information"] .request-confirm-summary small,
+body[data-page="request-information"] .request-success-status small {
+  font-size: var(--portal-meta-size);
+}
+body[data-page="request-information"] .request-complaint-grid dd,
+body[data-page="request-information"] .missing-checklist span,
+body[data-page="request-information"] .previous-requests-table td,
+body[data-page="request-information"] .request-field select,
+body[data-page="request-information"] .request-field textarea,
+body[data-page="request-information"] .request-field input {
+  font-size: var(--portal-body-size);
+}
+body[data-page="request-information"] .request-status-pill,
+body[data-page="request-information"] .request-provided-pill,
+body[data-page="request-information"] .request-pending-pill {
+  font-size: var(--portal-meta-size);
+}
+body[data-page="request-information"] .request-field,
+body[data-page="request-information"] .request-footer .button,
+body[data-page="request-information"] .request-dialog-actions .button,
+body[data-page="request-information"] .request-success-action {
+  font-size: var(--portal-control-size);
+}
+body[data-page="request-information"] .request-info-note,
+body[data-page="request-information"] .request-validation,
+body[data-page="request-information"] .request-confirm-summary strong {
+  font-size: var(--portal-meta-size);
+}
+body[data-page="request-information"] .request-success-status strong {
+  font-size: 14px;
+}
+
+body[data-page="route-complaint"] .complaint-info-grid dt,
+body[data-page="route-complaint"] .decision-option small,
+body[data-page="route-complaint"] .route-confirm-summary small,
+body[data-page="route-complaint"] .route-success-reference small {
+  font-size: var(--portal-meta-size);
+}
+body[data-page="route-complaint"] .complaint-info-grid dd,
+body[data-page="route-complaint"] .route-document,
+body[data-page="route-complaint"] .decision-option strong,
+body[data-page="route-complaint"] .route-confirm-summary strong,
+body[data-page="route-complaint"] .route-success-reference strong {
+  font-size: var(--portal-body-size);
+}
+body[data-page="route-complaint"] .route-field,
+body[data-page="route-complaint"] .routing-footer .button,
+body[data-page="route-complaint"] .route-confirm-actions .button,
+body[data-page="route-complaint"] .route-return-button {
+  font-size: var(--portal-control-size);
+}
+body[data-page="route-complaint"] .content .route-field {
+  font-size: var(--portal-meta-size);
+}
+body[data-page="route-complaint"] .content .route-field input,
+body[data-page="route-complaint"] .content .route-field select,
+body[data-page="route-complaint"] .content .route-field textarea {
+  font-size: var(--portal-body-size);
+}
+
+body[data-page="update-status"] .content .status-back-link,
+body[data-page="update-status"] .content .status-footer-actions .button {
+  font-size: var(--portal-control-size);
+}
+body[data-page="update-status"] .content .status-section-heading p,
+body[data-page="update-status"] .content .status-summary-grid small,
+body[data-page="update-status"] .content .status-select-field > small,
+body[data-page="update-status"] .content .status-transition > small,
+body[data-page="update-status"] .content .status-validation,
+body[data-page="update-status"] .content .upload-zone small,
+body[data-page="update-status"] .content .notify-note small,
+body[data-page="update-status"] .content .channel-group legend,
+body[data-page="update-status"] .content .acknowledgment-group legend,
+body[data-page="update-status"] .content .status-history small {
+  font-size: var(--portal-meta-size);
+}
+body[data-page="update-status"] .content .status-summary-grid strong,
+body[data-page="update-status"] .content .status-transition .transition-state,
+body[data-page="update-status"] .content .status-field,
+body[data-page="update-status"] .content .upload-zone strong,
+body[data-page="update-status"] .content .notify-note,
+body[data-page="update-status"] .content .channel-options span,
+body[data-page="update-status"] .content .channel-options span b,
+body[data-page="update-status"] .content .ack-options span {
+  font-size: var(--portal-control-size);
+}
+body[data-page="update-status"] .content .status-field input,
+body[data-page="update-status"] .content .status-field select,
+body[data-page="update-status"] .content .status-field textarea,
+body[data-page="update-status"] .content .status-history p {
+  font-size: var(--portal-body-size);
+}
+body[data-page="update-status"] .content .status-dialog > p,
+body[data-page="update-status"] .status-dialog .status-confirm-transition small,
+body[data-page="update-status"] .status-dialog .status-confirm-reference small,
+body[data-page="update-status"] .status-dialog .status-confirm-pill {
+  font-size: var(--portal-meta-size);
+}
+
+body[data-page="update-status"] .content .communication-card .status-field {
+  font-size: var(--portal-control-size);
+}
+body[data-page="update-status"] .content .communication-card .status-field input,
+body[data-page="update-status"] .content .communication-card .status-field select,
+body[data-page="update-status"] .content .communication-card .status-field textarea {
+  font-size: var(--portal-body-size);
+}
+body[data-page="update-status"] .content .communication-card .channel-group legend,
+body[data-page="update-status"] .content .communication-card .acknowledgment-group legend {
+  font-size: var(--portal-meta-size);
+}
+body[data-page="update-status"] .content .communication-card .channel-options span,
+body[data-page="update-status"] .content .communication-card .channel-options span b,
+body[data-page="update-status"] .content .communication-card .ack-options span {
+  font-size: var(--portal-control-size);
+}
+body[data-page="update-status"] .content .communication-card .notify-note {
+  font-size: var(--portal-meta-size);
+}

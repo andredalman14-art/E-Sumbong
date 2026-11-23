@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#123f2f" />
+    <title>Review Complaint Details | Barangay Poblacion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/complaints.css" />
+    <link rel="stylesheet" href="css/registration.css" />
+  </head>
+  <body data-page="review">
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a
+          class="brand"
+          href="dashboard.html"
+          aria-label="Barangay Poblacion home"
+        >
+          <span class="brand-mark"
+            ><img src="assets/images/figma-icon-07.svg" alt=""
+          /></span>
+          <span class="brand-copy"
+            ><strong>Barangay Poblacion</strong
+            ><small>Personnel Portal</small></span
+          >
+        </a>
+        <div class="side-label">Workspace</div>
+        <nav class="side-nav" aria-label="Main navigation">
+          <a class="nav-link" href="dashboard.html" data-section="Dashboard"
+            ><img src="assets/images/figma-icon-11.svg" alt="" /><span
+              >Dashboard</span
+            ></a
+          >
+          <a
+            class="nav-link active"
+            href="complaints.html"
+            data-section="Complaints"
+            ><img src="assets/images/figma-icon-12.svg" alt="" /><span
+              >Complaints</span
+            ></a
+          >
+          <a class="nav-link" href="#hearings" data-section="Hearing Calendar"
+            ><img src="assets/images/figma-icon-13.svg" alt="" /><span
+              >Hearing Calendar</span
+            ></a
+          >
+          <a class="nav-link" href="#activity" data-section="Activity Log"
+            ><img src="assets/images/figma-icon-14.svg" alt="" /><span
+              >Activity Log</span
+            ></a
+          >
+          <a class="nav-link" href="#reports" data-section="Monthly Reports"
+            ><img src="assets/images/figma-icon-15.svg" alt="" /><span
+              >Monthly Reports</span
+            ></a
+          >
+          <a class="nav-link" href="#notifications" data-section="Notifications"
+            ><img src="assets/images/figma-icon-16.svg" alt="" /><span
+              >Notifications</span
+            ><span class="nav-count">4</span></a
+          >
+        </nav>
+        <button class="logout" type="button" data-action="logout">
+          <span class="logout-icon">↪</span
+          ><span
+            ><strong>Logout</strong><small>End personnel session</small></span
+          ><span class="logout-arrow">›</span>
+        </button>
+      </aside>
+      <main class="main-area">
+        <header class="topbar">
+          <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open navigation"
+          >
+            ☰
+          </button>
+          <div class="top-title">
+            <strong id="pageTitle">Complaint Management</strong
+            ><small id="pageSubtitle"
+              >Centralized resident concern processing</small
+            >
+          </div>
+          <div class="top-actions">
+            <div class="popover-wrap">
+              <button
+                class="icon-button notification-trigger"
+                id="notificationButton"
+                aria-label="Notifications"
+                aria-expanded="false"
+              >
+                <img src="assets/images/figma-icon-00.svg" alt="" /><i></i>
+              </button>
+              <div
+                class="popover notification-popover"
+                id="notificationPanel"
+                hidden
+              >
+                <div class="popover-head">
+                  <strong>Notifications</strong
+                  ><button class="text-button" data-action="mark-read">
+                    Mark all read
+                  </button>
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>New complaint submitted</b
+                    ><small>Noise complaint · 10 minutes ago</small></span
+                  >
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>Hearing reminder</b
+                    ><small>BC-2025-0041 · Tomorrow, 10:00 AM</small></span
+                  >
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>Additional information received</b
+                    ><small>BC-2025-0047 · Yesterday</small></span
+                  >
+                </div>
+                <button class="popover-footer" data-action="all-notifications">
+                  View all notifications <span>→</span>
+                </button>
+              </div>
+            </div>
+            <div class="popover-wrap">
+              <button
+                class="profile-button"
+                id="profileButton"
+                aria-expanded="false"
+              >
+                <span class="avatar">M</span
+                ><span class="profile-copy"
+                  ><strong>Maria Santos</strong><small>Secretary</small></span
+                ><span class="chevron">⌄</span>
+              </button>
+              <div class="popover profile-popover" id="profilePanel" hidden>
+                <div class="profile-popover-head">
+                  <span class="avatar large">M</span
+                  ><span
+                    ><b>Maria Santos</b><small>Barangay Secretary</small></span
+                  >
+                </div>
+                <button data-action="profile">My profile</button
+                ><button data-action="settings">Account settings</button
+                ><button data-action="logout">Log out</button>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="content review-underlay" aria-hidden="true">
+          <div class="crumb-row">
+            <div class="breadcrumbs">
+              <a href="complaints.html">Complaint Management</a><span>›</span
+              ><strong>Record Walk-In Complaint</strong>
+            </div>
+          </div>
+          <div class="underlay-title">
+            <span class="registration-mark">▤</span>
+            <div>
+              <p>STAFF-ASSISTED REGISTRATION</p>
+              <h1>Record Walk-In Complaint</h1>
+              <small
+                >Register a complaint from a resident who personally visits the
+                barangay office.</small
+              >
+            </div>
+          </div>
+          <div class="underlay-layout">
+            <div class="underlay-form">
+              <section class="underlay-section">
+                <header>
+                  <b>01</b
+                  ><span
+                    ><strong>Resident Information</strong
+                    ><small
+                      >Record the details provided directly by the
+                      resident.</small
+                    ></span
+                  >
+                </header>
+                <div class="underlay-fields"><i></i><i></i><i></i><i></i></div>
+              </section>
+              <section class="underlay-section">
+                <header>
+                  <b>02</b
+                  ><span
+                    ><strong>Complaint Information</strong
+                    ><small
+                      >Identify the concern and when and where it
+                      occurred.</small
+                    ></span
+                  >
+                </header>
+                <div class="underlay-fields"><i></i><i></i><i></i><i></i></div>
+              </section>
+              <section class="underlay-section">
+                <header>
+                  <b>03</b
+                  ><span
+                    ><strong>Persons Involved</strong
+                    ><small
+                      >Add each person named in the resident's account.</small
+                    ></span
+                  >
+                </header>
+                <div class="underlay-person"><i></i><i></i><i></i></div>
+              </section>
+              <section class="underlay-section">
+                <header>
+                  <b>04</b
+                  ><span
+                    ><strong>Complaint Description</strong
+                    ><small
+                      >Document the resident's account in clear and neutral
+                      language.</small
+                    ></span
+                  >
+                </header>
+                <div class="underlay-fields one"><i></i><i></i></div>
+              </section>
+              <section class="underlay-section">
+                <header>
+                  <b>05</b
+                  ><span
+                    ><strong>Internal Notes</strong
+                    ><small
+                      >Optional notes visible only to authorized
+                      personnel.</small
+                    ></span
+                  >
+                </header>
+                <div class="underlay-fields one"><i></i></div>
+              </section>
+            </div>
+            <aside class="underlay-sidebar">
+              <section>
+                <strong>Submission Information</strong
+                ><small>SUBMISSION METHOD</small><b>Walk-In</b
+                ><small>RECORDED BY</small><b>Maria Santos</b
+                ><small>REGISTRATION TIMESTAMP</small><i></i>
+              </section>
+              <section class="underlay-note">
+                <strong>Before you continue</strong><i></i><i></i>
+              </section>
+            </aside>
+          </div>
+        </div>
+        <div class="workflow-shade">
+          <section
+            class="review-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="reviewTitle"
+          >
+            <header class="workflow-dialog-heading">
+              <p>FINAL REVIEW</p>
+              <h1 id="reviewTitle">Review Complaint Details</h1>
+              <button
+                type="button"
+                class="workflow-x"
+                onclick="location.href = 'record-walkin.html'"
+                aria-label="Close"
+              >
+                ×
+              </button>
+            </header>
+            <div class="review-alert">
+              Confirm the details with the resident. The reference number will
+              be generated only after successful registration.
+            </div>
+            <section class="review-info-grid">
+              <div>
+                <small>Resident</small><strong id="reviewName"></strong>
+              </div>
+              <div>
+                <small>Contact Number</small
+                ><strong id="reviewContact"></strong>
+              </div>
+              <div>
+                <small>Complete Address</small
+                ><strong id="reviewAddress"></strong>
+              </div>
+              <div>
+                <small>Purok / Location</small
+                ><strong id="reviewPurok"></strong>
+              </div>
+              <div>
+                <small>Category</small><strong id="reviewCategory"></strong>
+              </div>
+              <div>
+                <small>Incident Date &amp; Time</small
+                ><strong id="reviewIncidentDate"></strong>
+              </div>
+              <div>
+                <small>Incident Location</small
+                ><strong id="reviewLocation"></strong>
+              </div>
+              <div>
+                <small>Submission Method</small
+                ><strong id="reviewSubmission">Walk-In</strong>
+              </div>
+            </section>
+            <section class="review-info-block">
+              <h2>Persons Involved</h2>
+              <div id="reviewPeople"></div>
+            </section>
+            <section class="review-info-block">
+              <h2>Complaint Description</h2>
+              <p id="reviewDescription"></p>
+              <div id="reviewAdditionalBlock" hidden>
+                <h2>Additional Information</h2>
+                <p id="reviewAdditional"></p>
+              </div>
+              <div id="reviewInternalBlock" hidden>
+                <h2>Personnel-only internal note</h2>
+                <p id="reviewInternal"></p>
+              </div>
+            </section>
+            <footer class="workflow-actions">
+              <button class="button button-light" id="editDetails">
+                Edit Details</button
+              ><button class="button button-primary" id="registerComplaint">
+                Save and Register Complaint <span>✓</span>
+              </button>
+            </footer>
+          </section>
+        </div>
+      </main>
+    </div>
+    <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+    <script src="js/navigation.js"></script>
+    <script src="js/complaints.js"></script>
+  </body>
+</html>

@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#123f2f" />
+    <title>Record Walk-In Complaint | Barangay Poblacion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/complaints.css" />
+    <link rel="stylesheet" href="css/registration.css" />
+  </head>
+  <body data-page="record">
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a
+          class="brand"
+          href="dashboard.html"
+          aria-label="Barangay Poblacion home"
+        >
+          <span class="brand-mark"
+            ><img src="assets/images/figma-icon-07.svg" alt=""
+          /></span>
+          <span class="brand-copy"
+            ><strong>Barangay Poblacion</strong
+            ><small>Personnel Portal</small></span
+          >
+        </a>
+        <div class="side-label">Workspace</div>
+        <nav class="side-nav" aria-label="Main navigation">
+          <a class="nav-link" href="dashboard.html" data-section="Dashboard"
+            ><img src="assets/images/figma-icon-11.svg" alt="" /><span
+              >Dashboard</span
+            ></a
+          >
+          <a
+            class="nav-link active"
+            href="complaints.html"
+            data-section="Complaints"
+            ><img src="assets/images/figma-icon-12.svg" alt="" /><span
+              >Complaints</span
+            ></a
+          >
+          <a class="nav-link" href="#hearings" data-section="Hearing Calendar"
+            ><img src="assets/images/figma-icon-13.svg" alt="" /><span
+              >Hearing Calendar</span
+            ></a
+          >
+          <a class="nav-link" href="#activity" data-section="Activity Log"
+            ><img src="assets/images/figma-icon-14.svg" alt="" /><span
+              >Activity Log</span
+            ></a
+          >
+          <a class="nav-link" href="#reports" data-section="Monthly Reports"
+            ><img src="assets/images/figma-icon-15.svg" alt="" /><span
+              >Monthly Reports</span
+            ></a
+          >
+          <a class="nav-link" href="#notifications" data-section="Notifications"
+            ><img src="assets/images/figma-icon-16.svg" alt="" /><span
+              >Notifications</span
+            ><span class="nav-count">4</span></a
+          >
+        </nav>
+        <button class="logout" type="button" data-action="logout">
+          <span class="logout-icon">↪</span
+          ><span
+            ><strong>Logout</strong><small>End personnel session</small></span
+          ><span class="logout-arrow">›</span>
+        </button>
+      </aside>
+      <main class="main-area">
+        <header class="topbar">
+          <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open navigation"
+          >
+            ☰
+          </button>
+          <div class="top-title">
+            <strong id="pageTitle">Complaint Management</strong
+            ><small id="pageSubtitle"
+              >Centralized resident concern processing</small
+            >
+          </div>
+          <div class="top-actions">
+            <div class="popover-wrap">
+              <button
+                class="icon-button notification-trigger"
+                id="notificationButton"
+                aria-label="Notifications"
+                aria-expanded="false"
+              >
+                <img src="assets/images/figma-icon-00.svg" alt="" /><i></i>
+              </button>
+              <div
+                class="popover notification-popover"
+                id="notificationPanel"
+                hidden
+              >
+                <div class="popover-head">
+                  <strong>Notifications</strong
+                  ><button class="text-button" data-action="mark-read">
+                    Mark all read
+                  </button>
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>New complaint submitted</b
+                    ><small>Noise complaint · 10 minutes ago</small></span
+                  >
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>Hearing reminder</b
+                    ><small>BC-2025-0041 · Tomorrow, 10:00 AM</small></span
+                  >
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>Additional information received</b
+                    ><small>BC-2025-0047 · Yesterday</small></span
+                  >
+                </div>
+                <button class="popover-footer" data-action="all-notifications">
+                  View all notifications <span>→</span>
+                </button>
+              </div>
+            </div>
+            <div class="popover-wrap">
+              <button
+                class="profile-button"
+                id="profileButton"
+                aria-expanded="false"
+              >
+                <span class="avatar">M</span
+                ><span class="profile-copy"
+                  ><strong>Maria Santos</strong><small>Secretary</small></span
+                ><span class="chevron">⌄</span>
+              </button>
+              <div class="popover profile-popover" id="profilePanel" hidden>
+                <div class="profile-popover-head">
+                  <span class="avatar large">M</span
+                  ><span
+                    ><b>Maria Santos</b><small>Barangay Secretary</small></span
+                  >
+                </div>
+                <button data-action="profile">My profile</button
+                ><button data-action="settings">Account settings</button
+                ><button data-action="logout">Log out</button>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="content registration-page">
+          <div class="crumb-row">
+            <div class="breadcrumbs">
+              <a href="complaints.html">Complaint Management</a><span>›</span
+              ><strong>Record Walk-In Complaint</strong>
+            </div>
+            <a class="button button-light back-button" href="complaints.html"
+              >← Back to Complaints</a
+            >
+          </div>
+          <div class="registration-title">
+            <span class="registration-mark">▤</span>
+            <div>
+              <p class="registration-eyebrow">Staff-assisted registration</p>
+              <h1>Record Walk-In Complaint</h1>
+              <p>
+                Register a complaint from a resident who personally visits the
+                barangay office.
+              </p>
+            </div>
+          </div>
+          <div class="registration-layout">
+            <form id="walkinForm" novalidate>
+              <section class="form-section">
+                <div class="form-section-heading">
+                  <span>01</span>
+                  <div>
+                    <h2>Resident Information</h2>
+                    <p>Record the details provided directly by the resident.</p>
+                  </div>
+                </div>
+                <div class="form-fields two-col">
+                  <label
+                    >Full Name <b>*</b
+                    ><input
+                      name="fullName"
+                      required
+                      autocomplete="name"
+                      placeholder="Enter resident's full name"
+                    /><small class="field-error"
+                      >Please enter the resident's full name.</small
+                    ></label
+                  >
+                  <label
+                    >Contact Number <b>*</b
+                    ><input
+                      name="contactNumber"
+                      required
+                      type="tel"
+                      autocomplete="tel"
+                      placeholder="e.g. 09XX XXX XXXX"
+                    /><small class="field-error"
+                      >Please enter a contact number.</small
+                    ></label
+                  >
+                  <label
+                    >Complete Address <b>*</b
+                    ><input
+                      name="completeAddress"
+                      required
+                      autocomplete="street-address"
+                      placeholder="House number, street, barangay, municipality"
+                    /><small class="field-error"
+                      >Please enter the complete address.</small
+                    ></label
+                  >
+                  <label
+                    >Purok / Location <b>*</b
+                    ><input
+                      name="purok"
+                      required
+                      placeholder="Enter purok or local area"
+                    /><small class="field-error"
+                      >Please enter the purok or location.</small
+                    ></label
+                  >
+                </div>
+              </section>
+              <section class="form-section">
+                <div class="form-section-heading">
+                  <span>02</span>
+                  <div>
+                    <h2>Complaint Information</h2>
+                    <p>Identify the concern and when and where it occurred.</p>
+                  </div>
+                </div>
+                <div class="form-fields two-col">
+                  <label
+                    >Complaint Category <b>*</b
+                    ><select name="category" required>
+                      <option value="">Select a category</option>
+                      <option>Noise</option>
+                      <option>Garbage / Cleanliness</option>
+                      <option>Property Dispute</option>
+                      <option>Safety</option>
+                      <option>Other</option>
+                    </select></label
+                  >
+                  <label
+                    >Incident Location <b>*</b
+                    ><input
+                      name="incidentLocation"
+                      required
+                      placeholder="Where the incident occurred"
+                  /></label>
+                  <label
+                    >Date of Incident <b>*</b
+                    ><input name="incidentDate" required type="date"
+                  /></label>
+                  <label
+                    >Time of Incident <b>*</b
+                    ><input name="incidentTime" required type="time"
+                  /></label>
+                </div>
+              </section>
+              <section class="form-section">
+                <div class="form-section-heading">
+                  <span>03</span>
+                  <div>
+                    <h2>Persons Involved</h2>
+                    <p>Add each person named in the resident's account.</p>
+                  </div>
+                </div>
+                <div id="peopleList" class="people-list"></div>
+                <button type="button" class="add-person-button" id="addPerson">
+                  ＋ Add another individual
+                </button>
+              </section>
+              <section class="form-section">
+                <div class="form-section-heading">
+                  <span>04</span>
+                  <div>
+                    <h2>Complaint Description</h2>
+                    <p>
+                      Document the resident's account in clear and neutral
+                      language.
+                    </p>
+                  </div>
+                </div>
+                <div class="form-fields single-col">
+                  <label
+                    >Description of Complaint <b>*</b
+                    ><textarea
+                      name="description"
+                      required
+                      rows="5"
+                      placeholder="Describe what happened in the resident's own account, including the sequence of events and relevant details."
+                    ></textarea>
+                  </label>
+                  <div class="helper-note">
+                    ⓘ &nbsp;Record the information accurately as provided. Avoid
+                    assumptions, conclusions, or details the resident did not
+                    state.
+                  </div>
+                  <label
+                    >Additional Information (optional)<textarea
+                      name="additionalInformation"
+                      rows="3"
+                      placeholder="Add other relevant information provided by the resident"
+                    ></textarea>
+                  </label>
+                </div>
+              </section>
+              <section class="form-section internal-section">
+                <div class="form-section-heading">
+                  <span>05</span>
+                  <div>
+                    <h2>Internal Notes</h2>
+                    <p>Optional notes visible only to authorized personnel.</p>
+                  </div>
+                </div>
+                <div class="form-fields single-col">
+                  <label
+                    >Personnel-only notes (optional)<textarea
+                      name="internalNotes"
+                      rows="3"
+                      placeholder="Add an internal note for authorized personnel"
+                    ></textarea>
+                  </label>
+                  <div class="privacy-note">
+                    ♧ &nbsp;Confidential: internal notes are stored separately
+                    and are not included in the resident confirmation slip.
+                  </div>
+                </div>
+              </section>
+              <p class="form-error-banner" id="walkinError" role="alert" hidden>
+                Please complete all required fields before reviewing the
+                complaint.
+              </p>
+              <div class="form-bottom-actions">
+                <a class="button button-light" href="complaints.html">Cancel</a
+                ><button type="button" class="text-button" id="clearWalkin">
+                  Clear Form</button
+                ><button
+                  class="button button-primary review-button"
+                  type="submit"
+                >
+                  Review Details <span>→</span>
+                </button>
+              </div>
+            </form>
+            <aside class="submission-sidebar">
+              <section class="submission-card">
+                <h2><span>♧</span> Submission Information</h2>
+                <dl>
+                  <div>
+                    <dt>Submission Method</dt>
+                    <dd class="tag-green">Walk-In</dd>
+                  </div>
+                  <div>
+                    <dt>Recorded By</dt>
+                    <dd>Maria Santos</dd>
+                  </div>
+                  <div>
+                    <dt>Registration Timestamp</dt>
+                    <dd id="registrationTimestamp">Loading…</dd>
+                  </div>
+                  <div>
+                    <dt>Reference Number</dt>
+                    <dd class="muted">Generated after registration</dd>
+                  </div>
+                  <div>
+                    <dt>Initial Status</dt>
+                    <dd><span class="submitted-tag">Submitted</span></dd>
+                  </div>
+                </dl>
+              </section>
+              <div class="continue-note">
+                <strong>Before you continue</strong>
+                <p>
+                  Review names, dates, locations, and the resident's account
+                  with the resident before registering the record.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+    <script src="js/navigation.js"></script>
+    <script src="js/complaints.js"></script>
+  </body>
+</html>

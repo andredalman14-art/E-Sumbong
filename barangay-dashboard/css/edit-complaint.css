@@ -1,0 +1,368 @@
+body[data-page="edit-complaint"] .edit-complaint-page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 27px 75px 90px;
+  color: #263830;
+}
+body[data-page="edit-complaint"] .topbar {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.save-confirm-backdrop {
+  z-index: 40;
+  background: rgba(11, 29, 21, 0.48);
+  backdrop-filter: blur(3px);
+}
+.save-confirm-modal {
+  width: min(440px, 100%);
+  padding: 27px 24px 22px;
+  text-align: center;
+  border: 1px solid #e4ece7;
+  border-radius: 15px;
+}
+.save-confirm-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 13px;
+  border-radius: 50%;
+  background: #e2f5e9;
+  color: #176144;
+}
+.save-confirm-icon svg { width: 23px; height: 23px; }
+.save-confirm-modal h2 {
+  margin: 0 0 8px;
+  color: #20372d;
+  font-size: 18px;
+  font-weight: 650;
+}
+.save-confirm-modal > p:not(.save-confirm-error) {
+  max-width: 365px;
+  margin: 0 auto 16px;
+  color: #73837b;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.save-confirm-summary {
+  overflow: hidden;
+  margin: 17px 0 0;
+  border: 1px solid #e0e9e3;
+  border-radius: 9px;
+  background: #fafcfb;
+  text-align: left;
+}
+.save-confirm-summary > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 39px;
+  padding: 9px 11px;
+}
+.save-confirm-summary > div + div { border-top: 1px solid #edf1ee; }
+.save-confirm-summary span { color: #788880; font-size: 10px; }
+.save-confirm-summary strong { color: #263a31; font-size: 10px; text-align: right; }
+.save-confirm-actions { display: grid; grid-template-columns: 1fr 1fr; margin-top: 16px; }
+.save-confirm-actions .button { justify-content: center; min-height: 37px; }
+.save-confirm-actions #confirmSave { background: #154b37; }
+.save-confirm-actions #confirmSave:hover { background: #103d2d; }
+.save-confirm-actions #confirmSave:disabled { opacity: .7; cursor: wait; }
+.save-confirm-error { margin: 12px 0 0; color: #b83232; font-size: 11px; line-height: 1.45; text-align: left; }
+body:has(#saveConfirmModal:not([hidden])) { overflow: hidden; }
+@media (max-width: 1050px) {
+  body[data-page="edit-complaint"] .edit-complaint-page,
+  body[data-page="edit-complaint"] .topbar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.edit-heading {
+  margin-bottom: 18px;
+}
+.edit-heading h1 {
+  margin: 5px 0 0;
+  color: #17251f;
+  font-size: 27px;
+  font-weight: 600;
+  letter-spacing: -0.55px;
+}
+.edit-heading > div > p:last-child {
+  margin: 6px 0 0;
+  color: #718379;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.edit-section {
+  margin-bottom: 12px;
+}
+.edit-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px 16px;
+}
+.edit-field {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+  color: #52645c;
+  font-size: 10px;
+  font-weight: 600;
+}
+.edit-field > b {
+  display: none;
+}
+.edit-field input,
+.edit-field select,
+.edit-field textarea {
+  width: 100%;
+  min-height: 38px;
+  padding: 9px 10px;
+  border: 1px solid #dce5e0;
+  border-radius: 7px;
+  outline: 0;
+  background: #fff;
+  color: #293b34;
+  font: 400 12px Inter, Arial, sans-serif;
+}
+.edit-field textarea {
+  min-height: 105px;
+  resize: vertical;
+  line-height: 1.5;
+}
+.edit-field input:focus,
+.edit-field select:focus,
+.edit-field textarea:focus {
+  border-color: #5aa782;
+  box-shadow: 0 0 0 2px #dff1e7;
+}
+.edit-field-wide {
+  grid-column: 1 / -1;
+}
+.edit-error {
+  color: #b83232;
+  font-size: 10px;
+  font-weight: 500;
+}
+.edit-field.invalid input,
+.edit-field.invalid select,
+.edit-field.invalid textarea {
+  border-color: #cf4444;
+}
+.edit-attachment-list {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 9px;
+}
+.edit-attachment {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid #e1e9e4;
+  border-radius: 7px;
+  background: #fbfdfc;
+}
+.edit-attachment-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  border-radius: 7px;
+  background: #e8f7ef;
+  color: #18845b;
+}
+.edit-attachment-meta {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+.edit-attachment-meta strong {
+  overflow: hidden;
+  color: #33473d;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.edit-attachment-meta small {
+  color: #87968e;
+  font-size: 9px;
+}
+.edit-attachment-actions {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+.edit-attachment-actions button {
+  min-height: 30px;
+  padding: 0 9px;
+  border: 1px solid #dce5e0;
+  border-radius: 6px;
+  background: #fff;
+  color: #315441;
+  font: 600 10px Inter, Arial, sans-serif;
+  cursor: pointer;
+}
+.edit-attachment-actions .remove-attachment {
+  color: #bd3737;
+}
+.edit-no-attachments {
+  margin: 0 0 10px;
+  color: #829189;
+  font-size: 11px;
+}
+.edit-upload {
+  display: flex;
+  min-height: 72px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px dashed #99c7ac;
+  border-radius: 7px;
+  background: #fbfefc;
+  color: #2a8059;
+  text-align: center;
+  cursor: pointer;
+}
+.edit-upload > span {
+  font-size: 18px;
+  line-height: 1;
+}
+.edit-upload strong {
+  font-size: 11px;
+}
+.edit-upload small {
+  color: #8b9c92;
+  font-size: 9px;
+  font-weight: 400;
+}
+.edit-upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.edit-record-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.edit-record-grid > div {
+  display: grid;
+  min-height: 54px;
+  align-content: center;
+  gap: 5px;
+  padding: 8px 10px;
+  border: 1px solid #e1e9e4;
+  border-radius: 7px;
+  background: #fbfdfc;
+}
+.edit-record-grid small {
+  color: #84968c;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.45px;
+}
+.edit-record-grid strong {
+  color: #273b31;
+  font-size: 12px;
+  font-weight: 600;
+}
+.edit-form-error {
+  margin: 0 0 10px;
+  color: #b83232;
+  font-size: 11px;
+}
+.edit-form-actions {
+  position: fixed;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  left: 182px;
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 7px 26px;
+  border-top: 1px solid #dce5e0;
+  background: #fff;
+}
+.edit-form-actions a {
+  text-decoration: none;
+}
+.discard-confirm {
+  background: #a83232;
+  border-color: #a83232;
+}
+.discard-confirm:hover {
+  background: #8f2929;
+}
+@media (min-width: 1500px) {
+  .edit-form-actions {
+    left: 256px;
+  }
+  body[data-page="edit-complaint"] .edit-heading h1 {
+    font-size: 34px;
+  }
+  body[data-page="edit-complaint"] .edit-heading > div > p:last-child {
+    font-size: 14px;
+  }
+  body[data-page="edit-complaint"] .edit-field {
+    font-size: 13px;
+  }
+  body[data-page="edit-complaint"] .edit-field input,
+  body[data-page="edit-complaint"] .edit-field select,
+  body[data-page="edit-complaint"] .edit-field textarea {
+    font-size: 14px;
+  }
+  body[data-page="edit-complaint"] .edit-record-grid strong {
+    font-size: 14px;
+  }
+}
+@media (max-width: 720px) {
+  body[data-page="edit-complaint"] .edit-complaint-page {
+    padding: 20px 14px 90px;
+  }
+  body[data-page="edit-complaint"] .topbar {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .edit-heading h1 {
+    font-size: 24px;
+  }
+  .edit-fields,
+  .edit-record-grid {
+    grid-template-columns: 1fr;
+  }
+  .edit-field-wide {
+    grid-column: auto;
+  }
+  .edit-attachment {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .edit-attachment-actions {
+    width: 100%;
+    margin-left: 40px;
+  }
+  .edit-form-actions {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 7px 14px;
+    margin: 0;
+    border-top: 1px solid #e2e8f0;
+    background: #fff;
+  }
+  .edit-form-actions > * {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+  }
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123f2f">
+  <title>Edit Complaint Details | Barangay Poblacion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/complaints.css">
+  <link rel="stylesheet" href="css/edit-complaint.css">
+</head>
+<body data-page="edit-complaint">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="dashboard.html" aria-label="Barangay Poblacion home"><span class="brand-mark"><img src="assets/images/figma-icon-07.svg" alt=""></span><span class="brand-copy"><strong>Barangay Poblacion</strong><small>Personnel Portal</small></span></a>
+      <div class="side-label">Workspace</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link" href="dashboard.html" data-section="Dashboard"><img src="assets/images/figma-icon-11.svg" alt=""><span>Dashboard</span></a>
+        <a class="nav-link active" href="complaints.html" data-section="Complaints"><img src="assets/images/figma-icon-12.svg" alt=""><span>Complaints</span></a>
+        <a class="nav-link" href="#hearings" data-section="Hearing Calendar"><img src="assets/images/figma-icon-13.svg" alt=""><span>Hearing Calendar</span></a>
+        <a class="nav-link" href="#activity" data-section="Activity Log"><img src="assets/images/figma-icon-14.svg" alt=""><span>Activity Log</span></a>
+        <a class="nav-link" href="#reports" data-section="Monthly Reports"><img src="assets/images/figma-icon-15.svg" alt=""><span>Monthly Reports</span></a>
+        <a class="nav-link" href="#notifications" data-section="Notifications"><img src="assets/images/figma-icon-16.svg" alt=""><span>Notifications</span><span class="nav-count">4</span></a>
+      </nav>
+      <button class="logout" type="button" data-action="logout"><span class="logout-icon">↪</span><span><strong>Logout</strong><small>End personnel session</small></span><span class="logout-arrow">›</span></button>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div class="top-title"><strong>Complaint Management</strong><small>Centralized resident concern processing</small></div>
+        <div class="top-actions">
+          <div class="popover-wrap"><button class="icon-button notification-trigger" id="notificationButton" aria-label="Notifications" aria-expanded="false"><img src="assets/images/figma-icon-00.svg" alt=""><i></i></button><div class="popover notification-popover" id="notificationPanel" hidden><div class="popover-head"><strong>Notifications</strong><button class="text-button" data-action="mark-read">Mark all read</button></div><div class="notice"><span class="notice-dot"></span><span><b>New complaint submitted</b><small>Noise complaint · 10 minutes ago</small></span></div><button class="popover-footer" data-action="all-notifications">View all notifications <span>→</span></button></div></div>
+          <div class="popover-wrap"><button class="profile-button" id="profileButton" aria-expanded="false"><span class="avatar">M</span><span class="profile-copy"><strong>Maria Santos</strong><small>Secretary</small></span><span class="chevron">⌄</span></button><div class="popover profile-popover" id="profilePanel" hidden><div class="profile-popover-head"><span class="avatar large">M</span><span><b>Maria Santos</b><small>Barangay Secretary</small></span></div><button data-action="profile">My profile</button><button data-action="settings">Account settings</button><button data-action="logout">Log out</button></div></div>
+        </div>
+      </header>
+      <section class="content edit-complaint-page">
+        <nav class="details-breadcrumb" aria-label="Breadcrumb"><a href="complaints.html">COMPLAINT MANAGEMENT</a><span>/</span><a id="detailsBreadcrumb" href="complaint-details.html">COMPLAINT DETAILS</a><span>/</span><span>EDIT DETAILS</span></nav>
+        <div class="edit-heading"><div><p class="complaint-eyebrow">CENTRALIZED RECORDS</p><h1>Edit Complaint Details</h1><p>Correct resident and complaint information. Status updates remain in the Update Status workflow.</p></div></div>
+        <form id="editComplaintForm" novalidate>
+          <section class="details-card edit-section">
+            <div class="details-card-heading"><span class="details-icon">01</span><div><h2>Resident Information</h2><p>Update the resident's contact and address details.</p></div></div>
+            <div class="edit-fields">
+              <label class="edit-field">Full Name <b>*</b><input id="editFullName" name="fullName" autocomplete="name" required><small class="edit-error" id="errorFullName" hidden>Please enter the resident's full name.</small></label>
+              <label class="edit-field">Contact Number <b>*</b><input id="editContactNumber" name="contactNumber" type="tel" autocomplete="tel" required><small class="edit-error" id="errorContactNumber" hidden>Please enter a contact number.</small></label>
+              <label class="edit-field">Complete Address <b>*</b><input id="editCompleteAddress" name="completeAddress" autocomplete="street-address" required><small class="edit-error" id="errorCompleteAddress" hidden>Please enter the complete address.</small></label>
+              <label class="edit-field">Purok / Location <b>*</b><input id="editPurok" name="purok" required><small class="edit-error" id="errorPurok" hidden>Please enter the purok or location.</small></label>
+            </div>
+          </section>
+          <section class="details-card edit-section">
+            <div class="details-card-heading"><span class="details-icon">02</span><div><h2>Complaint Information</h2><p>Update where and when the incident occurred and the resident's account.</p></div></div>
+            <div class="edit-fields">
+              <label class="edit-field">Complaint Category <b>*</b><select id="editCategory" name="category" required><option value="">Select a category</option><option>Noise</option><option>Garbage / Sanitation</option><option>Garbage / Cleanliness</option><option>Property Dispute</option><option>Safety</option><option>Other</option></select><small class="edit-error" id="errorCategory" hidden>Please select a complaint category.</small></label>
+              <label class="edit-field">Incident Location <b>*</b><input id="editIncidentLocation" name="incidentLocation" required><small class="edit-error" id="errorIncidentLocation" hidden>Please enter the incident location.</small></label>
+              <label class="edit-field">Date of Incident <b>*</b><input id="editIncidentDate" name="incidentDate" type="date" required><small class="edit-error" id="errorIncidentDate" hidden>Please enter the incident date.</small></label>
+              <label class="edit-field">Time of Incident <b>*</b><input id="editIncidentTime" name="incidentTime" type="time" required><small class="edit-error" id="errorIncidentTime" hidden>Please enter the incident time.</small></label>
+              <label class="edit-field edit-field-wide">Complaint Description <b>*</b><textarea id="editDescription" name="description" rows="5" required></textarea><small class="edit-error" id="errorDescription" hidden>Please enter a complaint description.</small></label>
+            </div>
+          </section>
+          <section class="details-card edit-section">
+            <div class="details-card-heading"><span class="details-icon">03</span><div><h2>Supporting Documents</h2><p>Review existing attachments or add images and documents to the complaint.</p></div></div>
+            <div id="editAttachmentList" class="edit-attachment-list"></div>
+            <p class="edit-no-attachments" id="editNoAttachments">No supporting documents have been added to this complaint.</p>
+            <label class="edit-upload" for="editAttachments"><span aria-hidden="true">⇧</span><strong>Add supporting document</strong><small>Images, PDF, DOC, and DOCX files · up to 10 MB each</small><input id="editAttachments" type="file" accept="image/*,.pdf,.doc,.docx" multiple></label>
+            <small class="edit-error" id="errorAttachments" hidden>Unable to save the selected file. Please try a smaller file.</small>
+          </section>
+          <section class="details-card edit-section">
+            <div class="details-card-heading"><span class="details-icon">04</span><div><h2>Record Information</h2><p>Original registration details are read-only.</p></div></div>
+            <div class="edit-record-grid">
+              <div><small>COMPLAINT REFERENCE NUMBER</small><strong id="editReference">—</strong></div>
+              <div><small>ORIGINAL SUBMISSION DATE AND TIME</small><strong id="editSubmittedAt">—</strong></div>
+              <div><small>SUBMISSION METHOD</small><strong id="editSubmissionMethod">—</strong></div>
+              <div><small>ORIGINAL COMPLAINT STATUS</small><strong id="editOriginalStatus">—</strong></div>
+            </div>
+          </section>
+          <p class="edit-form-error" id="editFormError" role="alert" hidden>Please correct the highlighted fields before saving.</p>
+          <div class="edit-form-actions"><a class="button button-light" id="cancelEdit" href="complaints.html">Cancel</a><button class="button button-primary" type="submit" id="saveEdit">Save Changes</button></div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <div class="modal-backdrop save-confirm-backdrop" id="saveConfirmModal" hidden>
+    <section class="modal save-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="saveConfirmTitle" aria-describedby="saveConfirmDescription">
+      <span class="save-confirm-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12.5 4.2 4.2L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 12a8 8 0 1 1-2.34-5.66" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+      <h2 id="saveConfirmTitle">Save Complaint Changes?</h2>
+      <p id="saveConfirmDescription">Are you sure you want to save the changes made to this complaint? The updated information will replace the existing complaint details.</p>
+      <div class="save-confirm-summary">
+        <div><span>Complaint Reference Number</span><strong id="confirmComplaintReference">—</strong></div>
+        <div><span>Resident Name</span><strong id="confirmResidentName">—</strong></div>
+        <div><span>Complaint Category</span><strong id="confirmComplaintCategory">—</strong></div>
+      </div>
+      <p class="save-confirm-error" id="saveConfirmError" role="alert" hidden></p>
+      <div class="modal-actions save-confirm-actions"><button class="button button-light" id="cancelSaveConfirm" type="button">Cancel</button><button class="button button-primary" id="confirmSave" type="button"><span class="confirm-save-label">Confirm &amp; Save</span></button></div>
+    </section>
+  </div>
+  <div class="modal-backdrop" id="discardModal" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="discardTitle"><button class="modal-close" id="closeDiscard" type="button" aria-label="Close">×</button><h2 id="discardTitle">Discard Changes?</h2><p>You have unsaved changes. Are you sure you want to leave without saving?</p><div class="modal-actions"><button class="button button-light" id="continueEditing" type="button">Continue Editing</button><button class="button button-primary discard-confirm" id="discardChanges" type="button">Discard Changes</button></div></section></div>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <script src="js/navigation.js"></script><script src="js/complaints.js"></script>
+</body>
+</html>

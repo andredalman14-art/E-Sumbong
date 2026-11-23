@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#123f2f" />
+    <title>Update Complaint Status | Barangay Poblacion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/complaints.css" />
+    <link rel="stylesheet" href="css/update-status.css" />
+  </head>
+  <body data-page="update-status">
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a
+          class="brand"
+          href="dashboard.html"
+          aria-label="Barangay Poblacion home"
+          ><span class="brand-mark"
+            ><img src="assets/images/figma-icon-07.svg" alt="" /></span
+          ><span class="brand-copy"
+            ><strong>Barangay Poblacion</strong
+            ><small>Personnel Portal</small></span
+          ></a
+        >
+        <div class="side-label">Workspace</div>
+        <nav class="side-nav" aria-label="Main navigation">
+          <a class="nav-link" href="dashboard.html" data-section="Dashboard"
+            ><img src="assets/images/figma-icon-11.svg" alt="" /><span
+              >Dashboard</span
+            ></a
+          >
+          <a
+            class="nav-link active"
+            href="complaints.html"
+            data-section="Complaints"
+            ><img src="assets/images/figma-icon-12.svg" alt="" /><span
+              >Complaints</span
+            ></a
+          >
+          <a class="nav-link" href="#hearings" data-section="Hearing Calendar"
+            ><img src="assets/images/figma-icon-13.svg" alt="" /><span
+              >Hearing Calendar</span
+            ></a
+          >
+          <a class="nav-link" href="#activity" data-section="Activity Log"
+            ><img src="assets/images/figma-icon-14.svg" alt="" /><span
+              >Activity Log</span
+            ></a
+          >
+          <a class="nav-link" href="#reports" data-section="Monthly Reports"
+            ><img src="assets/images/figma-icon-15.svg" alt="" /><span
+              >Monthly Reports</span
+            ></a
+          >
+          <a class="nav-link" href="#notifications" data-section="Notifications"
+            ><img src="assets/images/figma-icon-16.svg" alt="" /><span
+              >Notifications</span
+            ><span class="nav-count">4</span></a
+          >
+        </nav>
+        <button class="logout" type="button" data-action="logout">
+          <span class="logout-icon">↪</span
+          ><span
+            ><strong>Logout</strong><small>End personnel session</small></span
+          ><span class="logout-arrow">›</span>
+        </button>
+      </aside>
+      <main class="main-area">
+        <header class="topbar">
+          <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open navigation"
+          >
+            ☰
+          </button>
+          <div class="top-title">
+            <strong id="pageTitle">Complaint Management</strong
+            ><small id="pageSubtitle"
+              >Centralized resident concern processing</small
+            >
+          </div>
+          <div class="top-actions">
+            <div class="popover-wrap">
+              <button
+                class="icon-button notification-trigger"
+                id="notificationButton"
+                aria-label="Notifications"
+                aria-expanded="false"
+              >
+                <img src="assets/images/figma-icon-00.svg" alt="" /><i></i>
+              </button>
+              <div
+                class="popover notification-popover"
+                id="notificationPanel"
+                hidden
+              >
+                <div class="popover-head">
+                  <strong>Notifications</strong
+                  ><button class="text-button" data-action="mark-read">
+                    Mark all read
+                  </button>
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>New complaint submitted</b
+                    ><small>Noise complaint · 10 minutes ago</small></span
+                  >
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>Hearing reminder</b
+                    ><small>BC-2025-0041 · Tomorrow, 10:00 AM</small></span
+                  >
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>Additional information received</b
+                    ><small>BC-2025-0047 · Yesterday</small></span
+                  >
+                </div>
+                <button class="popover-footer" data-action="all-notifications">
+                  View all notifications <span>→</span>
+                </button>
+              </div>
+            </div>
+            <div class="popover-wrap">
+              <button
+                class="profile-button"
+                id="profileButton"
+                aria-expanded="false"
+              >
+                <span class="avatar">M</span
+                ><span class="profile-copy"
+                  ><strong>Maria Santos</strong><small>Secretary</small></span
+                ><span class="chevron">⌄</span>
+              </button>
+              <div class="popover profile-popover" id="profilePanel" hidden>
+                <div class="profile-popover-head">
+                  <span class="avatar large">M</span
+                  ><span
+                    ><b>Maria Santos</b><small>Barangay Secretary</small></span
+                  >
+                </div>
+                <button data-action="profile">My profile</button
+                ><button data-action="settings">Account settings</button
+                ><button data-action="logout">Log out</button>
+              </div>
+            </div>
+          </div>
+        </header>
+        <section class="content status-update-page">
+          <a
+            class="status-back-link"
+            id="backToComplaintDetails"
+            href="complaints.html"
+            >‹ &nbsp;Back to Complaint Details</a
+          >
+          <div class="status-heading-row">
+            <div class="status-page-heading">
+              <h1>Update Complaint Status</h1>
+              <p>
+                Record status transitions, update case progress, and log resident
+                communication.
+              </p>
+            </div>
+            <a class="button button-light workflow-back-top" href="complaints.html">← Back to Complaints</a>
+          </div>
+          <form id="statusUpdateForm" novalidate>
+            <section class="status-panel-card status-information-card">
+              <div class="status-section-heading">
+                <span class="status-icon">▣</span>
+                <div>
+                  <h2>Complaint Information</h2>
+                  <p>
+                    Review the active case and choose its next recorded status.
+                  </p>
+                </div>
+              </div>
+              <div class="status-summary-grid">
+                <div>
+                  <small>REFERENCE NUMBER</small
+                  ><strong id="updateReference">—</strong>
+                </div>
+                <div>
+                  <small>RESIDENT NAME</small
+                  ><strong id="updateResident">—</strong>
+                </div>
+                <div>
+                  <small>CATEGORY</small><strong id="updateCategory">—</strong>
+                </div>
+                <div>
+                  <small>DATE SUBMITTED</small
+                  ><strong id="updateDate">—</strong>
+                </div>
+                <div>
+                  <small>INCIDENT LOCATION</small
+                  ><strong id="updateLocation">—</strong>
+                </div>
+                <div>
+                  <small>ASSIGNED PERSONNEL</small
+                  ><strong id="updateAssigned">—</strong>
+                </div>
+                <div>
+                  <small>CURRENT STATUS</small
+                  ><strong
+                    ><span class="status" id="currentStatusBadge"
+                      >None</span
+                    ></strong
+                  >
+                </div>
+                <label class="status-select-field"
+                  ><small for="newComplaintStatus">SELECT NEW STATUS</small
+                  ><select id="newComplaintStatus" required>
+                    <option value="">None</option>
+                    <option>Submitted</option>
+                    <option>For Review</option>
+                    <option>For Verification</option>
+                    <option>For Hearing</option>
+                    <option>Resolved</option>
+                    <option>Referred</option>
+                  </select></label
+                >
+              </div>
+              <div class="status-transition">
+                <small>STATUS TRANSITION</small
+                ><span class="transition-state" id="transitionFrom">None</span
+                ><span class="transition-arrow">›</span
+                ><span class="transition-state next" id="transitionTo"
+                  >None</span
+                >
+              </div>
+              <p class="status-validation" id="statusValidation" hidden>
+                Select a new status to continue.
+              </p>
+            </section>
+            <div class="status-form-grid">
+              <section class="status-panel-card action-taken-card">
+                <div class="status-section-heading">
+                  <span class="status-icon">↗</span>
+                  <div>
+                    <h2>Action Taken</h2>
+                    <p>
+                      Document the action that supports this status transition.
+                    </p>
+                  </div>
+                </div>
+                <label class="status-field"
+                  >ACTION SUMMARY<input
+                    id="actionSummary"
+                    type="text"
+                    placeholder="e.g. Mediation meeting completed"
+                /></label>
+                <div class="status-two-fields">
+                  <label class="status-field"
+                    >DATE OF ACTION<input id="actionDate" type="date" /></label
+                  ><label class="status-field"
+                    >ASSIGNED PERSONNEL<select id="actionAssignee">
+                      <option>Maria Santos</option>
+                      <option>Roberto Dela Cruz</option>
+                      <option>Kagawad Lorenzo Ramos</option>
+                      <option>Barangay Health Worker</option>
+                    </select></label
+                  >
+                </div>
+                <label class="status-field"
+                  >ADDITIONAL REMARKS<textarea
+                    id="actionRemarks"
+                    rows="4"
+                    placeholder="Add details about the action taken."
+                  ></textarea>
+                </label>
+                <div class="status-field">
+                  <span class="status-field-label">SUPPORTING DOCUMENT</span
+                  ><label class="upload-zone" for="supportingDocument"
+                    ><span class="upload-icon">⇧</span
+                    ><strong id="uploadPrompt"
+                      >Drop a supporting document here or browse</strong
+                    ><small>PDF, JPG, PNG, DOCX up to 10 MB</small
+                    ><input
+                      id="supportingDocument"
+                      type="file"
+                      accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                  /></label>
+                </div>
+              </section>
+              <section class="status-panel-card communication-card">
+                <div class="status-section-heading">
+                  <span class="status-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+                      <path d="M10 21h4" />
+                    </svg>
+                  </span>
+                  <div>
+                    <h2>Resident Communication &amp; Acknowledgment</h2>
+                    <p>Record communication with the complainant’s response.</p>
+                  </div>
+                </div>
+                <div class="notify-note">
+                  <div class="notify-copy">
+                    <strong>Notify Resident</strong>
+                    <small
+                      >Record how this status update was communicated to the
+                      complainant</small
+                    >
+                  </div>
+                  <label class="notify-switch" aria-label="Notify Resident">
+                    <input
+                      id="notifyResident"
+                      type="checkbox"
+                      checked />
+                    <span></span>
+                  </label>
+                </div>
+                <fieldset class="channel-group">
+                  <legend>COMMUNICATION CHANNEL</legend>
+                  <div class="channel-options">
+                    <label
+                      ><input
+                        type="radio"
+                        name="channel"
+                        value="In-Person"
+                        checked /><span
+                        ><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                          <path d="M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 18.5V20" />
+                          <circle cx="10" cy="7" r="3" />
+                          <path d="M16 11a3 3 0 1 0 0-6m4 15v-1.5a3.5 3.5 0 0 0-2.5-3.35" />
+                        </svg><b>In-Person</b></span
+                    ></label
+                    ><label
+                      ><input
+                        type="radio"
+                        name="channel"
+                        value="Phone Call" /><span
+                        ><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                          <path d="M5 4h4l2 5-2.5 1.5a15 15 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2.2 2A17 17 0 0 1 3 6.2 2 2 0 0 1 5 4Z" />
+                        </svg><b>Phone Call</b></span
+                    ></label
+                    ><label
+                      ><input
+                        type="radio"
+                        name="channel"
+                        value="Text Message" /><span
+                        ><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                          <path d="M4 5h16v12H9l-5 3V5Z" />
+                          <path d="M8 9h8M8 13h5" />
+                        </svg><b>Text Message</b></span
+                    ></label
+                    >
+                  </div>
+                </fieldset>
+                <label class="status-field"
+                  >RESIDENT-FACING INSTRUCTIONS &amp; MESSAGE<textarea
+                    id="residentMessage"
+                    rows="4"
+                    placeholder="Enter the message shared with the resident."
+                  ></textarea>
+                </label>
+                <fieldset class="acknowledgment-group">
+                  <legend>RESIDENT ACKNOWLEDGMENT STATUS</legend>
+                  <div class="ack-options">
+                    <label
+                      ><input
+                        type="radio"
+                        name="acknowledgment"
+                        value="Acknowledged"
+                        checked
+                      /><span>Acknowledged</span></label
+                    ><label
+                      ><input
+                        type="radio"
+                        name="acknowledgment"
+                        value="Pending Confirmation"
+                      /><span>Pending Confirmation</span></label
+                    ><label
+                      ><input
+                        type="radio"
+                        name="acknowledgment"
+                        value="No Response"
+                      /><span>No Response</span></label
+                    >
+                  </div>
+                </fieldset>
+                <label class="status-field"
+                  >RESIDENT ACKNOWLEDGMENT NOTES<textarea
+                    id="acknowledgmentNotes"
+                    rows="3"
+                    placeholder="Record the resident’s response, confirmation date/time, or acknowledgment details."
+                  ></textarea>
+                </label>
+              </section>
+            </div>
+            <section class="status-panel-card case-history-card">
+              <div class="status-section-heading">
+                <span class="status-icon">◷</span>
+                <div>
+                  <h2>Case Activity History</h2>
+                  <p>
+                    Status changes, communication records, and resident
+                    acknowledgment.
+                  </p>
+                </div>
+              </div>
+              <ol class="status-history" id="statusHistory"></ol>
+            </section>
+            <footer class="status-page-footer">
+              <span class="status-footer-actions"
+                ><button
+                  class="button button-light"
+                  type="button"
+                  id="saveStatusDraft"
+                >
+                  Save as Draft</button
+                ><button class="button button-primary" type="submit">
+                  Update Complaint <b>›</b>
+                </button></span
+              >
+            </footer>
+          </form>
+        </section>
+      </main>
+    </div>
+    <div class="status-modal-overlay" id="statusModalOverlay" hidden>
+      <section
+        class="status-dialog"
+        id="confirmStatusDialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="confirmStatusTitle"
+      >
+        <button
+          class="status-dialog-close"
+          type="button"
+          id="closeStatusConfirm"
+          aria-label="Close"
+        >
+          ×
+        </button>
+        <span class="status-dialog-icon">✎</span>
+        <h2 id="confirmStatusTitle">Update complaint status?</h2>
+        <p>
+          Review the status change before saving it to the complaint record.
+        </p>
+        <div class="status-confirm-transition">
+          <div>
+            <small>PREVIOUS STATUS</small
+            ><span id="confirmPreviousStatus">None</span>
+          </div>
+          <b>›</b>
+          <div>
+            <small>NEW STATUS</small><span id="confirmNewStatus">None</span>
+          </div>
+        </div>
+        <div class="status-dialog-actions">
+          <button
+            class="button button-light"
+            type="button"
+            id="cancelStatusConfirm"
+          >
+            Cancel</button
+          ><button
+            class="button button-primary"
+            type="button"
+            id="confirmStatusUpdate"
+          >
+            Confirm Update
+          </button>
+        </div>
+      </section>
+      <section
+        class="status-dialog status-success-dialog"
+        id="statusSuccessDialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="statusSuccessTitle"
+        hidden
+      >
+        <span class="status-dialog-icon success">✓</span>
+        <h2 id="statusSuccessTitle">Complaint Status Updated Successfully</h2>
+        <p>
+          The action has been recorded and the resident notification is ready.
+        </p>
+        <div class="status-confirm-reference">
+          <small>COMPLAINT REFERENCE</small
+          ><strong id="successStatusReference">—</strong>
+        </div>
+        <button
+          class="button button-primary status-return-button"
+          type="button"
+          id="returnToComplaintManagement"
+        >
+          Return to Complaint Management
+        </button>
+      </section>
+    </div>
+    <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+    <script src="js/navigation.js"></script>
+    <script src="js/complaints.js"></script>
+  </body>
+</html>

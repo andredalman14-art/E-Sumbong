@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#123c2c" />
+    <title>Personnel Login | Barangay Poblacion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <script src="js/auth.js" defer></script>
+  </head>
+  <body data-auth-page="login">
+    <main class="auth-layout">
+      <section class="auth-brand" aria-label="Barangay Poblacion Personnel Portal">
+        <span class="auth-orbit auth-orbit-top" aria-hidden="true"></span>
+        <span class="auth-orbit auth-orbit-bottom" aria-hidden="true"></span>
+        <a class="auth-brand-lockup" href="index.html">
+          <span class="auth-brand-icon"><img src="assets/images/login-brand-shield.svg" alt="" /></span>
+          <span><strong>Barangay Poblacion</strong><small>Personnel Portal</small></span>
+        </a>
+        <div class="auth-brand-copy">
+          <p class="auth-eyebrow">CENTRALIZED COMPLAINT MANAGEMENT</p>
+          <h1>A clearer way to serve every resident concern.</h1>
+          <p class="auth-brand-description">Receive, verify, route, schedule, and resolve complaints through one accountable workflow shared with the resident application.</p>
+        </div>
+        <p class="auth-brand-footer"><img src="assets/images/login-footer-shield.svg" alt="" />Authorized personnel access only <span aria-hidden="true">•</span> Demonstration system</p>
+      </section>
+
+      <section class="auth-main" aria-label="Personnel sign in">
+        <div class="auth-card">
+          <p class="auth-card-eyebrow">Personnel access</p>
+          <h2>Welcome back</h2>
+          <p class="auth-card-intro">Sign in to manage and monitor barangay complaints.</p>
+
+          <form id="personnelLoginForm" novalidate>
+            <fieldset class="role-fieldset">
+              <legend>Access Role</legend>
+              <div class="role-options" role="group" aria-label="Select your access role">
+                <button type="button" class="role-option" data-role="Desk Staff" aria-pressed="false">Desk Staff</button>
+                <button type="button" class="role-option is-selected" data-role="Barangay Secretary" aria-pressed="true">Barangay Secretary</button>
+                <button type="button" class="role-option" data-role="Barangay Captain" aria-pressed="false">Barangay Captain</button>
+              </div>
+              <input type="hidden" name="requestedRole" id="requestedRole" value="Barangay Secretary" />
+            </fieldset>
+
+            <label class="auth-label" for="loginIdentifier">Email or Username</label>
+            <input class="auth-input" id="loginIdentifier" name="identifier" type="text" autocomplete="username" placeholder="secretary@demo.local" required />
+            <small class="auth-field-error" id="identifierError" hidden>Enter your email or username.</small>
+
+            <label class="auth-label auth-password-label" for="loginPassword">Password</label>
+            <div class="auth-password-wrap">
+              <input class="auth-input" id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="8" required />
+              <button class="password-toggle" id="passwordToggle" type="button" aria-label="Show password" aria-pressed="false">
+                <svg class="eye-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
+              </button>
+            </div>
+            <small class="auth-field-error" id="passwordError" hidden>Enter a password of at least 8 characters.</small>
+
+            <div class="auth-form-options">
+              <label class="remember-option"><input type="checkbox" id="rememberMe" name="rememberMe" /><span>Remember me</span></label>
+              <a href="forgot-password.html">Forgot password?</a>
+            </div>
+            <p class="auth-feedback" id="loginFeedback" role="alert" aria-live="polite" hidden></p>
+            <button class="auth-submit" id="loginSubmit" type="submit"><span>LOGIN</span><img src="assets/images/login-arrow.svg" alt="" /></button>
+          </form>
+
+          <p class="auth-create-account">Need a personnel account? <a href="personnel-account-request.html">Create Account</a></p>
+          <aside class="auth-privacy"><img src="assets/images/login-privacy-warning.svg" alt="" /><p><strong>Data Privacy Notice:</strong> Individual complaint records are confidential and never publicly displayed. Unauthorized access or disclosure of resident information is strictly prohibited.</p></aside>
+        </div>
+      </section>
+    </main>
+    <div class="verify-overlay" id="identityVerifyModal" hidden>
+      <section class="verify-dialog" role="dialog" aria-modal="true" aria-labelledby="verifyTitle" aria-describedby="verifyDescription">
+        <button class="verify-close" type="button" id="verifyClose" aria-label="Close verification"><img src="assets/images/verify-close.svg" alt="" /></button>
+        <p class="verify-eyebrow">VERIFY STAFF IDENTITY TO CONTINUE</p>
+        <span class="verify-icon"><img src="assets/images/verify-shield.svg" alt="" /></span>
+        <h2 id="verifyTitle">Staff Identity Verification Required</h2>
+        <p class="verify-description" id="verifyDescription">Re-enter your staff password to verify your identity before signing in to the personnel portal.</p>
+        <div class="verify-session"><span class="verify-avatar" aria-hidden="true">✓</span><span><strong>SIGN-IN REQUEST</strong><small id="verifyIdentity">Enter your account and selected role on the sign-in form.</small></span></div>
+        <form id="identityVerifyForm" novalidate>
+          <label class="auth-label" for="verifyPassword">STAFF SECURITY PIN / PASSWORD</label>
+          <div class="verify-password-wrap"><img src="assets/images/verify-lock.svg" alt="" /><input class="auth-input" id="verifyPassword" type="password" autocomplete="current-password" placeholder="Re-enter your password" required /></div>
+          <small class="auth-field-error" id="verifyPasswordError" hidden>Re-enter the password used on the sign-in form.</small>
+          <label class="verify-consent"><input type="checkbox" id="officialUse" /><span>I confirm this sign-in is for official barangay personnel work.</span></label>
+          <small class="auth-field-error" id="verifyConsentError" hidden>Please confirm this is an official sign-in.</small>
+          <p class="auth-feedback" id="verifyFeedback" role="alert" aria-live="polite" hidden></p>
+          <div class="verify-actions"><button class="verify-cancel" type="button" id="verifyCancel">Cancel</button><button class="verify-submit" id="verifySubmit" type="submit"><img src="assets/images/verify-check-shield.svg" alt="" /><span>Verify &amp; Continue</span></button></div>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>

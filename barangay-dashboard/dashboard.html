@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#123f2f" />
+    <title>Operations Overview | Barangay Poblacion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/complaints.css" />
+  </head>
+  <body data-page="dashboard">
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="dashboard.html" aria-label="Barangay Poblacion home">
+          <span class="brand-mark"
+            ><img src="assets/images/figma-icon-07.svg" alt=""
+          /></span>
+          <span class="brand-copy"
+            ><strong>Barangay Poblacion</strong
+            ><small>Personnel Portal</small></span
+          >
+        </a>
+        <div class="side-label">Workspace</div>
+        <nav class="side-nav" aria-label="Main navigation">
+          <a class="nav-link active" href="dashboard.html" data-section="Dashboard"
+            ><img src="assets/images/figma-icon-11.svg" alt="" /><span
+              >Dashboard</span
+            ></a
+          >
+          <a
+            class="nav-link"
+            href="complaints.html"
+            data-section="Complaints"
+            ><img src="assets/images/figma-icon-12.svg" alt="" /><span
+              >Complaints</span
+            ></a
+          >
+          <a class="nav-link" href="#hearings" data-section="Hearing Calendar"
+            ><img src="assets/images/figma-icon-13.svg" alt="" /><span
+              >Hearing Calendar</span
+            ></a
+          >
+          <a class="nav-link" href="#activity" data-section="Activity Log"
+            ><img src="assets/images/figma-icon-14.svg" alt="" /><span
+              >Activity Log</span
+            ></a
+          >
+          <a class="nav-link" href="#reports" data-section="Monthly Reports"
+            ><img src="assets/images/figma-icon-15.svg" alt="" /><span
+              >Monthly Reports</span
+            ></a
+          >
+          <a class="nav-link" href="#notifications" data-section="Notifications"
+            ><img src="assets/images/figma-icon-16.svg" alt="" /><span
+              >Notifications</span
+            ><span class="nav-count">4</span></a
+          >
+        </nav>
+        <button class="logout" type="button" data-action="logout">
+          <span class="logout-icon">↪</span
+          ><span
+            ><strong>Logout</strong><small>End personnel session</small></span
+          ><span class="logout-arrow">›</span>
+        </button>
+      </aside>
+      <main class="main-area" id="dashboard">
+        <header class="topbar">
+          <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open navigation"
+          >
+            ☰
+          </button>
+          <div class="top-title">
+            <strong id="pageTitle">Operations Overview</strong
+            ><small id="pageSubtitle">Academic demonstration environment</small>
+          </div>
+          <div class="top-actions">
+            <div class="popover-wrap">
+              <button
+                class="icon-button notification-trigger"
+                id="notificationButton"
+                aria-label="Notifications"
+                aria-expanded="false"
+              >
+                <img src="assets/images/figma-icon-00.svg" alt="" /><i></i>
+              </button>
+              <div
+                class="popover notification-popover"
+                id="notificationPanel"
+                hidden
+              >
+                <div class="popover-head">
+                  <strong>Notifications</strong
+                  ><button class="text-button" data-action="mark-read">
+                    Mark all read
+                  </button>
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>New complaint submitted</b
+                    ><small>Noise complaint · 10 minutes ago</small></span
+                  >
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>Hearing reminder</b
+                    ><small>BC-2025-0041 · Tomorrow, 10:00 AM</small></span
+                  >
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>Additional information received</b
+                    ><small>BC-2025-0047 · Yesterday</small></span
+                  >
+                </div>
+                <button class="popover-footer" data-action="all-notifications">
+                  View all notifications <span>→</span>
+                </button>
+              </div>
+            </div>
+            <div class="popover-wrap">
+              <button
+                class="profile-button"
+                id="profileButton"
+                aria-expanded="false"
+              >
+                <span class="avatar">M</span
+                ><span class="profile-copy"
+                  ><strong>Maria Santos</strong><small>Secretary</small></span
+                ><span class="chevron">⌄</span>
+              </button>
+              <div class="popover profile-popover" id="profilePanel" hidden>
+                <div class="profile-popover-head">
+                  <span class="avatar large">M</span
+                  ><span
+                    ><b>Maria Santos</b><small>Barangay Secretary</small></span
+                  >
+                </div>
+                <button data-action="profile">My profile</button
+                ><button data-action="settings">Account settings</button
+                ><button data-action="logout">Log out</button>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="content" id="dashboardContent">
+          <section class="page-heading">
+            <div>
+              <p class="eyebrow">Today’s workspace</p>
+              <h1>Good day, Barangay Personnel</h1>
+              <p class="intro">
+                Monitor incoming reports, verification work, and upcoming
+                hearing schedules from one place.
+              </p>
+            </div>
+            <div class="heading-actions">
+              <button class="button button-light" data-action="new-complaints">
+                View new complaints</button
+              ><button
+                class="button button-primary"
+                data-action="manage-schedules"
+              >
+                Manage schedules
+              </button>
+            </div>
+          </section>
+          <section class="stats-grid" aria-label="Complaint summary">
+            <button class="stat-card" data-filter="All">
+              <span class="stat-icon neutral"
+                ><img src="assets/images/figma-icon-01.svg" alt="" /></span
+              ><strong>8</strong><span>Total Complaints</span>
+            </button>
+            <button class="stat-card" data-filter="Submitted">
+              <span class="stat-icon blue"
+                ><img src="assets/images/figma-icon-02.svg" alt="" /></span
+              ><strong>1</strong><span>New Complaints</span>
+            </button>
+            <button class="stat-card" data-filter="For Verification">
+              <span class="stat-icon yellow"
+                ><img src="assets/images/figma-icon-03.svg" alt="" /></span
+              ><strong>1</strong><span>For Verification</span>
+            </button>
+            <button class="stat-card" data-filter="Under Review">
+              <span class="stat-icon purple"
+                ><img src="assets/images/figma-icon-04.svg" alt="" /></span
+              ><strong>1</strong><span>Under Review</span>
+            </button>
+            <button class="stat-card" data-filter="For Hearing">
+              <span class="stat-icon orange"
+                ><img src="assets/images/figma-icon-05.svg" alt="" /></span
+              ><strong>3</strong><span>For Hearing</span>
+            </button>
+            <button class="stat-card" data-filter="Resolved">
+              <span class="stat-icon green"
+                ><img src="assets/images/figma-icon-06.svg" alt="" /></span
+              ><strong>1</strong><span>Resolved</span>
+            </button>
+          </section>
+          <section class="primary-grid" id="complaints">
+            <article class="panel complaint-panel">
+              <div class="panel-heading">
+                <div>
+                  <h2>Recent Complaint Submissions</h2>
+                  <p>Latest centralized records</p>
+                </div>
+                <button class="text-button green-text" data-action="view-all">
+                  View all
+                </button>
+              </div>
+              <div class="table-scroll">
+                <table class="complaint-table">
+                  <thead>
+                    <tr>
+                      <th>Reference</th>
+                      <th>Resident</th>
+                      <th>Category</th>
+                      <th>Submitted</th>
+                      <th>Status</th>
+                      <th>Assigned</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr tabindex="0" data-id="BC-2025-0048">
+                      <td class="reference">BC-2025-0048</td>
+                      <td>
+                        <strong>Elena Villanueva</strong
+                        ><small>Near the Purok 2 covered court</small>
+                      </td>
+                      <td>Noise</td>
+                      <td>Mar 11, 2025</td>
+                      <td><span class="status submitted">Submitted</span></td>
+                      <td>Maria Santos</td>
+                      <td>
+                        <button class="row-open" aria-label="Open BC-2025-0048">
+                          ›
+                        </button>
+                      </td>
+                    </tr>
+                    <tr tabindex="0" data-id="BC-2025-0047">
+                      <td class="reference">BC-2025-0047</td>
+                      <td>
+                        <strong>Joel Mendoza</strong
+                        ><small>Vacant area beside Purok 5 pathway</small>
+                      </td>
+                      <td>Garbage / Cleanliness</td>
+                      <td>Mar 10, 2025</td>
+                      <td>
+                        <span class="status verification"
+                          >For Verification</span
+                        >
+                      </td>
+                      <td>Maria Santos</td>
+                      <td>
+                        <button class="row-open" aria-label="Open BC-2025-0047">
+                          ›
+                        </button>
+                      </td>
+                    </tr>
+                    <tr tabindex="0" data-id="BC-2025-0046">
+                      <td class="reference">BC-2025-0046</td>
+                      <td>
+                        <strong>Marites Flores</strong
+                        ><small
+                          >Boundary between two fictional residential
+                          lots</small
+                        >
+                      </td>
+                      <td>Property Disputes</td>
+                      <td>Mar 8, 2025</td>
+                      <td><span class="status review">Under Review</span></td>
+                      <td>Roberto Dela Cruz</td>
+                      <td>
+                        <button class="row-open" aria-label="Open BC-2025-0046">
+                          ›
+                        </button>
+                      </td>
+                    </tr>
+                    <tr tabindex="0" data-id="BC-2025-0045">
+                      <td class="reference">BC-2025-0045</td>
+                      <td>
+                        <strong>Paolo Reyes</strong
+                        ><small>Dim pathway near a fictional side street</small>
+                      </td>
+                      <td>Safety</td>
+                      <td>Mar 6, 2025</td>
+                      <td><span class="status referred">Referred</span></td>
+                      <td>Roberto Dela Cruz</td>
+                      <td>
+                        <button class="row-open" aria-label="Open BC-2025-0045">
+                          ›
+                        </button>
+                      </td>
+                    </tr>
+                    <tr tabindex="0" data-id="BC-2025-0044">
+                      <td class="reference">BC-2025-0044</td>
+                      <td>
+                        <strong>Liza Navarro</strong
+                        ><small>Fictional residence in Purok 4</small>
+                      </td>
+                      <td>Noise</td>
+                      <td>Mar 4, 2025</td>
+                      <td><span class="status hearing">For Hearing</span></td>
+                      <td>Maria Santos</td>
+                      <td>
+                        <button class="row-open" aria-label="Open BC-2025-0044">
+                          ›
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+            <article class="panel status-panel">
+              <div class="panel-heading stacked">
+                <div>
+                  <h2>Complaint Status<br />Overview</h2>
+                  <p>Current active workload</p>
+                </div>
+              </div>
+              <div class="status-list">
+                <div class="status-item">
+                  <div><span>For Verification</span><b>1</b></div>
+                  <i><em style="width: 16%"></em></i>
+                </div>
+                <div class="status-item">
+                  <div><span>Under Review</span><b>1</b></div>
+                  <i><em style="width: 16%"></em></i>
+                </div>
+                <div class="status-item">
+                  <div><span>For Hearing</span><b>2</b></div>
+                  <i><em style="width: 34%"></em></i>
+                </div>
+                <div class="status-item">
+                  <div><span>Rescheduled</span><b>1</b></div>
+                  <i><em style="width: 16%"></em></i>
+                </div>
+                <div class="status-item">
+                  <div><span>Referred</span><b>1</b></div>
+                  <i><em style="width: 16%"></em></i>
+                </div>
+                <div class="status-item">
+                  <div><span>Resolved</span><b>1</b></div>
+                  <i><em style="width: 16%"></em></i>
+                </div>
+              </div>
+            </article>
+          </section>
+          <section class="lower-grid">
+            <article class="panel categories-panel">
+              <div class="panel-heading"><h2>Complaint Categories</h2></div>
+              <div class="category-list">
+                <div class="category">
+                  <span>Noise</span><i><em style="width: 100%"></em></i><b>2</b>
+                </div>
+                <div class="category">
+                  <span>Garbage / Cleanliness</span
+                  ><i><em style="width: 100%"></em></i><b>2</b>
+                </div>
+                <div class="category">
+                  <span>Property Disputes</span
+                  ><i><em style="width: 100%"></em></i><b>2</b>
+                </div>
+                <div class="category">
+                  <span>Safety</span><i><em style="width: 50%"></em></i><b>1</b>
+                </div>
+                <div class="category">
+                  <span>Other</span><i><em style="width: 50%"></em></i><b>1</b>
+                </div>
+              </div>
+            </article>
+            <article class="panel hearings-panel" id="hearings">
+              <div class="panel-heading">
+                <h2>Upcoming Hearings</h2>
+                <button class="text-button green-text" data-action="calendar">
+                  Calendar
+                </button>
+              </div>
+              <div class="hearing-list">
+                <button class="hearing-card" data-id="BC-2025-0041">
+                  <span class="hearing-icon"
+                    ><img src="assets/images/figma-icon-11.svg" alt="" /></span
+                  ><span
+                    ><strong>BC-2025-0041</strong
+                    ><small>Mar 18 • 10:00 AM</small></span
+                  >
+                </button>
+                <button class="hearing-card" data-id="BC-2025-0044">
+                  <span class="hearing-icon"
+                    ><img src="assets/images/figma-icon-11.svg" alt="" /></span
+                  ><span
+                    ><strong>BC-2025-0044</strong
+                    ><small>Mar 18 • 10:00 AM</small></span
+                  >
+                </button>
+                <button class="hearing-card" data-id="BC-2025-0043">
+                  <span class="hearing-icon"
+                    ><img src="assets/images/figma-icon-11.svg" alt="" /></span
+                  ><span
+                    ><strong>BC-2025-0043</strong
+                    ><small>Mar 21 • 1:30 PM</small></span
+                  >
+                </button>
+              </div>
+            </article>
+            <article class="panel activity-panel" id="activity">
+              <div class="panel-heading">
+                <h2>Recent Personnel Activity</h2>
+              </div>
+              <div class="activity-list">
+                <div class="activity-item">
+                  <i></i
+                  ><span
+                    ><strong>Complaint received</strong
+                    ><small>System • 11/03/2025</small></span
+                  >
+                </div>
+                <div class="activity-item">
+                  <i></i
+                  ><span
+                    ><strong>Additional information requested</strong
+                    ><small>Maria Santos • 10/03/2025</small></span
+                  >
+                </div>
+                <div class="activity-item">
+                  <i></i
+                  ><span
+                    ><strong>Hearing rescheduled</strong
+                    ><small>Maria Santos • 09/03/2025</small></span
+                  >
+                </div>
+                <div class="activity-item">
+                  <i></i
+                  ><span
+                    ><strong>Complaint verified</strong
+                    ><small>Maria Santos • 09/03/2025</small></span
+                  >
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+        
+      </main>
+    </div>
+    <div class="modal-backdrop" id="modal" hidden>
+      <section
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <button class="modal-close" aria-label="Close">×</button>
+        <div id="modalContent"></div>
+      </section>
+    </div>
+    <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+    <script src="js/script.js"></script>
+  <script src="js/navigation.js"></script>
+    
+  </body>
+</html>

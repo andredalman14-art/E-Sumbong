@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#123f2f"><title>Complaint Successfully Registered | Barangay Poblacion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/complaints.css"><link rel="stylesheet" href="css/registration.css"></head><body data-page="success"><div class="app-shell"><aside class="sidebar" id="sidebar">
+        <a class="brand" href="dashboard.html" aria-label="Barangay Poblacion home">
+          <span class="brand-mark"
+            ><img src="assets/images/figma-icon-07.svg" alt=""
+          /></span>
+          <span class="brand-copy"
+            ><strong>Barangay Poblacion</strong
+            ><small>Personnel Portal</small></span
+          >
+        </a>
+        <div class="side-label">Workspace</div>
+        <nav class="side-nav" aria-label="Main navigation">
+          <a class="nav-link" href="dashboard.html" data-section="Dashboard"
+            ><img src="assets/images/figma-icon-11.svg" alt="" /><span
+              >Dashboard</span
+            ></a
+          >
+          <a
+            class="nav-link active"
+            href="complaints.html"
+            data-section="Complaints"
+            ><img src="assets/images/figma-icon-12.svg" alt="" /><span
+              >Complaints</span
+            ></a
+          >
+          <a class="nav-link" href="#hearings" data-section="Hearing Calendar"
+            ><img src="assets/images/figma-icon-13.svg" alt="" /><span
+              >Hearing Calendar</span
+            ></a
+          >
+          <a class="nav-link" href="#activity" data-section="Activity Log"
+            ><img src="assets/images/figma-icon-14.svg" alt="" /><span
+              >Activity Log</span
+            ></a
+          >
+          <a class="nav-link" href="#reports" data-section="Monthly Reports"
+            ><img src="assets/images/figma-icon-15.svg" alt="" /><span
+              >Monthly Reports</span
+            ></a
+          >
+          <a class="nav-link" href="#notifications" data-section="Notifications"
+            ><img src="assets/images/figma-icon-16.svg" alt="" /><span
+              >Notifications</span
+            ><span class="nav-count">4</span></a
+          >
+        </nav>
+        <button class="logout" type="button" data-action="logout">
+          <span class="logout-icon">↪</span
+          ><span
+            ><strong>Logout</strong><small>End personnel session</small></span
+          ><span class="logout-arrow">›</span>
+        </button>
+      </aside><main class="main-area">        <header class="topbar">
+          <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open navigation"
+          >
+            ☰
+          </button>
+          <div class="top-title">
+            <strong id="pageTitle">Complaint Management</strong
+            ><small id="pageSubtitle">Centralized resident concern processing</small>
+          </div>
+          <div class="top-actions">
+            <div class="popover-wrap">
+              <button
+                class="icon-button notification-trigger"
+                id="notificationButton"
+                aria-label="Notifications"
+                aria-expanded="false"
+              >
+                <img src="assets/images/figma-icon-00.svg" alt="" /><i></i>
+              </button>
+              <div
+                class="popover notification-popover"
+                id="notificationPanel"
+                hidden
+              >
+                <div class="popover-head">
+                  <strong>Notifications</strong
+                  ><button class="text-button" data-action="mark-read">
+                    Mark all read
+                  </button>
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>New complaint submitted</b
+                    ><small>Noise complaint · 10 minutes ago</small></span
+                  >
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>Hearing reminder</b
+                    ><small>BC-2025-0041 · Tomorrow, 10:00 AM</small></span
+                  >
+                </div>
+                <div class="notice">
+                  <span class="notice-dot"></span
+                  ><span
+                    ><b>Additional information received</b
+                    ><small>BC-2025-0047 · Yesterday</small></span
+                  >
+                </div>
+                <button class="popover-footer" data-action="all-notifications">
+                  View all notifications <span>→</span>
+                </button>
+              </div>
+            </div>
+            <div class="popover-wrap">
+              <button
+                class="profile-button"
+                id="profileButton"
+                aria-expanded="false"
+              >
+                <span class="avatar">M</span
+                ><span class="profile-copy"
+                  ><strong>Maria Santos</strong><small>Secretary</small></span
+                ><span class="chevron">⌄</span>
+              </button>
+              <div class="popover profile-popover" id="profilePanel" hidden>
+                <div class="profile-popover-head">
+                  <span class="avatar large">M</span
+                  ><span
+                    ><b>Maria Santos</b><small>Barangay Secretary</small></span
+                  >
+                </div>
+                <button data-action="profile">My profile</button
+                ><button data-action="settings">Account settings</button
+                ><button data-action="logout">Log out</button>
+              </div>
+            </div>
+          </div>
+        </header><div class="content review-underlay success-underlay" aria-hidden="true"><div class="complaint-page-heading"><p class="complaint-eyebrow">CENTRALIZED RECORDS</p><h1>Complaint Management</h1><p class="complaint-intro">Search, verify, assign, and route resident concerns from one secure workspace.</p></div><div class="complaint-toolbar-heading"><div class="complaint-tabs"><span class="complaint-tab active">All Complaints</span><span class="complaint-tab">New Submissions</span><span class="complaint-tab">For Verification</span><span class="complaint-tab">Active Complaints</span><span class="complaint-tab">Resolved Complaints</span></div></div><div class="complaint-records"><div class="complaint-table-scroll"><table class="management-table"><thead><tr><th>Reference</th><th>Resident</th><th>Category</th><th>Date Filed</th><th>Status</th><th>Assigned Personnel</th></tr></thead><tbody><tr><td>BC-2025-0042</td><td>Elena Villanueva</td><td>Noise</td><td>Mar 17, 2025</td><td>For Review</td><td>Maria Santos</td></tr><tr><td>BC-2025-0047</td><td>Joel Mendoza</td><td>Garbage / Sanitation</td><td>Mar 15, 2025</td><td>For Verification</td><td>Maria Santos</td></tr><tr><td>BC-2025-0039</td><td>Marites Reyes</td><td>Property Dispute</td><td>Mar 12, 2025</td><td>For Hearing</td><td>Maria Santos</td></tr></tbody></table></div></div><div class="selected-complaint"><div><p class="complaint-eyebrow">SELECTED COMPLAINT</p><strong>BC-2025-0042 · Elena Villanueva</strong></div></div></div>
+<div class="workflow-shade success-shade"><section class="success-dialog" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+  <header class="success-dialog-heading"><span class="success-check">✓</span><h1 id="successTitle">Complaint Successfully Registered!</h1><p>The complaint is now part of the centralized barangay complaint record.</p></header>
+  <div class="success-dialog-content">
+    <div class="reference-banner"><small>COMPLAINT REFERENCE NUMBER</small><strong id="successReference">BC-2026-0001</strong></div>
+    <div class="success-details">
+      <div><small>Resident Name</small><strong data-confirmation="fullName"></strong></div><div><small>Category</small><strong data-confirmation="category"></strong></div>
+      <div><small>Date Registered</small><strong id="successDate"></strong></div><div><small>Submission Method</small><strong data-confirmation="submissionMethod">Walk-In</strong></div>
+      <div><small>Status</small><strong><span class="submitted-tag">Submitted</span></strong></div>
+    </div>
+    <p class="success-missing" id="successMissing" hidden>No recent registration was found. <a href="complaints.html">Return to Complaint Management</a>.</p>
+    <div class="success-actions"><button class="button button-light" id="printConfirmation"><svg class="print-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M7 14h10v7H7z"/><path d="M18 11h.01"/></svg>Print Confirmation Slip</button><button class="button button-primary" id="returnComplaints">View Complaint Details</button></div>
+  </div>
+  <section class="print-slip" id="printSlip"><h1>Barangay Poblacion</h1><p>Complaint Confirmation Slip</p><hr><dl><div><dt>Reference Number</dt><dd id="printReference"></dd></div><div><dt>Resident Name</dt><dd data-print="fullName"></dd></div><div><dt>Complaint Category</dt><dd data-print="category"></dd></div><div><dt>Date Registered</dt><dd data-print-date></dd></div><div><dt>Status</dt><dd>Submitted</dd></div></dl></section>
+</section></div></main></div>
+<div class="toast-region" id="toastRegion" aria-live="polite"></div>
+<script src="js/navigation.js"></script><script src="js/complaints.js"></script></body></html>

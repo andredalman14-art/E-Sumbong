@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#123f2f">
+  <title>Request Additional Information | Barangay Poblacion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/complaints.css"><link rel="stylesheet" href="css/information-request.css">
+</head>
+<body data-page="request-information">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="dashboard.html" aria-label="Barangay Poblacion home"><span class="brand-mark"><img src="assets/images/figma-icon-07.svg" alt=""></span><span class="brand-copy"><strong>Barangay Poblacion</strong><small>Personnel Portal</small></span></a>
+      <div class="side-label">Workspace</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link" href="dashboard.html" data-section="Dashboard"><img src="assets/images/figma-icon-11.svg" alt=""><span>Dashboard</span></a>
+        <a class="nav-link active" href="complaints.html" data-section="Complaints"><img src="assets/images/figma-icon-12.svg" alt=""><span>Complaints</span></a>
+        <a class="nav-link" href="#hearings" data-section="Hearing Calendar"><img src="assets/images/figma-icon-13.svg" alt=""><span>Hearing Calendar</span></a>
+        <a class="nav-link" href="#activity" data-section="Activity Log"><img src="assets/images/figma-icon-14.svg" alt=""><span>Activity Log</span></a>
+        <a class="nav-link" href="#reports" data-section="Monthly Reports"><img src="assets/images/figma-icon-15.svg" alt=""><span>Monthly Reports</span></a>
+        <a class="nav-link" href="#notifications" data-section="Notifications"><img src="assets/images/figma-icon-16.svg" alt=""><span>Notifications</span><span class="nav-count">4</span></a>
+      </nav>
+      <button class="logout" type="button" data-action="logout"><span class="logout-icon">↪</span><span><strong>Logout</strong><small>End personnel session</small></span><span class="logout-arrow">›</span></button>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div class="top-title"><strong id="pageTitle">Complaint Management</strong><small id="pageSubtitle">Centralized resident concern processing</small></div>
+        <div class="top-actions">
+          <div class="popover-wrap"><button class="icon-button notification-trigger" id="notificationButton" aria-label="Notifications" aria-expanded="false"><img src="assets/images/figma-icon-00.svg" alt=""><i></i></button><div class="popover notification-popover" id="notificationPanel" hidden><div class="popover-head"><strong>Notifications</strong><button class="text-button" data-action="mark-read">Mark all read</button></div><div class="notice"><span class="notice-dot"></span><span><b>New complaint submitted</b><small>Noise complaint · 10 minutes ago</small></span></div><div class="notice"><span class="notice-dot"></span><span><b>Hearing reminder</b><small>BC-2025-0041 · Tomorrow, 10:00 AM</small></span></div><div class="notice"><span class="notice-dot"></span><span><b>Additional information received</b><small>BC-2025-0047 · Yesterday</small></span></div><button class="popover-footer" data-action="all-notifications">View all notifications <span>→</span></button></div></div>
+          <div class="popover-wrap"><button class="profile-button" id="profileButton" aria-expanded="false"><span class="avatar">M</span><span class="profile-copy"><strong>Maria Santos</strong><small>Secretary</small></span><span class="chevron">⌄</span></button><div class="popover profile-popover" id="profilePanel" hidden><div class="profile-popover-head"><span class="avatar large">M</span><span><b>Maria Santos</b><small>Barangay Secretary</small></span></div><button data-action="profile">My profile</button><button data-action="settings">Account settings</button><button data-action="logout">Log out</button></div></div>
+        </div>
+      </header>
+      <section class="content information-request-page">
+        <div class="request-heading-row">
+          <div class="request-heading"><p>COMPLAINT MANAGEMENT / INFORMATION REQUEST</p><h1>Request Additional Information</h1><span>Identify incomplete details and prepare a clear request for the resident.</span></div>
+          <a class="button button-light workflow-back-top" href="complaints.html">← Back to Complaints</a>
+        </div>
+        <form id="informationRequestForm" class="request-layout" novalidate>
+          <div class="request-left-column">
+            <section class="request-card complaint-summary-card">
+              <div class="request-card-heading"><span class="request-icon">▣</span><div><h2>Complaint Details</h2><p>Current complaint record.</p></div></div>
+              <dl class="request-complaint-grid">
+                <div><dt>COMPLAINT REFERENCE NUMBER</dt><dd id="requestReference">—</dd></div><div><dt>RESIDENT NAME</dt><dd id="requestResident">—</dd></div>
+                <div><dt>COMPLAINT CATEGORY</dt><dd id="requestCategory">—</dd></div><div><dt>DATE SUBMITTED</dt><dd id="requestSubmitted">—</dd></div>
+                <div><dt>CURRENT STATUS</dt><dd><span class="request-status-pill" id="requestCurrentStatus">—</span></dd></div>
+                <div class="request-description"><dt>COMPLAINT DESCRIPTION</dt><dd id="requestDescription">—</dd></div>
+              </dl>
+            </section>
+            <section class="request-card checklist-card">
+              <div class="request-card-heading"><span class="request-icon">✓</span><div><h2>Missing Information Checklist</h2><p>Select all details the resident needs to provide.</p></div></div>
+              <div class="missing-checklist">
+                <label><input type="checkbox" name="missingInfo" value="Exact Incident Location" checked><span>Exact Incident Location</span></label>
+                <label><input type="checkbox" name="missingInfo" value="Date and Time of Incident"><span>Date and Time of Incident</span></label>
+                <label><input type="checkbox" name="missingInfo" value="Persons Involved"><span>Persons Involved</span></label>
+                <label><input type="checkbox" name="missingInfo" value="Additional Incident Details"><span>Additional Incident Details</span></label>
+                <label><input type="checkbox" name="missingInfo" value="Supporting Evidence or Documents" checked><span>Supporting Evidence or Documents</span></label>
+                <label><input type="checkbox" name="missingInfo" value="Contact Information"><span>Contact Information</span></label>
+              </div>
+            </section>
+            <section class="request-card previous-requests-card">
+              <div class="request-card-heading"><span class="request-icon">◷</span><div><h2>Previous Information Requests</h2><p>Earlier requests associated with this complaint.</p></div></div>
+              <div class="previous-requests-scroll"><table class="previous-requests-table"><thead><tr><th>REQUEST DATE</th><th>REQUESTED INFORMATION</th><th>STATUS</th></tr></thead><tbody id="previousRequestsBody"></tbody></table></div>
+            </section>
+          </div>
+          <section class="request-card request-details-card">
+            <div class="request-card-heading"><span class="request-icon">✎</span><div><h2>Request Details</h2><p>Set the reason, deadline, and resident notification.</p></div></div>
+            <label class="request-field">REASON FOR REQUEST<select id="requestReason"><option>Missing required information</option><option>Clarification required</option><option>Supporting documents needed</option><option>Contact resident</option><option>Other</option></select></label>
+            <label class="request-field">ADDITIONAL INFORMATION NEEDED<textarea id="requestedInformation" rows="4" required>Please confirm the exact location of the incident and attach any available photos, videos, or witness statements.</textarea></label>
+            <div class="request-date-grid"><label class="request-field">REQUEST DATE<input id="requestDate" type="date"></label><label class="request-field">RESPONSE DEADLINE<input id="responseDeadline" type="date"></label></div>
+            <label class="request-field notification-message-field">EDITABLE NOTIFICATION MESSAGE<textarea id="residentNotification" rows="6">Your complaint requires additional information before we can proceed with the review. Please provide the requested details so we can continue processing your report.</textarea></label>
+            <p class="request-info-note"><span>ⓘ</span>The resident will receive this message through their in-app notification center.</p>
+            <p class="request-validation" id="requestValidation" hidden>Choose at least one missing detail and provide the requested information.</p>
+          </section>
+          <footer class="request-footer"><span><button class="button button-light" type="button" id="saveInformationDraft">Save Draft</button><button class="button button-primary" type="submit">Send Request <b>›</b></button></span></footer>
+        </form>
+      </section>
+    </main>
+  </div>
+  <div class="request-modal-overlay" id="requestModalOverlay" hidden>
+    <section class="request-dialog" id="requestConfirmDialog" role="dialog" aria-modal="true" aria-labelledby="requestConfirmTitle">
+      <button class="request-dialog-close" type="button" id="closeRequestConfirm" aria-label="Close"><img src="assets/images/request-modal-close.svg" alt=""></button>
+      <span class="request-dialog-icon"><img src="assets/images/request-confirm-info.svg" alt=""></span>
+      <h2 id="requestConfirmTitle">Send information request?</h2>
+      <p>The resident will be notified that more details are required before review can continue.</p>
+      <div class="request-confirm-summary"><div><small>COMPLAINT REFERENCE</small><strong id="confirmRequestReference">—</strong></div><div><small>RESPONSE DEADLINE</small><strong id="confirmRequestDeadline">No deadline selected</strong></div></div>
+      <div class="request-dialog-actions"><button class="button button-light" type="button" id="cancelRequestConfirm">Cancel</button><button class="button button-primary" type="button" id="confirmAndSendRequest">Confirm &amp; Send</button></div>
+    </section>
+    <section class="request-dialog request-success-dialog" id="requestSuccessDialog" role="dialog" aria-modal="true" aria-labelledby="requestSuccessTitle" hidden>
+      <span class="request-dialog-icon success"><img src="assets/images/request-success-check.svg" alt=""></span>
+      <h2 id="requestSuccessTitle">Additional Information Request Sent Successfully</h2>
+      <p>The complaint status has been updated and the resident has been notified.</p>
+      <div class="request-success-status"><small>UPDATED STATUS</small><strong>For Additional Information</strong></div>
+      <button class="button button-primary request-success-action" type="button" id="viewUpdatedRequest">View Updated Request</button>
+    </section>
+  </div>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <script src="js/navigation.js"></script><script src="js/complaints.js"></script>
+</body>
+</html>
