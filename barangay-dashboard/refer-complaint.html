@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123f2f">
+  <title>Refer Complaint | Barangay Poblacion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/complaints.css">
+  <style>
+    body[data-page="refer-complaint"]{background:#f4f6f5;font-family:Inter,Arial,sans-serif;color:#1b2c25}
+    body[data-page="refer-complaint"] .main-area{min-width:0}
+    .referral-content{padding:24px 28px 90px;max-width:1600px;margin:0 auto}
+    .referral-crumbs{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:0 0 10px;color:#64748b;font-size:11px;font-weight:600}
+    .referral-crumbs a{color:#0c7050;text-decoration:none}.referral-crumbs a:hover{text-decoration:underline}
+    .referral-heading-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px}.referral-heading{margin-bottom:0}.referral-back-top{margin-top:18px;flex:none}
+    .referral-eyebrow,.referral-micro{margin:0;color:#64748b;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+    .referral-eyebrow{color:#08774f;letter-spacing:.12em}.referral-heading h1{margin:5px 0 6px;color:#172820;font-size:clamp(24px,2vw,31px);letter-spacing:-.035em}
+    .referral-heading>p:last-child{max-width:900px;margin:0;color:#71827a;font-size:14px;line-height:1.55}
+    .referral-grid{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(300px,1fr);gap:16px;align-items:start}
+    .referral-column{display:grid;gap:16px;min-width:0}
+    .referral-card{padding:20px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 3px 12px rgba(18,63,47,.035)}
+    .referral-card-head{display:flex;align-items:flex-start;gap:11px;margin-bottom:16px}
+    .referral-card-icon{width:34px;height:34px;display:grid;place-items:center;flex:none;border-radius:9px;background:#eaf7f0;color:#13764f;font-size:16px}
+    .referral-card-head h2{margin:0;color:#1c3027;font-size:17px;line-height:1.3;font-weight:650}
+    .referral-card-head p{margin:3px 0 0;color:#809087;font-size:11px;line-height:1.5}
+    .referral-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 22px}
+    .referral-summary dt,.referral-detail-list dt{margin-bottom:5px;color:#64748b;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+    .referral-summary dd,.referral-detail-list dd{margin:0;color:#25392f;font-size:13px;font-weight:550;line-height:1.45;overflow-wrap:anywhere}
+    .referral-summary .full{grid-column:1/-1}
+    .referral-badge{display:inline-flex;padding:5px 10px;border-radius:20px;background:#def5e9;color:#08744d;font-size:11px;font-weight:700}
+    .referral-disclosure{margin-top:17px;border-top:1px solid #edf1ef;padding-top:12px}
+    .referral-disclosure summary{color:#176c4d;font-size:12px;font-weight:650;cursor:pointer;list-style:none}
+    .referral-disclosure summary::-webkit-details-marker{display:none}
+    .referral-disclosure summary::after{content:"＋";float:right;color:#16764f}
+    .referral-disclosure[open] summary::after{content:"−"}
+    .referral-detail-list{display:grid;gap:12px;margin:14px 0 0}
+    .referral-detail-list dd{font-weight:400;color:#55675e}
+    .referral-docs{padding:0 0 0 17px;margin:5px 0;color:#52655b;font-size:12px}
+    .referral-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .referral-field{display:block;min-width:0;color:#64748b;font-size:10px;font-weight:700;letter-spacing:.045em;text-transform:uppercase}
+    .referral-field[hidden]{display:none!important}
+    .referral-field.full{grid-column:1/-1}
+    .referral-field input,.referral-field select,.referral-field textarea{display:block;width:100%;min-height:40px;margin-top:6px;padding:10px 12px;border:1px solid #d9e3de;border-radius:8px;background:#fff;color:#24372d;font:500 12px Inter,Arial,sans-serif;letter-spacing:0;text-transform:none;outline:none}
+    .referral-field input:focus,.referral-field select:focus,.referral-field textarea:focus{border-color:#20875e;box-shadow:0 0 0 3px rgba(32,135,94,.12)}
+    .referral-field textarea{min-height:106px;resize:vertical;line-height:1.5}
+    .referral-field input[readonly]{background:#f7faf8;color:#4c6156}
+    .referral-required{color:#c64646}
+    .referral-error{display:none;margin-top:5px;color:#b42318;font-size:11px;letter-spacing:0;text-transform:none}
+    .referral-field.is-invalid .referral-error{display:block}
+    .referral-field.is-invalid input,.referral-field.is-invalid select,.referral-field.is-invalid textarea{border-color:#d04444}
+    .referral-checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:16px}
+    .referral-check{display:flex;align-items:center;gap:9px;min-height:38px;padding:9px 10px;border:1px solid #e2e9e5;border-radius:8px;color:#53645b;font-size:11px;font-weight:500;letter-spacing:0;text-transform:none}
+    .referral-check input,.referral-radio input{width:15px;height:15px;accent-color:#13754f}
+    .referral-guidance{display:grid;gap:14px}
+    .referral-radio-list{display:grid;gap:8px}
+    .referral-radio{display:flex;align-items:center;gap:9px;padding:10px 11px;border:1px solid #e2e9e5;border-radius:8px;color:#40564b;font-size:12px;font-weight:500}
+    .referral-ack{display:flex;align-items:flex-start;gap:9px;padding:11px;border:1px solid #d9eee3;border-radius:8px;background:#f0faf4;color:#476052;font-size:11px;line-height:1.45}
+    .referral-ack input{margin-top:1px;accent-color:#13754f}
+    .referral-note{padding:14px;border:1px solid #dcebe2;border-radius:10px;background:#eef7f1;color:#597065;font-size:11px;line-height:1.55}
+    .referral-note strong{display:block;margin-bottom:4px;color:#245b40;font-size:11px}
+    .referral-form-alert{display:none;margin-top:12px;padding:10px 12px;border-radius:8px;background:#fff1f0;color:#a52e2e;font-size:12px}
+    .referral-form-alert.show{display:block}
+    .referral-actionbar{position:fixed;left:182px;right:0;bottom:0;z-index:8;min-height:54px;display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:7px 26px;border-top:1px solid #dce5e0;background:#fff}
+    .referral-actionbar .left-actions,.referral-actionbar .right-actions{display:flex;align-items:center;gap:9px}
+    .referral-btn{display:inline-flex;min-height:32px;align-items:center;justify-content:center;gap:8px;padding:0 13px;border:1px solid #d8e3dd;border-radius:8px;background:#fff;color:#274236;text-decoration:none;font:650 10px Inter,Arial,sans-serif;cursor:pointer}
+    .referral-btn.primary{border-color:#123f2f;background:#123f2f;color:#fff}.referral-btn:hover{filter:brightness(.97)}
+    .referral-btn:disabled{opacity:.65;cursor:wait}
+    .referral-overlay{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:18px;background:rgba(12,34,25,.58);backdrop-filter:blur(4px)}
+    .referral-overlay[hidden]{display:none}
+    .referral-dialog{width:min(510px,100%);padding:26px;border:1px solid #e2e8f0;border-radius:14px;background:#fff;box-shadow:0 24px 70px rgba(5,30,19,.28)}
+    .referral-dialog-icon{width:44px;height:44px;display:grid;place-items:center;margin:0 auto 12px;border-radius:50%;background:#e5f6ec;color:#11764e;font-size:20px}
+    .referral-dialog h2{margin:0;text-align:center;color:#20362b;font-size:20px}
+    .referral-dialog p{margin:9px 0 17px;text-align:center;color:#728279;font-size:12px;line-height:1.55}
+    .referral-success-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px;border:1px solid #dceae2;border-radius:9px;background:#f7faf8}
+    .referral-success-summary small{display:block;margin-bottom:4px;color:#718078;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    .referral-success-summary strong{display:block;color:#253b30;font-size:12px}
+    .referral-success-summary .full{grid-column:1/-1}
+    .referral-dialog-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}
+    .referral-dialog .referral-btn.primary{background:#123f2f}
+    .referral-loading{padding:15px;border:1px solid #e2e8f0;border-radius:9px;background:#fff;color:#6c7d74;font-size:12px}
+    @media(min-width:1500px){.referral-actionbar{left:256px}}
+    @media(max-width:1050px){.referral-content{padding:20px 20px 84px}.referral-grid{grid-template-columns:minmax(0,1.4fr) minmax(280px,1fr)}.referral-actionbar{padding:7px 20px}}
+    @media(max-width:800px){.referral-grid{grid-template-columns:1fr}.referral-content{padding:18px 14px 82px}.referral-actionbar{left:0;padding:8px 18px}}
+    @media(max-width:520px){.referral-card{padding:16px}.referral-form-grid,.referral-summary,.referral-checklist{grid-template-columns:1fr}.referral-field.full,.referral-summary .full{grid-column:auto}.referral-heading-row{flex-direction:column;align-items:stretch;gap:10px}.referral-back-top{align-self:flex-end;margin-top:0}.referral-actionbar{min-height:60px;padding:8px 12px}.referral-actionbar .referral-btn{padding:0 9px;font-size:9px}.referral-dialog{padding:22px 17px}.referral-dialog-actions{flex-direction:column-reverse}.referral-dialog-actions .referral-btn{width:100%}}
+    @media print{body[data-page="refer-complaint"] *{visibility:hidden!important}.referral-overlay.printing,.referral-overlay.printing *{visibility:visible!important}.referral-overlay.printing{position:static!important;display:block!important;background:white!important;backdrop-filter:none!important;padding:0}.referral-overlay.printing .referral-dialog{width:100%;max-width:none;border:0;box-shadow:none}.referral-overlay.printing .referral-dialog-actions{display:none!important}}
+  </style>
+</head>
+<body data-page="refer-complaint">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="dashboard.html" aria-label="Barangay Poblacion home">
+        <span class="brand-mark"><img src="assets/images/barangay-logo.png" alt="Barangay Poblacion seal"></span>
+        <span class="brand-copy"><strong>Barangay Poblacion</strong><small>Personnel Portal</small></span>
+      </a>
+      <div class="side-label">Workspace</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link" href="dashboard.html" data-section="Dashboard"><img src="assets/images/figma-icon-11.svg" alt=""><span>Dashboard</span></a>
+        <a class="nav-link active" href="complaints.html" data-section="Complaints"><img src="assets/images/figma-icon-12.svg" alt=""><span>Complaints</span></a>
+        <a class="nav-link" href="hearing-calendar.html" data-section="Hearing Calendar"><img src="assets/images/figma-icon-13.svg" alt=""><span>Hearing Calendar</span></a>
+        <a class="nav-link" href="activity-log.html" data-section="Activity Log"><img src="assets/images/figma-icon-14.svg" alt=""><span>Activity Log</span></a>
+        <a class="nav-link" href="#reports" data-section="Monthly Reports"><img src="assets/images/figma-icon-15.svg" alt=""><span>Monthly Reports</span></a>
+        <a class="nav-link" href="#notifications" data-section="Notifications"><img src="assets/images/figma-icon-16.svg" alt=""><span>Notifications</span><span class="nav-count">4</span></a>
+      </nav>
+      <button class="logout" type="button" data-action="logout"><span class="logout-icon">↪</span><span><strong>Logout</strong><small>End personnel session</small></span><span class="logout-arrow">›</span></button>
+    </aside>
+    <main class="main-area" id="dashboard">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div class="top-title"><strong>Complaint Management</strong><small>Centralized resident concern processing</small></div>
+        <div class="top-actions">
+          <div class="popover-wrap">
+            <button class="icon-button notification-trigger" id="notificationButton" aria-label="Notifications" aria-expanded="false"><img src="assets/images/figma-icon-00.svg" alt=""><i></i></button>
+            <div class="popover notification-popover" id="notificationPanel" hidden><div class="popover-head"><strong>Notifications</strong><button class="text-button" data-action="mark-read">Mark all read</button></div><div class="notice"><span class="notice-dot"></span><span><b>New complaint submitted</b><small>Noise complaint · 10 minutes ago</small></span></div><div class="notice"><span class="notice-dot"></span><span><b>Hearing reminder</b><small>BC-2025-0041 · Tomorrow, 10:00 AM</small></span></div><div class="notice"><span class="notice-dot"></span><span><b>Additional information received</b><small>BC-2025-0047 · Yesterday</small></span></div><button class="popover-footer" data-action="all-notifications">View all notifications <span>→</span></button></div>
+          </div>
+          <div class="popover-wrap">
+            <button class="profile-button" id="profileButton" aria-expanded="false"><span class="avatar" id="referralAvatar">MS</span><span class="profile-copy"><strong id="referralUserName">Maria Santos</strong><small id="referralUserRole">Secretary</small></span><span class="chevron">⌄</span></button>
+            <div class="popover profile-popover" id="profilePanel" hidden><div class="profile-popover-head"><span class="avatar large" id="referralPopoverAvatar">MS</span><span><b id="referralPopoverName">Maria Santos</b><small id="referralPopoverRole">Secretary</small></span></div><button data-action="profile">My profile</button><button data-action="settings">Account settings</button><button data-action="logout">Log out</button></div>
+          </div>
+        </div>
+      </header>
+      <section class="content referral-content">
+        <nav class="referral-crumbs" aria-label="Breadcrumb">
+          <a href="complaints.html">Complaints</a><span aria-hidden="true">/</span><span id="referralCrumbReference">BC-2025-0042</span><span aria-hidden="true">/</span><span>Refer for Further Action</span>
+        </nav>
+        <div class="referral-heading-row">
+          <div class="referral-heading">
+            <p class="referral-eyebrow">COMPLAINT MANAGEMENT / VERIFIED COMPLAINT</p>
+            <h1>Refer Complaint for Further Action</h1>
+            <p>Officially endorse this verified complaint to an external agency or specialized office and record resident next-step instructions.</p>
+          </div>
+          <a id="backToRouting" class="button button-light referral-back-top" href="route-complaint.html">← Back to Routing</a>
+        </div>
+        <div id="referralLoadMessage" class="referral-loading">Loading selected complaint…</div>
+        <form id="referralForm" hidden novalidate>
+          <div class="referral-grid">
+            <div class="referral-column">
+              <section class="referral-card">
+                <div class="referral-card-head"><span class="referral-card-icon" aria-hidden="true">▤</span><div><h2>Verified Complaint Summary</h2><p>Read-only verified information for the selected complaint.</p></div></div>
+                <dl class="referral-summary">
+                  <div><dt>Complaint Reference Number</dt><dd id="refComplaintNumber">—</dd></div>
+                  <div><dt>Resident Name</dt><dd id="refResidentName">—</dd></div>
+                  <div><dt>Contact Number</dt><dd id="refContactNumber">—</dd></div>
+                  <div><dt>Complaint Category</dt><dd id="refCategory">—</dd></div>
+                  <div class="full"><dt>Incident Location</dt><dd id="refIncidentLocation">—</dd></div>
+                  <div><dt>Verification Status</dt><dd><span class="referral-badge" id="refVerificationStatus">Verified</span></dd></div>
+                </dl>
+                <details class="referral-disclosure">
+                  <summary>Show full complaint description &amp; documents</summary>
+                  <dl class="referral-detail-list">
+                    <div><dt>Complaint Description</dt><dd id="refDescription">—</dd></div>
+                    <div><dt>Incident Date &amp; Time</dt><dd id="refIncidentAt">—</dd></div>
+                    <div><dt>Persons Involved</dt><dd id="refPersonsInvolved">—</dd></div>
+                    <div><dt>Supporting Documents</dt><dd id="refDocuments">—</dd></div>
+                  </dl>
+                </details>
+              </section>
+              <section class="referral-card">
+                <div class="referral-card-head"><span class="referral-card-icon" aria-hidden="true">⌁</span><div><h2>Receiving Office &amp; Endorsement Details</h2><p>Identify the receiving agency and document the official referral.</p></div></div>
+                <div class="referral-form-grid">
+                  <label class="referral-field full" id="targetOfficeField">Target Office / Responsible Agency <span class="referral-required">*</span>
+                    <select id="targetOffice" required>
+                      <option value="">Select a receiving office</option>
+                      <option>Philippine National Police (PNP) – Valencia City Police Station</option>
+                      <option>Lupon Tagapamayapa (Formal Conciliation)</option>
+                      <option>City Social Welfare and Development Office (CSWDO) / VAWC Desk</option>
+                      <option>City Environment &amp; Natural Resources Office (CENRO)</option>
+                      <option>City Engineering / Office of the Building Official</option>
+                      <option>Bureau of Fire Protection (BFP) / CDRRMO</option>
+                      <option>Other Responsible Office</option>
+                    </select><small class="referral-error">Select the responsible office.</small>
+                  </label>
+                  <label class="referral-field full" id="otherOfficeField" hidden>Specify Office Name <span class="referral-required">*</span>
+                    <input id="otherOfficeName" type="text" placeholder="Enter the office or agency name"><small class="referral-error">Enter the office name.</small>
+                  </label>
+                  <label class="referral-field">Specific Unit / Receiving Officer (Optional)
+                    <input id="receivingOfficer" type="text" placeholder="Unit, desk, or officer">
+                  </label>
+                  <label class="referral-field">Endorsement Reference No.
+                    <input id="endorsementReference" type="text" readonly>
+                  </label>
+                  <label class="referral-field" id="basisField">Referral Basis / Reason <span class="referral-required">*</span>
+                    <select id="referralBasis" required>
+                      <option value="">Select a referral basis</option>
+                      <option>Outside Barangay Jurisdiction</option>
+                      <option>Escalation After Unsettled Mediation</option>
+                      <option>Requires Law Enforcement Intervention</option>
+                      <option>Requires Technical / Regulatory Inspection</option>
+                    </select><small class="referral-error">Select a referral basis.</small>
+                  </label>
+                  <label class="referral-field" id="dateField">Referral Date <span class="referral-required">*</span>
+                    <input id="referralDate" type="date" required><small class="referral-error">Select the referral date.</small>
+                  </label>
+                  <label class="referral-field full" id="remarksField">Official Referral Remarks &amp; Findings <span class="referral-required">*</span>
+                    <textarea id="referralRemarks" rows="5" required></textarea><small class="referral-error">Enter the official referral remarks.</small>
+                  </label>
+                </div>
+                <div class="referral-micro" style="margin-top:18px">Documents Included in Referral Packet</div>
+                <div class="referral-checklist">
+                  <label class="referral-check"><input type="checkbox" value="Verified Complaint Record" checked>Verified Complaint Record</label>
+                  <label class="referral-check"><input type="checkbox" value="Barangay Intake &amp; Verification Summary" checked>Barangay Intake &amp; Verification Summary</label>
+                  <label class="referral-check"><input type="checkbox" value="Supporting Documents / Evidence">Supporting Documents / Evidence</label>
+                  <label class="referral-check"><input type="checkbox" value="Official Barangay Endorsement Letter / CFA">Official Barangay Endorsement Letter / CFA</label>
+                </div>
+              </section>
+            </div>
+            <div class="referral-column">
+              <section class="referral-card">
+                <div class="referral-card-head"><span class="referral-card-icon" aria-hidden="true">➜</span><div><h2>Resident Next-Step Guidance</h2><p>Provide clear instructions so the resident knows where to follow up without returning unnecessarily to the barangay hall.</p></div></div>
+                <div class="referral-guidance">
+                  <label class="referral-field" id="officeAddressField">Receiving Office Address / Desk Location <span class="referral-required">*</span>
+                    <input id="officeAddress" type="text" required placeholder="Enter receiving office address"><small class="referral-error">Enter the receiving office address.</small>
+                  </label>
+                  <label class="referral-field" id="residentInstructionsField">Instructions Visible to Resident <span class="referral-required">*</span>
+                    <textarea id="residentInstructions" rows="5" required></textarea><small class="referral-error">Enter instructions for the resident.</small>
+                  </label>
+                  <fieldset style="border:0;padding:0;margin:0">
+                    <legend class="referral-micro" style="margin-bottom:8px">How Was Resident Informed?</legend>
+                    <div class="referral-radio-list">
+                      <label class="referral-radio"><input type="radio" name="referralChannel" value="In-Person (Printed Referral Slip)" checked>In-Person (Printed Referral Slip)</label>
+                      <label class="referral-radio"><input type="radio" name="referralChannel" value="Phone Call">Phone Call</label>
+                      <label class="referral-radio"><input type="radio" name="referralChannel" value="Text Message (SMS)">Text Message (SMS)</label>
+                    </div>
+                  </fieldset>
+                  <label class="referral-ack"><input type="checkbox" id="residentNotified"><span>Resident has been notified of this referral</span></label>
+                </div>
+              </section>
+              <aside class="referral-note"><strong>Scope &amp; Privacy Note</strong>Case handling after external referral occurs outside this portal. Only approved next-step instructions—never sensitive third-party details—are displayed on the resident status tracker.</aside>
+            </div>
+          </div>
+          <p class="referral-form-alert" id="referralFormAlert" role="alert"></p>
+        </form>
+      </section>
+      <footer class="referral-actionbar">
+        <div class="right-actions"><button class="referral-btn" type="button" id="saveReferralDraft">Save as Draft</button><button class="referral-btn primary" type="submit" form="referralForm" id="confirmReferral">Confirm &amp; Log Referral <span aria-hidden="true">✓</span></button></div>
+      </footer>
+    </main>
+  </div>
+  <div class="referral-overlay" id="referralSuccessOverlay" hidden>
+    <section class="referral-dialog" role="dialog" aria-modal="true" aria-labelledby="referralSuccessTitle">
+      <div class="referral-dialog-icon" aria-hidden="true">✓</div>
+      <h2 id="referralSuccessTitle">Referral Logged Successfully</h2>
+      <p>The complaint has been endorsed. The resident can follow the next-step instructions recorded here.</p>
+      <div class="referral-success-summary">
+        <div><small>COMPLAINT REFERENCE</small><strong id="successComplaintReference">—</strong></div>
+        <div><small>REFERRED TO</small><strong id="successTargetOffice">—</strong></div>
+        <div><small>RESIDENT</small><strong id="printSlipResident">—</strong></div>
+        <div><small>CONTACT NUMBER</small><strong id="printSlipContact">—</strong></div>
+        <div class="full"><small>RECEIVING OFFICE ADDRESS</small><strong id="printSlipAddress">—</strong></div>
+        <div><small>ENDORSEMENT REFERENCE</small><strong id="printSlipReference">—</strong></div>
+        <div class="full"><small>NEXT-STEP INSTRUCTIONS</small><strong id="printSlipInstructions">—</strong></div>
+      </div>
+      <div class="referral-dialog-actions">
+        <button class="referral-btn" type="button" id="printReferralSlip">Print Resident Referral Slip</button>
+        <a class="referral-btn primary" id="returnToComplaints" href="complaints.html">Return to Complaints</a>
+      </div>
+    </section>
+  </div>
+  <script src="js/api.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/refer-complaint.js"></script>
+</body>
+</html>

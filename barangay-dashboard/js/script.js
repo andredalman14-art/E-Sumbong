@@ -200,16 +200,10 @@ document.addEventListener("click", (e) => {
         .scrollIntoView({ behavior: "smooth" });
       break;
     case "manage-schedules":
-      document
-        .querySelector("#hearings")
-        .scrollIntoView({ behavior: "smooth" });
-      toast("Upcoming hearing schedule");
+      location.href = "hearing-calendar.html";
       break;
     case "calendar":
-      document
-        .querySelector("#hearings")
-        .scrollIntoView({ behavior: "smooth" });
-      toast("Calendar view is ready");
+      location.href = "hearing-calendar.html";
       break;
     case "view-all":
       toast("Showing the latest complaint records");

@@ -23,7 +23,7 @@
           href="dashboard.html"
           aria-label="Barangay Poblacion home"
           ><span class="brand-mark"
-            ><img src="assets/images/figma-icon-07.svg" alt="" /></span
+            ><img src="assets/images/barangay-logo.png" alt="Barangay Poblacion seal" /></span
           ><span class="brand-copy"
             ><strong>Barangay Poblacion</strong
             ><small>Personnel Portal</small></span
@@ -44,12 +44,12 @@
               >Complaints</span
             ></a
           >
-          <a class="nav-link" href="#hearings" data-section="Hearing Calendar"
+          <a class="nav-link" href="hearing-calendar.html" data-section="Hearing Calendar"
             ><img src="assets/images/figma-icon-13.svg" alt="" /><span
               >Hearing Calendar</span
             ></a
           >
-          <a class="nav-link" href="#activity" data-section="Activity Log"
+          <a class="nav-link" href="activity-log.html" data-section="Activity Log"
             ><img src="assets/images/figma-icon-14.svg" alt="" /><span
               >Activity Log</span
             ></a
@@ -365,6 +365,66 @@ Complaint details have been verified. Please evaluate the report and determine t
         aria-modal="true"
         aria-labelledby="routeConfirmTitle"
       >
+        <section class="schedule-hearing-content" id="scheduleHearingContent" aria-labelledby="scheduleHearingTitle" hidden>
+          <button class="route-modal-close" type="button" id="closeScheduleHearing" aria-label="Close">
+            <img src="assets/images/request-modal-close.svg" alt="" />
+          </button>
+          <h2 id="scheduleHearingTitle">Schedule Hearing</h2>
+          <p class="schedule-hearing-intro">Set the hearing details for this verified complaint.</p>
+          <div class="schedule-complaint-summary">
+            <div><small>COMPLAINT REFERENCE NUMBER</small><strong id="scheduleReference">—</strong></div>
+            <div><small>RESIDENT NAME</small><strong id="scheduleResident">—</strong></div>
+            <div class="schedule-summary-category"><small>COMPLAINT CATEGORY</small><strong id="scheduleCategory">—</strong></div>
+          </div>
+          <div class="schedule-form-grid">
+            <label class="schedule-field schedule-full-field">HEARING TYPE
+              <select id="hearingType"><option>Initial Hearing</option><option>Mediation Hearing</option><option>Follow-up Hearing</option></select>
+            </label>
+            <label class="schedule-field">HEARING DATE<input type="date" id="hearingDate" required /></label>
+            <label class="schedule-field">HEARING TIME<input type="time" id="hearingTime" required /></label>
+            <label class="schedule-field schedule-full-field">HEARING LOCATION
+              <select id="hearingLocation"><option>Barangay Mediation Room</option><option>Barangay Session Hall</option><option>Barangay Hall Conference Room</option><option>Other</option></select>
+            </label>
+            <label class="schedule-field schedule-full-field">ASSIGNED PERSONNEL
+              <select id="hearingPersonnel" required><option value="">Select Personnel</option><option>Maria Santos</option><option>Roberto Dela Cruz</option><option>Lupon Tagapamayapa</option><option>Barangay Tanod Office</option></select>
+            </label>
+            <label class="schedule-field schedule-full-field">ADDITIONAL INSTRUCTIONS (OPTIONAL)<textarea id="hearingInstructions" rows="3"></textarea></label>
+          </div>
+          <label class="schedule-notify"><input type="checkbox" id="notifyResidentHearing" checked /><span>Notify Resident after scheduling</span></label>
+          <p class="schedule-availability" id="hearingAvailability" role="status" hidden></p>
+          <div class="schedule-modal-actions"><button class="button button-light" type="button" id="cancelScheduleHearing">Cancel</button><button class="button button-primary" type="button" id="checkHearingAvailability">Check Availability</button></div>
+        </section>
+        <section class="hearing-confirm-state" id="hearingReviewContent" aria-labelledby="hearingReviewTitle" hidden>
+          <span class="hearing-state-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M8 3v5M16 3v5M4 10h16"/></svg></span>
+          <h2 id="hearingReviewTitle">Review Hearing Schedule</h2>
+          <p>Confirm the schedule and resident notification before saving.</p>
+          <div class="hearing-review-summary">
+            <div><small>COMPLAINT REFERENCE NUMBER</small><strong id="reviewHearingReference">—</strong></div>
+            <div><small>RESIDENT NAME</small><strong id="reviewHearingResident">—</strong></div>
+            <div><small>HEARING TYPE</small><strong id="reviewHearingType">—</strong></div>
+            <div><small>HEARING DATE AND TIME</small><strong id="reviewHearingDateTime">—</strong></div>
+            <div><small>HEARING LOCATION</small><strong id="reviewHearingLocation">—</strong></div>
+            <div><small>ASSIGNED PERSONNEL</small><strong id="reviewHearingPersonnel">—</strong></div>
+            <div class="hearing-review-full"><small>NOTIFICATION METHOD</small><strong id="reviewHearingNotification">—</strong></div>
+          </div>
+          <div class="hearing-state-actions"><button class="button button-light" type="button" id="backToHearingForm">Back</button><button class="button button-primary" type="button" id="confirmHearingSchedule">Confirm Schedule</button></div>
+        </section>
+        <section class="hearing-confirm-state" id="hearingConflictContent" aria-labelledby="hearingConflictTitle" hidden>
+          <span class="hearing-state-icon conflict"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg></span>
+          <h2 id="hearingConflictTitle">Schedule Conflict Detected</h2>
+          <p>The selected schedule conflicts with another appointment assigned to this personnel. Please choose another available time or date.</p>
+          <div class="hearing-conflict-summary">
+            <div><small>SELECTED HEARING DATE</small><strong id="conflictSelectedDate">—</strong></div>
+            <div><small>SELECTED HEARING TIME</small><strong id="conflictSelectedTime">—</strong></div>
+            <div class="hearing-review-full"><small>ASSIGNED PERSONNEL</small><strong id="conflictSelectedPersonnel">—</strong></div>
+            <h3>CONFLICTING APPOINTMENT</h3>
+            <div><small>REFERENCE NUMBER</small><strong id="conflictReference">—</strong></div>
+            <div><small>APPOINTMENT TYPE</small><strong id="conflictType">—</strong></div>
+            <div><small>EXISTING DATE AND TIME</small><strong id="conflictDateTime">—</strong></div>
+            <div><small>EXISTING LOCATION</small><strong id="conflictLocation">—</strong></div>
+          </div>
+          <div class="hearing-state-actions"><button class="button button-light" type="button" id="cancelHearingConflict">Cancel</button><button class="button button-primary" type="button" id="chooseAnotherHearing">Choose Another Schedule</button></div>
+        </section>
         <div id="routeConfirmContent">
           <button
             class="route-modal-close"
@@ -427,6 +487,12 @@ Complaint details have been verified. Please evaluate the report and determine t
             <small>COMPLAINT REFERENCE</small
             ><strong id="successRouteReference">—</strong>
           </div>
+          <div class="hearing-success-summary" id="hearingSuccessSummary" hidden>
+            <div><small>CONFIRMED HEARING</small><strong id="successHearingDateTime">—</strong></div>
+            <div><small>LOCATION</small><strong id="successHearingLocation">—</strong></div>
+            <div><small>RESIDENT NOTIFICATION STATUS</small><strong><span class="hearing-status-pill pending" id="successHearingNotification">Pending</span></strong></div>
+            <div><small>COMPLAINT STATUS</small><strong><span class="hearing-status-pill status" id="successHearingComplaintStatus">For Hearing</span></strong></div>
+          </div>
           <button
             class="button button-primary route-return-button"
             type="button"
@@ -434,11 +500,16 @@ Complaint details have been verified. Please evaluate the report and determine t
           >
             Return to Complaint Management
           </button>
+          <div class="hearing-success-actions" id="hearingSuccessActions" hidden>
+            <button class="button button-light" type="button" id="viewHearingCalendar">View Hearing Calendar</button>
+            <button class="button button-primary" type="button" id="viewHearingDetails">View Hearing Details</button>
+          </div>
         </section>
       </section>
     </div>
     <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+    <script src="js/api.js"></script>
     <script src="js/navigation.js"></script>
-    <script src="js/complaints.js"></script>
+    <script src="js/complaint-workflows.js"></script>
   </body>
 </html>

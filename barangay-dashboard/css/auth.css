@@ -30,13 +30,14 @@ body[data-auth-page] {
 }
 .auth-brand-icon {
   display: grid;
-  width: 44px;
-  height: 44px;
+  width: 58px;
+  height: 58px;
   place-items: center;
-  border-radius: 12px;
+  border-radius: 50%;
   background: #fff;
+  overflow: hidden;
 }
-.auth-brand-icon img { width: 24px; height: 24px; }
+.auth-brand-icon img { width: 52px; height: 52px; object-fit: contain; }
 .auth-brand-lockup strong,
 .auth-brand-lockup small { display: block; }
 .auth-brand-lockup strong { font-size: 14px; font-weight: 600; }
@@ -402,3 +403,26 @@ body.verify-open { overflow: hidden; }
   .signup-consent { padding-inline: 15px; }
   .signup-consent-grid { grid-template-columns: 1fr; }
 }
+
+/* Barangay Poblacion seal branding shared by login, registration, and recovery. */
+.auth-brand::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  top:50%;
+  left:50%;
+  width:min(92%, 560px);
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  background:url("../assets/images/barangay-logo.png") center/contain no-repeat;
+  filter:none;
+  opacity:.28;
+  pointer-events:none;
+}
+.auth-brand-icon{background:transparent!important;border-radius:50%!important;overflow:hidden}
+.auth-brand-icon img{width:100%!important;height:100%!important;object-fit:contain}
+.signup-emblem{background:transparent!important;box-shadow:none!important;border-radius:50%!important;overflow:hidden}
+.signup-emblem img{width:100%!important;height:100%!important;object-fit:contain}
+@media(max-width:760px){.auth-brand::before{width:min(78%, 390px);top:55%}}
+.auth-brand::before{z-index:1}
+.signup-brand::before{width:min(120%, 500px)}

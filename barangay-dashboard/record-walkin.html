@@ -24,7 +24,7 @@
           aria-label="Barangay Poblacion home"
         >
           <span class="brand-mark"
-            ><img src="assets/images/figma-icon-07.svg" alt=""
+            ><img src="assets/images/barangay-logo.png" alt="Barangay Poblacion seal"
           /></span>
           <span class="brand-copy"
             ><strong>Barangay Poblacion</strong
@@ -46,12 +46,12 @@
               >Complaints</span
             ></a
           >
-          <a class="nav-link" href="#hearings" data-section="Hearing Calendar"
+          <a class="nav-link" href="hearing-calendar.html" data-section="Hearing Calendar"
             ><img src="assets/images/figma-icon-13.svg" alt="" /><span
               >Hearing Calendar</span
             ></a
           >
-          <a class="nav-link" href="#activity" data-section="Activity Log"
+          <a class="nav-link" href="activity-log.html" data-section="Activity Log"
             ><img src="assets/images/figma-icon-14.svg" alt="" /><span
               >Activity Log</span
             ></a
@@ -194,18 +194,29 @@
                 </div>
                 <div class="form-fields two-col">
                   <label
-                    >Full Name <b>*</b
+                    ><span>First Name <b>*</b></span
                     ><input
-                      name="fullName"
+                      name="firstName"
                       required
-                      autocomplete="name"
-                      placeholder="Enter resident's full name"
+                      autocomplete="given-name"
+                      placeholder="Enter first name"
                     /><small class="field-error"
-                      >Please enter the resident's full name.</small
+                      >Please enter the resident's first name.</small
                     ></label
                   >
                   <label
-                    >Contact Number <b>*</b
+                    ><span>Last Name <b>*</b></span
+                    ><input
+                      name="lastName"
+                      required
+                      autocomplete="family-name"
+                      placeholder="Enter last name"
+                    /><small class="field-error"
+                      >Please enter the resident's last name.</small
+                    ></label
+                  >
+                  <label
+                    ><span>Contact Number <b>*</b></span
                     ><input
                       name="contactNumber"
                       required
@@ -217,7 +228,7 @@
                     ></label
                   >
                   <label
-                    >Complete Address <b>*</b
+                    ><span>Complete Address <b>*</b></span
                     ><input
                       name="completeAddress"
                       required
@@ -228,7 +239,7 @@
                     ></label
                   >
                   <label
-                    >Purok / Location <b>*</b
+                    ><span>Purok / Location <b>*</b></span
                     ><input
                       name="purok"
                       required
@@ -249,7 +260,7 @@
                 </div>
                 <div class="form-fields two-col">
                   <label
-                    >Complaint Category <b>*</b
+                    ><span>Complaint Category <b>*</b></span
                     ><select name="category" required>
                       <option value="">Select a category</option>
                       <option>Noise</option>
@@ -260,18 +271,18 @@
                     </select></label
                   >
                   <label
-                    >Incident Location <b>*</b
+                    ><span>Incident Location <b>*</b></span
                     ><input
                       name="incidentLocation"
                       required
                       placeholder="Where the incident occurred"
                   /></label>
                   <label
-                    >Date of Incident <b>*</b
+                    ><span>Date of Incident <b>*</b></span
                     ><input name="incidentDate" required type="date"
                   /></label>
                   <label
-                    >Time of Incident <b>*</b
+                    ><span>Time of Incident <b>*</b></span
                     ><input name="incidentTime" required type="time"
                   /></label>
                 </div>
@@ -302,7 +313,7 @@
                 </div>
                 <div class="form-fields single-col">
                   <label
-                    >Description of Complaint <b>*</b
+                    ><span>Description of Complaint <b>*</b></span
                     ><textarea
                       name="description"
                       required
@@ -401,7 +412,7 @@
       </main>
     </div>
     <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+    <script src="js/api.js"></script>
     <script src="js/navigation.js"></script>
-    <script src="js/complaints.js"></script>
   </body>
 </html>

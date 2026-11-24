@@ -23,7 +23,9 @@
           aria-label="Barangay Poblacion home"
         >
           <span class="brand-mark"
-            ><img src="assets/images/figma-icon-07.svg" alt=""
+            ><img
+              src="assets/images/barangay-logo.png"
+              alt="Barangay Poblacion seal"
           /></span>
           <span class="brand-copy"
             ><strong>Barangay Poblacion</strong
@@ -45,12 +47,18 @@
               >Complaints</span
             ></a
           >
-          <a class="nav-link" href="#hearings" data-section="Hearing Calendar"
+          <a
+            class="nav-link"
+            href="hearing-calendar.html"
+            data-section="Hearing Calendar"
             ><img src="assets/images/figma-icon-13.svg" alt="" /><span
               >Hearing Calendar</span
             ></a
           >
-          <a class="nav-link" href="#activity" data-section="Activity Log"
+          <a
+            class="nav-link"
+            href="activity-log.html"
+            data-section="Activity Log"
             ><img src="assets/images/figma-icon-14.svg" alt="" /><span
               >Activity Log</span
             ></a
@@ -216,12 +224,14 @@
                 Resolved Complaints
               </button>
             </div>
-            <button
+            <a
               class="button button-primary walkin-button"
               data-complaint-action="walkin"
+              href="record-walkin.html"
             >
-              <span aria-hidden="true">＋</span> Record Walk-in
-            </button>
+              <span aria-hidden="true">＋</span>
+              <span>Record Walk-in</span>
+            </a>
           </div>
           <div class="complaint-records">
             <div class="complaint-filters">
@@ -293,13 +303,14 @@
               >
                 <img src="assets/images/complaint-icon-09.svg" alt="" />Update
                 status</a
-              ><button
+              ><a
                 class="complaint-action-button route-button"
                 data-complaint-action="route"
+                href="route-complaint.html"
               >
                 <img src="assets/images/complaint-icon-10.svg" alt="" />Route
                 complaint
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -318,6 +329,7 @@
     </div>
     <div class="toast-region" id="toastRegion" aria-live="polite"></div>
 
+    <script src="js/api.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/complaints.js"></script>
   </body>

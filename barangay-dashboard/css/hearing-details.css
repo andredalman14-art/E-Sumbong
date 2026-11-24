@@ -1,0 +1,47 @@
+body[data-page="hearing-details"] .sidebar{width:224px}
+body[data-page="hearing-details"] .main-area{margin-left:224px}
+body[data-page="hearing-details"] .topbar{height:64px;padding:0 28px}
+body[data-page="hearing-details"] .brand{height:64px;padding:0 18px;gap:10px}
+body[data-page="hearing-details"] .brand-mark{width:34px;height:34px}
+body[data-page="hearing-details"] .content.hearing-details-screen{max-width:none;padding:28px 32px;background:#f5f7f6}
+.hearing-details-screen{min-height:calc(100vh - 64px)}
+.hearing-details-card{width:min(100%,980px);min-height:calc(100vh - 124px);margin:0 auto;padding:24px 26px 20px;border:1px solid #e2e8f0;border-radius:13px;background:#fff;box-shadow:0 2px 9px rgba(15,23,42,.035)}
+.hearing-details-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding-bottom:16px;border-bottom:1px solid #e9efec}
+.hearing-breadcrumb{display:flex;align-items:center;gap:7px;margin:0 0 9px;color:#84958c;font-size:9px}
+.hearing-breadcrumb a{color:#16724f;text-decoration:none;font-weight:600}
+.hearing-breadcrumb a:hover{text-decoration:underline}
+.hearing-details-heading h1{margin:0;color:#20352b;font-size:23px;line-height:1.25;font-weight:600;letter-spacing:-.35px}
+.hearing-record-status{flex:none;display:inline-flex;align-items:center;min-height:22px;margin-top:2px;padding:0 10px;border-radius:999px;background:#def5e9;color:#16724f;font-size:8px;font-weight:700}
+.details-section{padding:16px 0 15px}
+.details-section h2,.complaint-context h2,.hearing-history h2{margin:0 0 12px;color:#30463b;font-size:12px;font-weight:600}
+.hearing-information-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px 38px}
+.hearing-information-grid small,.hearing-information-grid strong{display:block}
+.hearing-information-grid small{margin:0 0 4px;color:#83938b;font-size:7px;font-weight:700;letter-spacing:.48px}
+.hearing-information-grid strong{color:#263b31;font-size:9px;line-height:1.45;font-weight:600;overflow-wrap:anywhere}
+.hearing-notification-status{display:inline-flex;align-items:center;min-height:17px;padding:0 8px;border-radius:999px;background:#def5e9;color:#16724f;font-size:7px;font-weight:700}
+.hearing-notification-status.pending{background:#fff0cf;color:#a96705}
+.hearing-notification-status.not-requested{background:#eef2f0;color:#6d7c74}
+.complaint-context{margin:2px 0 18px;padding:14px 16px;border:1px solid #c9ead7;border-radius:8px;background:#effaf4}
+.complaint-context h2{margin-bottom:7px;color:#245b42;font-size:10px}
+.complaint-context p{margin:0;color:#63786c;font-size:8px;line-height:1.55}
+.complaint-context-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.complaint-context-tags span{display:inline-flex;align-items:center;min-height:18px;padding:0 8px;border:1px solid #cfe6d8;border-radius:999px;background:#fff;color:#44715a;font-size:7px;font-weight:500}
+.hearing-history{padding-bottom:14px}
+.hearing-history h2{margin-bottom:11px}
+.hearing-history ol{position:relative;display:grid;gap:0;margin:0;padding:0;list-style:none}
+.hearing-history ol::before{position:absolute;top:14px;bottom:18px;left:8px;width:1px;background:#d9e9df;content:""}
+.hearing-history li{position:relative;display:grid;grid-template-columns:18px minmax(0,1fr) auto;align-items:start;column-gap:9px;min-height:48px;padding:0 0 8px}
+.hearing-history-index{z-index:1;display:grid;width:16px;height:16px;place-items:center;border-radius:50%;background:#def5e9;color:#178052;font-size:7px;font-weight:700}
+.hearing-history-copy strong{display:block;margin:1px 0 4px;color:#30463b;font-size:8px;font-weight:700}
+.hearing-history-copy small{display:block;margin:0 0 3px;color:#8a9891;font-size:7px}
+.hearing-history-copy p{margin:0;color:#73837b;font-size:7px;line-height:1.45}
+.hearing-history-tag{display:inline-flex;align-items:center;min-height:17px;padding:0 7px;border-radius:999px;background:#eaf4ff;color:#28749a;font-size:6px;font-weight:700}
+.hearing-history-tag.pending{background:#fff0cf;color:#a96705}
+.hearing-details-actions{display:grid;gap:6px;margin-top:4px;padding-top:13px;border-top:1px solid #e9efec}
+.details-button{display:flex;min-height:30px;align-items:center;justify-content:center;border:1px solid #dce5e0;border-radius:6px;background:#fff;color:#274334;text-decoration:none;font-size:8px;font-weight:600;transition:background .15s,border-color .15s}
+.details-button:hover{border-color:#b9d4c4;background:#f8fcfa}
+.details-button.primary{border-color:#17613f;background:#17613f;color:#fff}
+.details-button.primary:hover{border-color:#104e32;background:#104e32}
+@media(max-width:1050px){body[data-page="hearing-details"] .sidebar{width:190px}body[data-page="hearing-details"] .main-area{margin-left:190px}body[data-page="hearing-details"] .content.hearing-details-screen{padding:24px 16px}.hearing-details-card{min-height:calc(100vh - 112px)}}
+@media(max-width:720px){body[data-page="hearing-details"] .sidebar{width:256px;transform:translateX(-100%);transition:transform .2s}body[data-page="hearing-details"] .sidebar.open{transform:translateX(0)}body[data-page="hearing-details"] .main-area{margin-left:0}body[data-page="hearing-details"] .topbar{height:62px;padding:0 14px}body[data-page="hearing-details"] .content.hearing-details-screen{padding:18px 12px}.hearing-details-screen{min-height:calc(100vh - 62px)}.hearing-details-card{min-height:calc(100vh - 98px);padding:18px 16px}.hearing-details-heading h1{font-size:20px}.hearing-information-grid{gap:12px 18px}}
+@media(max-width:460px){.hearing-details-heading{gap:8px}.hearing-details-heading h1{font-size:18px}.hearing-record-status{font-size:7px}.hearing-information-grid{grid-template-columns:1fr;gap:10px}.complaint-context{padding:12px}.hearing-history li{grid-template-columns:18px minmax(0,1fr);column-gap:7px}.hearing-history-tag{grid-column:2;margin-top:5px;width:max-content}}

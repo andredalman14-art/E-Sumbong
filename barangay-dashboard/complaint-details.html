@@ -10,13 +10,13 @@
 <body data-page="complaint-details">
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
-      <a class="brand" href="dashboard.html" aria-label="Barangay Poblacion home"><span class="brand-mark"><img src="assets/images/figma-icon-07.svg" alt=""></span><span class="brand-copy"><strong>Barangay Poblacion</strong><small>Personnel Portal</small></span></a>
+      <a class="brand" href="dashboard.html" aria-label="Barangay Poblacion home"><span class="brand-mark"><img src="assets/images/barangay-logo.png" alt="Barangay Poblacion seal"></span><span class="brand-copy"><strong>Barangay Poblacion</strong><small>Personnel Portal</small></span></a>
       <div class="side-label">Workspace</div>
       <nav class="side-nav" aria-label="Main navigation">
         <a class="nav-link" href="dashboard.html" data-section="Dashboard"><img src="assets/images/figma-icon-11.svg" alt=""><span>Dashboard</span></a>
         <a class="nav-link active" href="complaints.html" data-section="Complaints"><img src="assets/images/figma-icon-12.svg" alt=""><span>Complaints</span></a>
-        <a class="nav-link" href="#hearings" data-section="Hearing Calendar"><img src="assets/images/figma-icon-13.svg" alt=""><span>Hearing Calendar</span></a>
-        <a class="nav-link" href="#activity" data-section="Activity Log"><img src="assets/images/figma-icon-14.svg" alt=""><span>Activity Log</span></a>
+        <a class="nav-link" href="hearing-calendar.html" data-section="Hearing Calendar"><img src="assets/images/figma-icon-13.svg" alt=""><span>Hearing Calendar</span></a>
+        <a class="nav-link" href="activity-log.html" data-section="Activity Log"><img src="assets/images/figma-icon-14.svg" alt=""><span>Activity Log</span></a>
         <a class="nav-link" href="#reports" data-section="Monthly Reports"><img src="assets/images/figma-icon-15.svg" alt=""><span>Monthly Reports</span></a>
         <a class="nav-link" href="#notifications" data-section="Notifications"><img src="assets/images/figma-icon-16.svg" alt=""><span>Notifications</span><span class="nav-count">4</span></a>
       </nav>
@@ -56,6 +56,6 @@
   </div>
   <div class="modal-backdrop" id="modal" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" aria-label="Close">×</button><div id="modalContent"></div></section></div>
   <div class="toast-region" id="toastRegion" aria-live="polite"></div>
-  <script src="js/navigation.js"></script><script src="js/complaints.js"></script>
+  <script src="js/api.js"></script><script src="js/navigation.js"></script><script src="js/complaint-details.js"></script>
 </body>
 </html>

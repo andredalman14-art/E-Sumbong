@@ -5,7 +5,14 @@
     link.classList.toggle(
       "active",
       (page === "dashboard" && link.dataset.section === "Dashboard") ||
-        (page !== "dashboard" && link.dataset.section === "Complaints"),
+        (page === "activity-log" && link.dataset.section === "Activity Log") ||
+        ((page === "hearing-calendar" || page === "hearing-details") &&
+          link.dataset.section === "Hearing Calendar") ||
+        (page !== "dashboard" &&
+          page !== "activity-log" &&
+          page !== "hearing-calendar" &&
+          page !== "hearing-details" &&
+          link.dataset.section === "Complaints"),
     ),
   );
   const sidebar = document.querySelector("#sidebar");
@@ -36,10 +43,13 @@
       <button type="button" class="logout-accept" data-action="finish-logout"><img src="assets/images/logout-button-icon.svg" alt="" /><span>Yes, Log Out</span></button>
     </div>`;
   document.body.append(logoutDialog);
-  logoutDialog.addEventListener("close", () => { document.body.style.overflow = ""; });
+  logoutDialog.addEventListener("close", () => {
+    document.body.style.overflow = "";
+  });
   logoutDialog.addEventListener("click", (event) => {
     if (event.target === logoutDialog) logoutDialog.close();
   });
+
   document.addEventListener("click", async (event) => {
     const action = event.target.closest("[data-action]");
     if (!action) return;
@@ -57,8 +67,15 @@
       action.disabled = true;
       action.querySelector("span").textContent = "Logging Out…";
       try {
-        await fetch("/api/personnel/auth/logout", { method: "POST", credentials: "include", cache: "no-store", signal: AbortSignal.timeout(5000) });
-      } catch { /* Continue to the sign-in page if the optional auth service is offline. */ }
+        await fetch("/api/personnel/auth/logout", {
+          method: "POST",
+          credentials: "include",
+          cache: "no-store",
+          signal: AbortSignal.timeout(5000),
+        });
+      } catch {
+        /* Continue to the sign-in page if the optional auth service is offline. */
+      }
       location.assign("index.html");
     }
   });
@@ -103,7 +120,9 @@
     if (!link || page === "dashboard") return;
     if (
       link.dataset.section === "Dashboard" ||
-      link.dataset.section === "Complaints"
+      link.dataset.section === "Complaints" ||
+      link.dataset.section === "Activity Log" ||
+      link.dataset.section === "Hearing Calendar"
     )
       return;
     event.preventDefault();
